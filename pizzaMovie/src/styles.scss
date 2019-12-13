@@ -149,6 +149,20 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* Navbar */
+
+.mat-toolbar{
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.space-navbar{
+    height: 50px;
+}
+
 .navbar {
     border-bottom: 1px white solid;
     .navbar-brand {
@@ -158,4 +172,12 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 35px;
     }
 }
+
+/* Spinner */
+
+.mat-dialog-container{
+    box-shadow: none;
+      background: rgba(0, 0, 0, 0.0);
+}
+
 

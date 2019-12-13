@@ -17,6 +17,7 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
 import { PopUpComponent } from './shared/components/pop-up/pop-up.component';
 import { StikyComponent } from './shared/components/stiky/stiky.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
+import { MatDialogModule, MatDialogRef, MatToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -33,14 +34,21 @@ import { MenuComponent } from './shared/components/menu/menu.component';
     LoadingComponent,
     PopUpComponent,
     StikyComponent,
-    MenuComponent
+    MenuComponent,
+  ],
+  entryComponents: [
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatToolbarModule
   ],
-  providers: [],
+  providers: [
+    { provide: MatDialogRef, useValue: {} }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
