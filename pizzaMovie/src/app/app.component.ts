@@ -12,6 +12,5 @@ export class AppComponent {
   constructor(
     public spinnerService: SpinnerService
   ){
-    this.spinnerService.openAlertDialog();
   }
 }
