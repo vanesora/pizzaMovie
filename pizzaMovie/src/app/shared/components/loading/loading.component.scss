@@ -1,0 +1,173 @@
+//pizza loading
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.loader {
+  font-size: 200%;
+  height: 5em;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 5em;
+  transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+.loader:before {
+  border: 3px solid #F98A3E;
+  box-shadow: 2px 4px 20px 7px #F98A3E;
+  animation: glowing 1s ease-in-out infinite alternate;
+  border-radius: 50%;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.loader span {
+  clip: rect(0, auto, 2.5em, auto);
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  transform: rotate(90deg);
+  transform: rotate(90deg);
+  animation: spinner 3s infinite linear;
+  animation: spinner 3s infinite linear;
+}
+.loader span:before, .loader span:after {
+  background-image: url("CargandoPizza.svg");
+  background-color: #FCF240;
+  background-blend-mode: difference;
+  border: 0.5em solid #F98A3E;
+  border-radius: 50%;
+  clip: rect(0, auto, 2.5em, auto);
+  content: "";
+  display: block;
+  height: inherit;
+  left: inherit;
+  position: inherit;
+  top: inherit;
+  width: inherit;
+}
+.loader span:before {
+  animation: firstHalf 3s infinite ease-in;
+  animation: firstHalf 3s infinite ease-in;
+}
+.loader span:after {
+  border-color: #F98A3E;
+  animation: secondHalf 3s infinite ease-out;
+  animation: secondHalf 3s infinite ease-out;
+}
+@keyframes glowing {
+    from {
+        box-shadow: 0 0 10px #F7D8C4, 0 0 20px #F7D8C4 0 0 30px #F98A3E, 0 0 40px #F98A3E, 0 0 50px #F98A3E, 0 0 60px #F98A3E, 0 0 70px #F98A3E;
+      }
+      to {
+        box-shadow: 0 0 20px #F7D8C4, 0 0 30px #F7AA74, 0 0 40px #F7AA74, 0 0 50px #F7AA74, 0 0 60px #F7AA74, 0 0 70px #F7AA74, 0 0 80px #F7AA74;
+      }
+  }
+@keyframes spinner {
+  0% {
+    opacity: 0.25;
+    clip: rect(0, auto, 2.5em, auto);
+  }
+  50% {
+    clip: rect(0, auto, 2.5em, auto);
+  }
+  51% {
+    clip: rect(0, auto, 5em, auto);
+  }
+  100% {
+    opacity: 1;
+    clip: rect(0, auto, 5em, auto);
+  }
+}
+@keyframes spinner {
+  0% {
+    opacity: 0;
+    clip: rect(0, auto, 2.5em, auto);
+  }
+  50% {
+    clip: rect(0, auto, 2.5em, auto);
+  }
+  51% {
+    clip: rect(0, auto, 5em, auto);
+  }
+  100% {
+    opacity: 1;
+    clip: rect(0, auto, 5em, auto);
+  }
+}
+@-webkit-keyframes firstHalf {
+  0% {
+    -webkit-transform: rotate(-180deg);
+  }
+  50% {
+    -webkit-transform: rotate(0);
+  }
+}
+@keyframes firstHalf {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+}
+@-webkit-keyframes secondHalf {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: rotate(0);
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+@keyframes secondHalf {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+
+//Background
+
+.transparent{
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.0);
+
+    .title{
+        background: rgba(0, 0, 0, 0);
+        font-weight: bold;
+    }
+}
+
