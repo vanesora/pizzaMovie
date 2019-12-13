@@ -26,7 +26,171 @@ $pizzaMovie-theme: mat-light-theme($pizzaMovie-primary, $pizzaMovie-accent, $piz
 // that you are using.
 @include angular-material-theme($pizzaMovie-theme);
 
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+/* Estilos globales */
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css?family=Parisienne|Roboto+Condensed:400,700|Share+Tech&display=swap');
+
+/* --- GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto Condensed', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    background-color: #0e0e16;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Share Tech';
+    color: #f982ee;
+    text-shadow: 0px 0px 7px #e02fcb;
+}
+
+/* Efectos neón */
+
+/* Fuentes */
+.text-npink {
+    color: #f982ee;
+    text-shadow: 0px 0px 5px #e02fcb;
+}
+
+.text-nblue {
+    color: #7ee9f3;
+    text-shadow: 0px 0px 5px #1ba6b3;
+}
+
+.text-ngreen {
+    color: #b3ff66;
+    text-shadow: 0px 0px 5px #71db07;
+}
+
+.text-nyellow {
+    color: #fdf787;
+    text-shadow: 0px 0px 5px #dfd62f;
+}
+
+.text-norange {
+    color: #ffe16b;
+    text-shadow: 0px 0px 5px #dab00b;
+}
+
+.text-nwhite {
+    color: #ffffff;
+    text-shadow: 0px 0px 5px #c7c7c7;
+}
+
+/* Bloques Neón */
+.bg-npink {
+    background-color: #f982ee;
+    box-shadow: 0px 0px 5px #e02fcb;
+}
+
+.bg-nblue {
+    background-color: #7ee9f3;
+    box-shadow: 0px 0px 5px #1ba6b3;
+}
+
+.bg-ngreen {
+    background-color: #b3ff66;
+    box-shadow: 0px 0px 5px #71db07;
+}
+
+.bg-nyellow {
+    background-color: #fdf787;
+    box-shadow: 0px 0px 5px #dfd62f;
+}
+
+.bg-norange {
+    background-color: #ffe16b;
+    box-shadow: 0px 0px 5px #dab00b;
+}
+
+.bg-nwhite {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px #c7c7c7;
+}
+
+
+/* Botones */
+
+.btn {
+    font-family: 'Share Tech';
+    border-radius: 0;
+}
+
+.btn-primary {
+    background-color: #0e0e16;
+    border: 1px white solid;
+    color: white;
+    border-radius: 0;
+    
+    &:hover {
+        background-color: #0e0e16;
+        border: 1px solid hotpink;
+        box-shadow: 0px 0px 5px #c7c7c7;
+        transition: .4s;
+        color: #f982ee;
+        text-shadow: 0px 0px 7px #e02fcb;
+    }
+}
+
+
+/* Navbar */
+
+.mat-toolbar{
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.space-navbar{
+    height: 50px;
+}
+
+.navbar {
+    border-bottom: 1px white solid;
+    .navbar-brand {
+        color: #f982ee;
+        text-shadow: 0px 0px 7px #e02fcb;
+        font-family: 'Share Tech';
+        font-size: 35px;
+    }
+}
+
+/* Spinner */
+
+.mat-dialog-container{
+    box-shadow: none;
+      background: rgba(0, 0, 0, 0.0);
+}
+
+
+/* Menu */
+
+.mat-sidenav-container{
+    background-color: #0e0e16;
+
+    height: calc(100% - 50px);;
+
+    .mat-drawer{
+        right: 0;
+    }
+}
+
+
