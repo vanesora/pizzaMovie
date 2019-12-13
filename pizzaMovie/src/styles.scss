@@ -181,3 +181,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* Menu */
+
+.mat-sidenav-container{
+    background-color: #0e0e16;
+
+    height: calc(100% - 50px);;
+
+    .mat-drawer{
+        right: 0;
+    }
+}
+
+

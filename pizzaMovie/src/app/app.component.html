@@ -1,24 +1,17 @@
-<!-- <header>
-    <div class="container-fluid px-3">
-        <div class="row">
-            <div class="col">
-                <nav class="navbar sticky-top">
-                    <a class="navbar-brand" href="#!">[Logo]</a>
-                    <button class="btn btn-primary">Iniciar sesión</button>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header> -->
-
 <mat-toolbar class="navbar">
-        <a class="navbar-brand" href="#!" >[Logo]</a>
+        <a class="navbar-brand" href="#!">[Logo]</a>
         <button class="btn btn-primary">Iniciar sesión</button>
 </mat-toolbar>
-<div class="space-navbar">
+<div class="space-navbar"></div>
+<app-preview *ngIf=login></app-preview>
+<mat-sidenav-container *ngIf="!login">
+        <mat-sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
+                Sidenav content
+        </mat-sidenav>
 
-</div>
-
-<app-register></app-register>
-
-<router-outlet></router-outlet>
+        <mat-sidenav-content>
+                <div style="height: 88vh;">
+                        <router-outlet></router-outlet>
+                </div>
+        </mat-sidenav-content>
+</mat-sidenav-container>

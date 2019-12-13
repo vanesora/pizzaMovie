@@ -16,8 +16,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { LoadingComponent } from './shared/components/loading/loading.component';
 import { PopUpComponent } from './shared/components/pop-up/pop-up.component';
 import { StikyComponent } from './shared/components/stiky/stiky.component';
-import { MenuComponent } from './shared/components/menu/menu.component';
-import { MatDialogModule, MatDialogRef, MatToolbarModule } from '@angular/material';
+import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import { MatDialogModule, MatDialogRef, MatToolbarModule } from '@angular/materi
     FooterComponent,
     LoadingComponent,
     PopUpComponent,
-    StikyComponent,
-    MenuComponent,
+    StikyComponent
   ],
   entryComponents: [
     LoadingComponent
@@ -44,7 +42,11 @@ import { MatDialogModule, MatDialogRef, MatToolbarModule } from '@angular/materi
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonModule,
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} }
