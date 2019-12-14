@@ -1,0 +1,36 @@
+<mat-dialog-content class="pay-content">
+  <div class="container mt-5">
+    <h2>Plan PREMIUM</h2>
+    <div class="payment_banner">
+      <ul>
+        <li>
+          <mat-icon class="premium-banner-icon">ondemand_video</mat-icon>
+          <span>SIN LÍMITE</span>
+        </li>
+        <li>
+          <mat-icon class="premium-banner-icon">stars</mat-icon>
+          <span>CALIFICAR PELÍCULAS</span>
+        </li>
+        <li>
+          <mat-icon class="premium-banner-icon">list_alt</mat-icon>
+          <span>CREAR LISTAS</span>
+        </li>
+      </ul>
+    </div>
+    <p class="mt-5">
+      Adquiere el plan PREMIUM y accede sín Límites a todo el contenido que tenemos para ti.
+      Califica el catálogo y crea listas personalizadas con tus series o pelis favoritas. Todo por solo $50.000
+    </p>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <button (click)="pay(50)" class="btn btn-primary btn-block">Tarjeta de Cŕedito</button>
+      </div>
+      <div class="col-md-4">
+        <button (click)="openPSE()" class="btn btn-primary btn-block">Cuentas débito ahorro y corriente (PSE)</button>
+      </div>
+    </div>
+    <p class="mt-5">
+        <i>Para esta prueba intenta con la TC <b>4242 4242 4242 4242</b>, y un nḿero cualquiera de 3 digítos para el CVC.</i>
+    </p>
+  </div>
+</mat-dialog-content>

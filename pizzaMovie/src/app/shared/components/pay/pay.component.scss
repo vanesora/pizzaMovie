@@ -1,0 +1,55 @@
+.pay-content{
+    background: white;
+}
+
+.paypizza-content{
+  min-width: 990px;
+  background: whitesmoke;
+}
+
+.aligned-with-icon{
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px; /* optional */
+}
+
+.with-icon {
+    display: flex;
+    align-items: center;
+}
+
+.payment_banner {
+    margin: 0;
+    padding: 0;
+}
+
+.payment_banner ul {
+    margin: 0;
+    padding: 5px;
+}
+
+.payment_banner li {
+	  text-align: center;
+    width: 31.9%;
+    margin-bottom: 3px!important;
+    background-color: #fff;
+    border: 1px solid #eee;
+    display: inline-block;
+    font-size: 10px;
+    padding:0;
+}
+
+.premium-banner-icon {
+  font-size: 50px;
+  width: auto;
+}
+
+.payment_banner span{
+  color:black;
+  font-size:10px;
+  padding:5px 0 10px 0;
+  display:block;
+  text-transform:uppercase;
+  font-family:'Josefin Sans';
+  letter-spacing:1px;
+}

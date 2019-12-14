@@ -1,0 +1,19 @@
+<mat-dialog-content class="paypizza-content">
+  <div class="container mt-5">
+    <h2>Pagar Pizza</h2>
+    <p class="mt-5">
+      Comprar pizza, Gracias por usar nuestro servicio para que disfrutes de tu pizza mientras ves películas!
+    </p>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <button (click)="pay(20)" class="btn btn-primary btn-block">Tarjeta de Cŕedito</button>
+      </div>
+      <div class="col-md-4">
+        <button (click)="openPSE()" class="btn btn-primary btn-block">Cuentas débito ahorro y corriente (PSE)</button>
+      </div>
+    </div>
+    <p class="mt-5">
+        <i>Para esta prueba intenta con la TC <b>4242 4242 4242 4242</b>, y un nḿero cualquiera de 3 digítos para el CVC.</i>
+    </p>
+  </div>
+</mat-dialog-content>
