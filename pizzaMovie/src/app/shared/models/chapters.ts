@@ -1,8 +1,7 @@
-export class Movies {
+export class Chapters {
     title: String;
     type: String;
     picture: String;
     description: String;
-    movie: String;
-    numberRepreduction: Number;
+    cap: String;
 }
