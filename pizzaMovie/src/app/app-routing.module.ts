@@ -8,7 +8,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/pizza-movie', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, canActivate: [GoHomeGuard]},
   { path: 'about-us', component: AboutUsComponent, canActivate: [GoHomeGuard]},
 ];
