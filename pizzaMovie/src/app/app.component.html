@@ -3,8 +3,9 @@
         <button class="btn btn-primary">Iniciar sesión</button>
 </mat-toolbar>
 <div class="space-navbar"></div>
-<app-preview *ngIf=login></app-preview>
-<mat-sidenav-container *ngIf="!login">
+<app-preview *ngIf="route=='Preview'"></app-preview>
+<app-register *ngIf="route=='Register'"></app-register>
+<mat-sidenav-container *ngIf="route=='Home'">
         <mat-sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
                 Sidenav content
         </mat-sidenav>
