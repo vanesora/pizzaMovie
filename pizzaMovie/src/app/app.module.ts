@@ -17,6 +17,9 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
 import { PopUpComponent } from './shared/components/pop-up/pop-up.component';
 import { StikyComponent } from './shared/components/stiky/stiky.component';
 import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule } from '@angular/material';
+import { BuypizzaComponent } from './shared/components/pay/buypizza.component';
+import { PayComponent } from './shared/components/pay/pay.component';
+import { PSEComponent } from './shared/components/pay/pse/pse.component';
 
 @NgModule({
   declarations: [
@@ -32,10 +35,16 @@ import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatI
     FooterComponent,
     LoadingComponent,
     PopUpComponent,
-    StikyComponent
+    StikyComponent,
+    PayComponent,
+    BuypizzaComponent,
+    PSEComponent
   ],
   entryComponents: [
-    LoadingComponent
+    LoadingComponent,
+    PSEComponent,
+    PayComponent,
+    BuypizzaComponent
   ],
   imports: [
     BrowserModule,

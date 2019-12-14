@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { SpinnerService } from './shared/services/spinner.service';
 import { MatSidenav } from '@angular/material';
+import { PopupPayService } from './shared/services/popup-pay.service';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +15,14 @@ export class AppComponent {
   opened: boolean = true;
   title = 'pizzaMovie';
   login=false;
-  
+
   constructor(
-    public spinnerService: SpinnerService
+    public spinnerService: SpinnerService,
+    public payService: PopupPayService
   ){
+  }
+
+  openDialog(type){
+    this.payService.openAlertDialog(type)
   }
 }
