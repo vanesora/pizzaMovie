@@ -151,20 +151,23 @@ h1, h2, h3, h4, h5, h6 {
 /* Navbar */
 
 .mat-toolbar{
-    background-color: black;
+    background-color: transparent;
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 2;
+    box-sizing: border-box;
 }
 
 .space-navbar{
-    height: 50px;
+    height: 100px;
 }
 
 .navbar {
     border-bottom: 1px white solid;
+    margin: 0 11px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 31px 0 11px 21px;
     .navbar-brand {
         color: #f982ee;
         text-shadow: 0px 0px 7px #e02fcb;
@@ -192,5 +195,16 @@ h1, h2, h3, h4, h5, h6 {
         right: 0;
     }
 }
+
+
+/* --- FOOTER --- */
+footer {
+    position: fixed;
+    bottom: 0;
+    color: white;
+    padding: 11px;
+    background-color: red;
+}
+
 
 
