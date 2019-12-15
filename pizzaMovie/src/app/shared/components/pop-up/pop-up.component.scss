@@ -1,0 +1,13 @@
+.popup {
+  background-color: whitesmoke;
+  width: 300px;
+  height: 250px;
+}
+
+.popup .texto {
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

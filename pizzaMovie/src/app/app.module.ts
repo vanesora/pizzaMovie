@@ -53,13 +53,15 @@ import { GoPreviewGuard } from './guards/go-preview.guard';
     PSEComponent,
     MenuComponent,
     HeaderComponent,
+    PopUpComponent
   ],
   entryComponents: [
     LoadingComponent,
     PSEComponent,
     PayComponent,
     BuypizzaComponent,
-    LoginComponent
+    LoginComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,
