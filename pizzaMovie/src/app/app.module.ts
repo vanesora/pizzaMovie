@@ -17,7 +17,9 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
 import { PopUpComponent } from './shared/components/pop-up/pop-up.component';
 import { StikyComponent } from './shared/components/stiky/stiky.component';
 import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule } from '@angular/material';
+import { BuypizzaComponent } from './shared/components/pay/buypizza.component';
 import { PayComponent } from './shared/components/pay/pay.component';
+import { PSEComponent } from './shared/components/pay/pse/pse.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
 
@@ -37,12 +39,16 @@ import { MenuComponent } from './shared/components/menu/menu.component';
     PopUpComponent,
     StikyComponent,
     PayComponent,
+    BuypizzaComponent,
+    PSEComponent,
+    MenuComponent,
     HeaderComponent,
-    MenuComponent
   ],
   entryComponents: [
     LoadingComponent,
-    PayComponent
+    PSEComponent,
+    PayComponent,
+    BuypizzaComponent
   ],
   imports: [
     BrowserModule,

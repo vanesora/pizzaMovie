@@ -18,8 +18,8 @@ export class AppComponent {
   
   constructor(
     public spinnerService: SpinnerService,
+    public payService: PopupPayService,
     public storageService: StorageService,
-    public payService: PopupPayService
   ){
     this.storageService.load();
     this.spinnerService.openAlertDialog();
@@ -28,7 +28,7 @@ export class AppComponent {
     },3000)
   }
 
-  openDialog(){
-    this.payService.openAlertDialog()
+  openDialog(type){
+    this.payService.openAlertDialog(type)
   }
 }

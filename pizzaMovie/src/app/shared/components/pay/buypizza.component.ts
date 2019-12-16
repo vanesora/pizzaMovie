@@ -4,12 +4,12 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { PSEComponent } from '../../components/pay/pse/pse.component';
 
 @Component({
-  selector: 'app-pay',
-  templateUrl: './pay.component.html',
+  selector: 'app-buypizza',
+  templateUrl: './buypizza.component.html',
   styleUrls: ['./pay.component.scss']
 })
 
-export class PayComponent {
+export class BuypizzaComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: any,
@@ -38,22 +38,18 @@ export class PayComponent {
         key: 'pk_test_aeUUjYYcx4XNfKVW60pmHTtI',
         locale: 'es',
         token: function (token: any) {
-          // You can access the token ID with `token.id`.
-          // Get the token ID to your server-side code for use.
-          console.log(token)
           alert('Pago Éxitoso!');
         }
       });
 
       handler.open({
-        name: 'PREMIUM PizzaMovie',
-        description: 'plan premium',
+        name: 'Comprar Pizza',
+        description: 'Comprar pizza a través de PizzaMovie',
         amount: amount * 100
       });
   }
 
   openPSE() {
-    console.log("OPEN PSE");
     this.dialogRef1 = this.dialog.open(PSEComponent);
   }
 
