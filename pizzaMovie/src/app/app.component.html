@@ -3,10 +3,93 @@
         <button class="btn btn-primary">Iniciar sesión</button>
 </mat-toolbar>
 <div class="space-navbar"></div>
-<button  mat-button (click)="openDialog()"> boton prueba</button>
+<!-- <button  mat-button (click)="openDialog()"> boton prueba</button> -->
 <mat-sidenav-container *ngIf="!login">
-        <mat-sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
-                Sidenav content
+        <mat-sidenav class="background" mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
+                <div id="sidebar-wrapper">
+                        <div class="list-group list-group-flush">
+                          <a href="#" class="list-group-item list-group-item-action text-nwhite">
+                                  <div class="row">
+                                          <div class="col-12">
+                                                <i class="fas fa-jedi"></i>
+                                          </div>
+                                          <div class="col-12">
+                                                Los más vistos
+                                          </div>
+                                  </div>
+                                  </a>
+                          <a href="#" class="list-group-item list-group-item-action text-nwhite">
+                                <div class="row">
+                                        <div class="col-12">
+                                                <i class="fas fa-rocket"></i>
+                                        </div>
+                                        <div class="col-12">
+                                              Últimos estrenos
+                                        </div>
+                                </div>
+                          </a>
+                          <a href="#" class="list-group-item list-group-item-action text-nwhite">
+                                <div class="row">
+                                        <div class="col-12">
+                                                <i class="fab fa-galactic-senate"></i>
+                                        </div>
+                                        <div class="col-12">
+                                              Agregados recientemente
+                                        </div>
+                                </div>
+                          </a>
+                          <a href="#" class="list-group-item list-group-item-action text-nwhite">
+                                <div class="row">
+                                        <div class="col-12">
+                                                <i class="fas fa-robot"></i>
+                                        </div>
+                                        <div class="col-12">
+                                              Recomendaciones
+                                        </div>
+                                </div>
+                          </a>
+                          <a href="#" class="list-group-item list-group-item-action text-nwhite">
+                                <div class="row">
+                                        <div class="col-12">
+                                                <i class="fas fa-meteor"></i>
+                                        </div>
+                                        <div class="col-12">
+                                              Favoritos
+                                        </div>
+                                </div>
+                          </a>
+                          <a href="#" class="list-group-item list-group-item-action text-nwhite">
+                                <div class="row">
+                                        <div class="col-12">
+                                                <i class="fas fa-pizza-slice"></i>
+                                        </div>
+                                        <div class="col-12">
+                                              Pide tu pizza
+                                        </div>
+                                </div>
+                          </a>
+                          <a href="#" class="list-group-item list-group-item-action text-nwhite">
+                                <div class="row">
+                                        <div class="col-12">
+                                                <i class="fas fa-user-astronaut"></i>
+                                        </div>
+                                        <div class="col-12">
+                                              Iniciar sesión
+                                        </div>
+                                </div>
+                          </a>
+                          <a href="#" class="list-group-item list-group-item-action text-nwhite">
+                                <div class="row">
+                                        <div class="col-12">
+                                                <i class="fas fa-hand-spock"></i>
+                                        </div>
+                                        <div class="col-12">
+                                              Registrate
+                                        </div>
+                                </div>
+                          </a>
+                        </div>
+                      </div>
         </mat-sidenav>
 
         <mat-sidenav-content>
