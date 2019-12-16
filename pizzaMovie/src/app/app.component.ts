@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { SpinnerService } from './shared/services/spinner.service';
 import { MatSidenav } from '@angular/material';
 import { StorageService } from './shared/services/storage.service';
+import { PopupPayService } from './shared/services/popup-pay.service';
 
 @Component({
   selector: 'app-root',
@@ -18,11 +19,16 @@ export class AppComponent {
   constructor(
     public spinnerService: SpinnerService,
     public storageService: StorageService
+    public payService: PopupPayService
   ){
     this.spinnerService.openAlertDialog();
     setTimeout(()=>{
       this.spinnerService.close();
     },3000)
 
+  }
+
+  openDialog(){
+    this.payService.openAlertDialog()
   }
 }
