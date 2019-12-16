@@ -3,13 +3,12 @@
         <button class="btn btn-primary">Iniciar sesión</button>
 </mat-toolbar>
 <div class="space-navbar"></div>
-<app-preview *ngIf="route=='Preview'"></app-preview>
-<app-register *ngIf="route=='Register'"></app-register>
-<mat-sidenav-container *ngIf="route=='Home'">
+<app-preview *ngIf="storageService.page =='Preview'"></app-preview>
+<app-register *ngIf="storageService.page =='Register'"></app-register>
+<mat-sidenav-container *ngIf="storageService.page =='Home'">
         <mat-sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
                 Sidenav content
         </mat-sidenav>
-
         <mat-sidenav-content>
                 <div style="height: 88vh;">
                         <router-outlet></router-outlet>

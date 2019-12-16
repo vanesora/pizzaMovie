@@ -3,5 +3,5 @@ export class Chapters {
     type: String;
     picture: String;
     description: String;
-    cap: String;
+    chapter: String;
 }

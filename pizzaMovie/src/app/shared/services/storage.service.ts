@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StorageService {
-  private SETTINGS_KEY: string = '_settings';
+  private SETTINGS_KEY: string = '_movies';
   public settings: any = {};
-  spinner=false;
   _defaults: any = {};
-  private ready = false;
+  page: String;
+
 
   constructor() {
-
+    this.page= this.getValue('session')? this.getValue('session'):'Preview';
   }
 
 
@@ -71,8 +71,13 @@ export class StorageService {
   }
 
   cleanUser() {
+    let page;
+    if (this.settings && this.settings.page) {
+      page = this.settings.page;
+    }
     delete this.settings;
     this.settings = {};
+    if (page) { this.setValue('page', page) }
     return this.save()
   }
 }
