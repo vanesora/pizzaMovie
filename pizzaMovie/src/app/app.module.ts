@@ -40,8 +40,8 @@ import { MenuComponent } from './shared/components/menu/menu.component';
     StikyComponent,
     PayComponent,
     BuypizzaComponent,
-    PSEComponent
-    MenuComponent
+    PSEComponent,
+    MenuComponent,
     HeaderComponent,
   ],
   entryComponents: [

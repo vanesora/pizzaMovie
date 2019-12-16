@@ -3,7 +3,6 @@ import { SpinnerService } from './shared/services/spinner.service';
 import { MatSidenav } from '@angular/material';
 import { StorageService } from './shared/services/storage.service';
 import { PopupPayService } from './shared/services/popup-pay.service';
-import { PopupPayService } from './shared/services/popup-pay.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +18,7 @@ export class AppComponent {
   
   constructor(
     public spinnerService: SpinnerService,
-    public payService: PopupPayService
+    public payService: PopupPayService,
     public storageService: StorageService,
   ){
     this.storageService.load();

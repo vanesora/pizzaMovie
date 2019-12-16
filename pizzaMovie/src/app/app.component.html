@@ -5,12 +5,13 @@
 <router-outlet *ngIf="storageService.page !='Home'"></router-outlet>
 
 <!-- <button  mat-button (click)="openDialog()"> boton prueba</button> -->
+
+<button  mat-button (click)="openDialog('Premium')">Hazte premium</button>
+<button  mat-button (click)="openDialog('Pizza')">Comprar pizza</button>
 <mat-sidenav-container *ngIf="storageService.page =='Home'">
         <mat-sidenav class="background" mode="side" [(opened)]="opened" (opened)="events.push('open!')"
                 (closed)="events.push('close!')">
                 <app-menu></app-menu>
-<button  mat-button (click)="openDialog('Premium')">Hazte premium</button>
-<button  mat-button (click)="openDialog('Pizza')">Comprar pizza</button>
         </mat-sidenav>
         <mat-sidenav-content>
                 <div style="height: 88vh;">
