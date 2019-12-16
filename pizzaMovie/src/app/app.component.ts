@@ -18,14 +18,14 @@ export class AppComponent {
   
   constructor(
     public spinnerService: SpinnerService,
-    public storageService: StorageService
+    public storageService: StorageService,
     public payService: PopupPayService
   ){
+    this.storageService.load();
     this.spinnerService.openAlertDialog();
     setTimeout(()=>{
       this.spinnerService.close();
     },3000)
-
   }
 
   openDialog(){

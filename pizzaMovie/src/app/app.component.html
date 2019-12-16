@@ -5,8 +5,9 @@
 <div class="space-navbar"></div>
 <app-preview *ngIf="storageService.page =='Preview'"></app-preview>
 <app-register *ngIf="storageService.page =='Register'"></app-register>
+<router-outlet *ngIf="storageService.page !='Home'"></router-outlet>
 <!-- <button  mat-button (click)="openDialog()"> boton prueba</button> -->
-<mat-sidenav-container *ngIf="!login">
+<mat-sidenav-container *ngIf="storageService.page =='Home'">
         <mat-sidenav class="background" mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
                 <div id="sidebar-wrapper">
                         <div class="list-group list-group-flush">
@@ -99,3 +100,5 @@
                 </div>
         </mat-sidenav-content>
 </mat-sidenav-container>
+
+

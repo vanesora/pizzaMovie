@@ -7,11 +7,9 @@ export class StorageService {
   private SETTINGS_KEY: string = '_movies';
   public settings: any = {};
   _defaults: any = {};
-  page: String;
 
-
-  constructor() {
-    this.page= this.getValue('session')? this.getValue('session'):'Preview';
+  get page(){
+    return this.getValue('page')? this.getValue('page'):'Home'; 
   }
 
 

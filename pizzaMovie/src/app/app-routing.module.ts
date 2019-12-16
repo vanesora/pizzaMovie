@@ -8,7 +8,8 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: PreviewComponent},
+  { path: 'register', component: RegisterComponent},
   { path: 'home', component: HomeComponent, canActivate: [GoHomeGuard]},
   { path: 'about-us', component: AboutUsComponent, canActivate: [GoHomeGuard]},
 ];
