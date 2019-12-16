@@ -1,7 +1,32 @@
-<mat-toolbar class="navbar">
-        <a class="navbar-brand" href="#!">[Logo]</a>
-        <button class="btn btn-primary">Iniciar sesión</button>
-</mat-toolbar>
+<header>
+        <!-- Header -->
+        <div class="container-fluid">
+                <div class="row">
+                        <nav class="navbar">
+                                <div class="col-md-3 d-flex justify-content-start">
+                                        <a class="navbar-brand" href="">[Logo]</a>
+                                </div>
+                                <div class="col-md-9 d-flex justify-content-end align-items-center">
+                                        <img src="../assets/img/user-prof-mars.jpg" alt="">
+                                        <p class="text-ngreen mb-0 mr-4">Hola, humano visitante</p>
+                                        <button class="btn btn-primary btn-lg">Iniciar/cerrar sesión</button>                                        
+                                </div>
+                        </nav>
+                </div>
+        </div>
+
+
+        <!-- <mat-toolbar>
+                <nav class="navbar">
+                        <div class="left"><a class="navbar-brand" href="#!">[Logo]</a></div>
+                        <div class="right">
+                                <img class="profile-top rounded-circle" src="../assets/img/user-prof-mars.jpg" alt="">
+                                <p class="text-ngreen mb-0">¡Hola, (aquí va el nombre)!</p>
+                                <button class="btn btn-primary">Iniciar/cerrar sesión</button>
+                        </div>
+                </nav>
+        </mat-toolbar> -->
+</header>
 <div class="space-navbar"></div>
 <app-preview *ngIf="storageService.page =='Preview'"></app-preview>
 <app-register *ngIf="storageService.page =='Register'"></app-register>
@@ -100,5 +125,4 @@
                 </div>
         </mat-sidenav-content>
 </mat-sidenav-container>
-
-
+<app-footer></app-footer>
