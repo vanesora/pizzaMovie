@@ -18,6 +18,8 @@ import { PopUpComponent } from './shared/components/pop-up/pop-up.component';
 import { StikyComponent } from './shared/components/stiky/stiky.component';
 import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule } from '@angular/material';
 import { PayComponent } from './shared/components/pay/pay.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { MenuComponent } from './shared/components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { PayComponent } from './shared/components/pay/pay.component';
     LoadingComponent,
     PopUpComponent,
     StikyComponent,
-    PayComponent
+    PayComponent,
+    HeaderComponent,
+    MenuComponent
   ],
   entryComponents: [
     LoadingComponent,

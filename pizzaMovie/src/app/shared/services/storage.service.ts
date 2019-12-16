@@ -12,6 +12,10 @@ export class StorageService {
     return this.getValue('page')? this.getValue('page'):'Home'; 
   }
 
+  get session(){
+    return this.getValue('session')? this.getValue('session'):''; 
+  }
+
 
   load(defaults = this._defaults) {
     try {
