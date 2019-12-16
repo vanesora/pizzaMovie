@@ -164,10 +164,14 @@ body {
 .transparent{
     box-shadow: none;
     background: rgba(0, 0, 0, 0.0);
+    height: 200px;
+    width: 200px;
+    text-align: center;
 
     .title{
         background: rgba(0, 0, 0, 0);
         font-weight: bold;
+        vertical-align: middle;
     }
 }
 

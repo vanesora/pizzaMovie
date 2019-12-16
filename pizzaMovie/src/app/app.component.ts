@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { SpinnerService } from './shared/services/spinner.service';
 import { MatSidenav } from '@angular/material';
+import { StorageService } from './shared/services/storage.service';
 import { PopupPayService } from './shared/services/popup-pay.service';
 
 @Component({
@@ -14,12 +15,17 @@ export class AppComponent {
   events: string[] = [];
   opened: boolean = true;
   title = 'pizzaMovie';
-  login=false;
   
   constructor(
     public spinnerService: SpinnerService,
+    public storageService: StorageService,
     public payService: PopupPayService
   ){
+    this.storageService.load();
+    this.spinnerService.openAlertDialog();
+    setTimeout(()=>{
+      this.spinnerService.close();
+    },3000)
   }
 
   openDialog(){
