@@ -1,27 +1,27 @@
 <mat-dialog-content class="pay-content">
   <div class="container mt-5">
-    <h2>Plan PREMIUM</h2>
-    <div class="payment_banner">
+    <div class="payment_banner bg-black-green mt-3">
+      <h2 class="text-ngreen">Plan Premium</h2>
       <ul>
         <li>
-          <mat-icon class="premium-banner-icon">ondemand_video</mat-icon>
-          <span>SIN LÍMITE</span>
+          <mat-icon class="premium-banner-icon text-ngreen">ondemand_video</mat-icon>
+          <span>Reproducción sin límite</span>
         </li>
         <li>
-          <mat-icon class="premium-banner-icon">stars</mat-icon>
-          <span>CALIFICAR PELÍCULAS</span>
+          <mat-icon class="premium-banner-icon text-ngreen">stars</mat-icon>
+          <span>Califica tus películas</span>
         </li>
         <li>
-          <mat-icon class="premium-banner-icon">list_alt</mat-icon>
-          <span>CREAR LISTAS</span>
+          <mat-icon class="premium-banner-icon text-ngreen">list_alt</mat-icon>
+          <span>Crea listas de reproducción</span>
         </li>
       </ul>
     </div>
     <p class="mt-5">
-      Adquiere el plan PREMIUM y accede sín Límites a todo el contenido que tenemos para ti.
-      Califica el catálogo y crea listas personalizadas con tus series o pelis favoritas. Todo por solo $50.000
+      Adquiere el plan PREMIUM y accede sín límites a todo el contenido que tenemos para ti.
+      Califica el catálogo y crea listas personalizadas con tus series o pelis favoritas. Todo por solo $50.000 COP.
     </p>
-    <div class="row mt-5">
+    <div class="row mt-3">
       <div class="col-md-4">
         <button (click)="pay(50)" class="btn btn-primary btn-block">Tarjeta de Cŕedito</button>
       </div>
@@ -29,8 +29,9 @@
         <button (click)="openPSE()" class="btn btn-primary btn-block">Cuentas débito ahorro y corriente (PSE)</button>
       </div>
     </div>
-    <p class="mt-5">
-        <i>Para esta prueba intenta con la TC <b>4242 4242 4242 4242</b>, y un nḿero cualquiera de 3 digítos para el CVC.</i>
+    <p class="mt-3">
+      <i>Para esta prueba intenta con la TC <b>4242 4242 4242 4242</b>, y un nuḿero cualquiera de 3 digítos para el
+        CVC.</i>
     </p>
   </div>
 </mat-dialog-content>

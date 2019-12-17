@@ -71,6 +71,14 @@ a {
     }
 }
 
+.lead {
+    color: white;
+}
+
+.logoini {
+    max-width: 300px;
+}
+
 /* Efectos neón */
 
 /* Fuentes */
@@ -104,6 +112,10 @@ a {
     text-shadow: 0px 0px 3px #c7c7c7;
 }
 
+.tech-text {
+    font-family: 'Share Tech';
+}
+
 /* Bloques Neón */
 .bg-npink {
     background-color: #f982ee;
@@ -135,6 +147,22 @@ a {
     box-shadow: 0px 0px 5px #c7c7c7;
 }
 
+.bg-black-green {
+    background-color: #0e0e16;
+    padding: 7px 15px;
+    border: 1px solid #b3ff66;
+    box-shadow: 0px 0px 5px #71db07;
+    margin-bottom: 17px;
+}
+
+.bg-black-blue {
+    background-color: #0e0e16;
+    padding: 7px 15px;
+    border: 1px solid #7ee9f3;
+    box-shadow: 0px 0px 5px #1ba6b3;
+    margin-bottom: 17px;
+}
+
 
 /* Botones */
 
@@ -149,7 +177,31 @@ a {
     color: white;
     border-radius: 0;
     
+    &:visited {
+        background-color: #0e0e16;
+        border: 1px solid hotpink;
+        box-shadow: 0px 0px 5px #c7c7c7;
+        transition: .4s;
+        color: #f982ee;
+        text-shadow: 0px 0px 7px #e02fcb;
+    }
     &:hover {
+        background-color: #0e0e16;
+        border: 1px solid hotpink;
+        box-shadow: 0px 0px 5px #c7c7c7;
+        transition: .4s;
+        color: #f982ee;
+        text-shadow: 0px 0px 7px #e02fcb;
+    }
+    &:focus {
+        background-color: #0e0e16 !important;
+        border: 1px solid hotpink !important;
+        box-shadow: 0px 0px 5px #c7c7c7;
+        transition: .4s;
+        color: #f982ee;
+        text-shadow: 0px 0px 7px #e02fcb;
+    }
+    &:active {
         background-color: #0e0e16;
         border: 1px solid hotpink;
         box-shadow: 0px 0px 5px #c7c7c7;
@@ -264,6 +316,10 @@ footer {
 
 
 /*  FORMS  */
+/* --- MISC --- */
+.spacer {
+    height: 50px;
+}
 
 .mat-form-field-appearance-legacy .mat-form-field-underline{
     background-color: #b3ff66;
@@ -271,6 +327,7 @@ footer {
 .mat-select-value-text{
     color: white;
 }
+/* --- PAY --- */
 
 .mat-select-arrow{
     color: #b3ff66;
@@ -283,4 +340,13 @@ footer {
 
 
 
+
+
+/* Caja */
+.cdk-overlay-dark-backdrop {
+    background-color: #0e0e16e1;
+    background-blend-mode: multiply;
+  }
+
+  
 
