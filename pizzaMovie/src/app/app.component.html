@@ -3,6 +3,7 @@
         <button class="btn btn-primary">Iniciar sesión</button>
 </mat-toolbar>
 <div class="space-navbar"></div>
+<app-home></app-home>
 <app-preview *ngIf=login></app-preview>
 <mat-sidenav-container *ngIf="!login">
         <mat-sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
