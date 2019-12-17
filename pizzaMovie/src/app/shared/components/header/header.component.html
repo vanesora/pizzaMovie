@@ -6,9 +6,11 @@
                             <a class="navbar-brand" href="#"><img src="../../../../assets/img/logo.svg" alt="PizzaMovie"></a>
                     </div>
                     <div class="col-md-9 d-flex justify-content-end align-items-center">
-                            <img src="../assets/img/user-prof-mars.jpg" alt="">
-                            <p class="text-ngreen mb-0 mr-4 tech-text">Hola, humano visitante</p>
-                            <button class="btn btn-primary btn-lg">Iniciar/cerrar sesión</button>
+                            <img src="../assets/img/user-prof-mars.jpg" alt="" *ngIf="storageService.session">
+                            <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="!storageService.session">Hola, humano visitante</p>
+                            <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="storageService.session">Hola, {{storageService.session.name}}</p>
+                            <button class="btn btn-primary btn-lg" *ngIf="storageService.session" (click)="logOut()">Cerrar sesión</button>
+                            <button class="btn btn-primary btn-lg" *ngIf="!storageService.session" (click)="logIn()">Iniciar</button>
                     </div>
             </nav>
     </div>
