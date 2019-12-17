@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { SpinnerService } from './shared/services/spinner.service';
 import { MatSidenav } from '@angular/material';
+import { MatDialog } from '@angular/material';
+import { LoginComponent } from './pages/preview/components/login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +18,11 @@ export class AppComponent {
   login=false;
   
   constructor(
-    public spinnerService: SpinnerService
-  ){
+    public spinnerService: SpinnerService,
+    public dialog: MatDialog
+  ){}
+
+  abrirModal () {
+    this.dialog.open(LoginComponent);
   }
 }

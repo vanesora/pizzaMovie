@@ -16,8 +16,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { LoadingComponent } from './shared/components/loading/loading.component';
 import { PopUpComponent } from './shared/components/pop-up/pop-up.component';
 import { StikyComponent } from './shared/components/stiky/stiky.component';
-import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule } from '@angular/material';
-
+import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule } from '@angular/material';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,10 +32,11 @@ import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatI
     FooterComponent,
     LoadingComponent,
     PopUpComponent,
-    StikyComponent
+    StikyComponent,
   ],
   entryComponents: [
-    LoadingComponent
+    LoadingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +48,17 @@ import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatI
     MatIconModule,
     MatListModule,
     MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} }

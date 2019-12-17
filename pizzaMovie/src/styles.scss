@@ -26,14 +26,17 @@ $pizzaMovie-theme: mat-light-theme($pizzaMovie-primary, $pizzaMovie-accent, $piz
 // that you are using.
 @include angular-material-theme($pizzaMovie-theme);
 
-
-
-
-
-
 /* Estilos globales */
 /* Fuentes */
 @import url('https://fonts.googleapis.com/css?family=Parisienne|Roboto+Condensed:400,700|Share+Tech&display=swap');
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Share Tech',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+@include angular-material-typography($custom-typography);
 
 /* --- GENERAL --- */
 * {
@@ -137,6 +140,8 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     border-radius: 0;
     
+    &:active,
+    &:focus,
     &:hover {
         background-color: #0e0e16;
         border: 1px solid hotpink;
