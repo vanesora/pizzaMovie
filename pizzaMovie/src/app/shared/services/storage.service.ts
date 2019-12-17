@@ -9,7 +9,7 @@ export class StorageService {
   _defaults: any = {};
 
   get page(){
-    return this.getValue('page')? this.getValue('page'):'Home'; 
+    return this.getValue('page')? this.getValue('page'):'Preview'; 
   }
 
   get session(){

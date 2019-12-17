@@ -14,9 +14,9 @@ md_upload,userController.uploadPictureUser);
 api.get('/upload-picture-user/:imageFile',
 md_upload,userController.getPictureUser);
 
-api.post('/usuario-login',userController.getUser);
-api.post('/usuario',userController.setUser);
-api.put('/usuario/:id',userController.updateUser);
-api.delete('/usuario/:id',userController.deleteUser);
+api.post('/user-login',userController.getUser);
+api.post('/user',userController.setUser);
+api.put('/user/:id',userController.updateUser);
+api.delete('/user/:id',userController.deleteUser);
 
 module.exports = api;

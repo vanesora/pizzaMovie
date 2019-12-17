@@ -11,7 +11,7 @@ function setUser(req,res){
     var params = req.body;
 
     user.name = params.name;
-    user.lastname = params.lastname;
+    user.lastName = params.lastName;
     user.gender = params.gender;
     user.type = "USER_FREE"; 
     user.email = params.email;

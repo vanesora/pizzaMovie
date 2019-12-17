@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { PSEComponent } from '../../components/pay/pse/pse.component';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-buypizza',
@@ -15,7 +16,9 @@ export class BuypizzaComponent {
     @Inject(MAT_DIALOG_DATA) private data: any,
     private dialog: MatDialog,
     private dialogRef: MatDialogRef<{}>,
-    private dialogRef1: MatDialogRef<PSEComponent>) {
+    private dialogRef1: MatDialogRef<PSEComponent>,
+    public storageService: StorageService,
+    ) {
   }
 
   loadStripe() {
@@ -51,6 +54,10 @@ export class BuypizzaComponent {
 
   openPSE() {
     this.dialogRef1 = this.dialog.open(PSEComponent);
+  }
+
+  close(): void {
+    this.dialogRef1.close(true);
   }
 
 }
