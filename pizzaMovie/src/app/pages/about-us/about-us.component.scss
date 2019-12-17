@@ -1,0 +1,45 @@
+.titulo{
+    max-width: 40%;
+}
+.clip-circle {
+    clip-path: circle(50% at center);
+}
+.tag-wrap-vanesora{
+    filter: drop-shadow(1px 0px 14px#e02fcb);
+} 
+.tag-wrap-camila{
+    filter: drop-shadow(1px 0px 14px#1ba6b3);
+} 
+.tag-wrap-dayana{
+    filter: drop-shadow(1px 0px 14px#dab00b);
+} 
+.tag-wrap-vanessah{
+    filter: drop-shadow(1px 0px 14px#71db07);
+} 
+.tag-wrap-laura{
+    filter: drop-shadow(1px 0px 14px#dfd62f);
+}
+.tag-wrap-katherine{
+    filter: drop-shadow(1px 0px 14px#c7c7c7);
+} 
+.name{
+    text-align: center;
+    font-size: 26px;
+}
+p.name{
+    margin-bottom: 0;
+}
+.work{
+    text-align: center;
+}
+@media only screen and (max-width:767px){
+#Camila{
+    flex-direction: column-reverse;
+}
+#Vanessa{
+    flex-direction: column-reverse;
+}
+  #Katherine{
+    flex-direction: column-reverse;
+}
+}
