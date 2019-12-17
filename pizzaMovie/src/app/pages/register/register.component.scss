@@ -55,12 +55,12 @@ input{
     
     img {
         border-radius: 50%;
-        border: 2px solid #b3ff66;
         padding: 2px;
         margin: 2px;
-        background-color: #71db07b2;
         object-fit: cover;
         margin-bottom: 11px;
+        border: 1px solid #b3ff66;
+        box-shadow: 0px 0px 17px #71db07;
     }
 
     .continer-img-user{

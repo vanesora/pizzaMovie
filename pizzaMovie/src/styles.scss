@@ -316,10 +316,6 @@ footer {
 
 
 /*  FORMS  */
-/* --- MISC --- */
-.spacer {
-    height: 50px;
-}
 
 .mat-form-field-appearance-legacy .mat-form-field-underline{
     background-color: #b3ff66;
@@ -327,7 +323,6 @@ footer {
 .mat-select-value-text{
     color: white;
 }
-/* --- PAY --- */
 
 .mat-select-arrow{
     color: #b3ff66;
@@ -337,10 +332,12 @@ footer {
     border-color: white;
 }
 
+/* --- MISC --- */
+.spacer {
+    height: 50px;
+}
 
-
-
-
+/* --- PAY --- */
 
 /* Caja */
 .cdk-overlay-dark-backdrop {
