@@ -29,3 +29,11 @@ p.name{
 .work{
     text-align: center;
 }
+@media only screen and (max-width:767px){
+#Camila{
+    flex-direction: column-reverse;
+}
+#Vanessa{
+    flex-direction: column-reverse;
+}
+}
