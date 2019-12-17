@@ -13,7 +13,7 @@ export class AppComponent {
   events: string[] = [];
   opened: boolean = true;
   title = 'pizzaMovie';
-  login=false;
+  login=true;
   
   constructor(
     public spinnerService: SpinnerService
