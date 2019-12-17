@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { PSEComponent } from '../../components/pay/pse/pse.component';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-pay',
@@ -12,6 +13,7 @@ import { PSEComponent } from '../../components/pay/pse/pse.component';
 export class PayComponent {
 
   constructor(
+    public userServie: UserService,
     @Inject(MAT_DIALOG_DATA) private data: any,
     private dialog: MatDialog,
     private dialogRef: MatDialogRef<{}>,
@@ -41,7 +43,8 @@ export class PayComponent {
           // You can access the token ID with `token.id`.
           // Get the token ID to your server-side code for use.
           console.log(token)
-          alert('Pago Éxitoso!');
+          alert('Pago exitoso');
+          this.dialogRef.close()
         }
       });
 
@@ -53,8 +56,12 @@ export class PayComponent {
   }
 
   openPSE() {
-    console.log("OPEN PSE");
     this.dialogRef1 = this.dialog.open(PSEComponent);
+    setTimeout(()=>{
+      this.dialogRef1.close()
+      this.dialogRef.close()
+    },6000)
   }
+  
 
 }

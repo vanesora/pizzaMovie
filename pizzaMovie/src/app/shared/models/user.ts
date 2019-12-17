@@ -2,7 +2,7 @@ import { Movies } from './movies';
 
 export class User {
     name: String;
-    lastname: String;
+    lastName: String;
     gender: String;
     email: String;
     picture: String;

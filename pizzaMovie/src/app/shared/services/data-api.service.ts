@@ -6,7 +6,7 @@ import { StorageService } from './storage.service';
   providedIn: 'root'
 })
 export class DataApiService {
-  url_api = 'http://localhost:8880/api/';
+  url_api = 'http://localhost:3977/api/';
 
   constructor(
     private http: HttpClient,
@@ -15,24 +15,8 @@ export class DataApiService {
 
   get headers(): HttpHeaders {
     return new HttpHeaders({
-      'content-type': 'application/json',
-      Authorization: 'Bearer ' + this.getToken()
+      'content-type': 'application/json'
     });
-  }
-
-  get headersFile(): HttpHeaders {
-    return new HttpHeaders({
-      Authorization: 'Bearer ' + this.getToken()
-    });
-  }
-
-  getToken() {
-    if (this.storageService.getValue('token')) {
-      const token = this.storageService.getValue('token');
-      return token;
-    } else {
-      return null;
-    }
   }
 
   getAll(extension: string): Promise<any> {
@@ -48,8 +32,18 @@ export class DataApiService {
   }
 
   post(element, extension: string): Promise<any> {
+    let elementString
+    elementString= JSON.stringify(element)
     return this.http
-      .post(this.url_api + extension, element, { headers: this.headers })
+      .post(this.url_api + extension, elementString, { headers: this.headers })
+      .toPromise();
+  }
+
+  postImg(file: File, extension: string): Promise<any> {
+    var formData = new FormData();
+    formData.append('image', file);
+    return this.http
+      .post(this.url_api + extension, formData)
       .toPromise();
   }
 }

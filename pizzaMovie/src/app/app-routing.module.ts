@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', component: PreviewComponent, canActivate: [GoPreviewGuard]},
   { path: 'register', component: RegisterComponent, canActivate: [GoPreviewGuard]},
   { path: 'home', component: HomeComponent, canActivate: [GoHomeGuard]},
-  { path: 'about-us', component: AboutUsComponent, canActivate: [GoHomeGuard]},
+  { path: 'about-us', component: AboutUsComponent},
 ];
 
 @NgModule({
