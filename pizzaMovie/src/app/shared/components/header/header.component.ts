@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../../services/storage.service';
+import { LoginComponent } from '../../../pages/preview/components/login/login.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +11,18 @@ import { StorageService } from '../../services/storage.service';
 export class HeaderComponent implements OnInit {
 
   constructor(
-    public storageService: StorageService
+    public storageService: StorageService,
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit() {
+  }
+
+  logIn(){
+    this.dialog.open(LoginComponent);
+  }
+
+  closeModal(){
   }
 
 }

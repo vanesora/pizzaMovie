@@ -1,28 +1,28 @@
-<mat-dialog-content [formGroup]="form" class="loginForm">
+<div class="loginForm">
   <div class="img-title">
-    <img src="../../../../../assets/img/titles/iniciarsesion.svg">
+    <img src="../../../../../assets/titles/iniciarsesion.svg">
   </div>
-
-  <mat-form-field class="inputForm" [floatLabel]="formLogin.value.floatLabel">
-    <mat-label class="text-nwhite">Correo electrónico</mat-label>
-    <input matInput placeholder="E-mail" [formControl]="email" required>
-
-    <mat-error *ngIf="email.invalid">
-      <p class="text-nerror">{{mensajeDeError()}}</p>
-    </mat-error>
-  </mat-form-field>
-
-  <mat-form-field class="inputForm"
-  [floatLabel]="formLogin.value.floatLabel">
-    <mat-label class="text-nwhite">Contraseña</mat-label>
-    <input matInput [formControl]="email" required
-    type="password">
-    <mat-error *ngIf="email.invalid">
-      <p class="text-nerror">{{mensajePassword()}}</p>
-    </mat-error>
-  </mat-form-field>
-
-  <button mat-button type="submit" class="btn-primary"> Iniciar Sesión </button>
-
-
-</mat-dialog-content>
+  <form [formGroup]="formLogin" (ngSubmit)="logForm()">
+  
+    <mat-form-field class="inputForm" [floatLabel]="formLogin.value.floatLabel">
+      <mat-label class="text-nwhite">Correo electrónico</mat-label>
+      <input matInput placeholder="E-mail" [formControl]="email" required>
+  
+      <mat-error *ngIf="email.invalid">
+        <p class="text-nerror">{{mensajeDeError()}}</p>
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="inputForm"
+    [floatLabel]="formLogin.value.floatLabel">
+      <mat-label class="text-nwhite">Contraseña</mat-label>
+      <input matInput [formControl]="email" required
+      type="password">
+      <mat-error *ngIf="email.invalid">
+        <p class="text-nerror">{{mensajePassword()}}</p>
+      </mat-error>
+    </mat-form-field>
+  
+    <button mat-button type="submit" class="btn-primary"> Iniciar Sesión </button>
+  </form>
+</div>

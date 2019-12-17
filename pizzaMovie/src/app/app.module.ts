@@ -58,7 +58,8 @@ import { GoPreviewGuard } from './guards/go-preview.guard';
     LoadingComponent,
     PSEComponent,
     PayComponent,
-    BuypizzaComponent
+    BuypizzaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

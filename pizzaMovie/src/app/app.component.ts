@@ -3,8 +3,6 @@ import { SpinnerService } from './shared/services/spinner.service';
 import { MatSidenav } from '@angular/material';
 import { StorageService } from './shared/services/storage.service';
 import { PopupPayService } from './shared/services/popup-pay.service';
-import { LoginComponent } from './pages/preview/components/login/login.component';
-import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -28,12 +26,5 @@ export class AppComponent {
     setTimeout(()=>{
       this.spinnerService.close();
     },3000)
-    public dialog: MatDialog
-  abrirModal () {
-    this.dialog.open(LoginComponent);
-  }
-
-  openDialog(type){
-    this.payService.openAlertDialog(type)
   }
 }
