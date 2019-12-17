@@ -18,6 +18,9 @@
 } 
 .tag-wrap-laura{
     filter: drop-shadow(1px 0px 14px#dfd62f);
+}
+.tag-wrap-katherine{
+    filter: drop-shadow(1px 0px 14px#c7c7c7);
 } 
 .name{
     text-align: center;
@@ -34,6 +37,9 @@ p.name{
     flex-direction: column-reverse;
 }
 #Vanessa{
+    flex-direction: column-reverse;
+}
+  #Katherine{
     flex-direction: column-reverse;
 }
 }
