@@ -4,9 +4,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   border: 2px solid #fdf787;
   box-shadow: 1px 1px 8px #dfd62f;
+  background-color: rgba(0, 0, 0, 0.397);
 }
 
 .h5 {
@@ -31,8 +32,4 @@
 .img-title {
   max-width: 200px;
   height: auto;
-}
-
-img{
-  background-color: white;
 }
