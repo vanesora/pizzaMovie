@@ -90,10 +90,10 @@ export class RegisterComponent implements OnInit {
   }
 
   submitForm() {
-    // if (!this.schForm.valid) {
-    //   this.snackBar.open('revisa los campos en rojo', 'OK', { duration: 4000 });
-    //   return;
-    // }
+    if (!this.schForm.valid) {
+      this.snackBar.open('revisa los campos en rojo', 'OK', { duration: 4000 });
+      return;
+    }
     if (!this.termsConditions) {
       this.snackBar.open('Debes aceptar los terminos y condiciones', 'OK', { duration: 4000 });
       return;
