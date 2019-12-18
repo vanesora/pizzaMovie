@@ -1,8 +1,6 @@
 <div class="loginForm">
-  <div class="img-title">
-    <img src="../../../../../assets/titles/iniciarsesion.svg">
-  </div>
-  <form [formGroup]="formLogin" (ngSubmit)="logIn()" autocomplete="off">
+  <div class="img-title"></div>
+  <form [formGroup]="formLogin" (ngSubmit)="logIn()" autocomplete="off" class="form">
   
     <mat-form-field class="inputForm">
       <mat-label class="text-nwhite">Correo electrónico</mat-label>
@@ -24,6 +22,6 @@
       </mat-error>
     </mat-form-field>
     <p class="text-nerror">{{messageError}}</p>
-    <button mat-button type="submit" class="btn btn-primary"> Iniciar Sesión </button>
+    <button type="submit" class="btn btn-primary"> Iniciar Sesión </button>
   </form>
 </div>

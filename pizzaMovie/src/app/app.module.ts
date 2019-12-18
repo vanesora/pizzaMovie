@@ -32,6 +32,7 @@ import { DataApiService } from './shared/services/data-api.service';
 import { StorageService } from './shared/services/storage.service';
 import { GoHomeGuard } from './guards/go-home.guard';
 import { GoPreviewGuard } from './guards/go-preview.guard';
+import { PopularComponent } from './pages/home/components/popular/popular.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { GoPreviewGuard } from './guards/go-preview.guard';
     PSEComponent,
     MenuComponent,
     HeaderComponent,
+    PopularComponent,
   ],
   entryComponents: [
     LoadingComponent,
@@ -82,7 +84,7 @@ import { GoPreviewGuard } from './guards/go-preview.guard';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} },
