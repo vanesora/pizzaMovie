@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogModule } from '@angular/material';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { User } from 'src/app/shared/models/user';
+import { DataApiService } from 'src/app/shared/services/data-api.service';
+import { StorageService } from 'src/app/shared/services/storage.service';
+import { Router } from '@angular/router';
 
 const material = [
   MatDialogModule,
-]; 
+];
 
 @Component({
   selector: 'app-login',
@@ -13,36 +17,60 @@ const material = [
 })
 export class LoginComponent implements OnInit {
 
+  emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   formLogin: FormGroup;
   options: FormGroup;
+  user = new User();
+  messageError;
 
-  constructor( private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    public dataApiService: DataApiService,
+    public storageService: StorageService,
+    private router: Router,
+  ) {
+    this.user = {
+      email: '',
+      gender: '',
+      lastName: '',
+      name: '',
+      password: '',
+      picture: '',
+      type: ''
+    }
+  }
 
   ngOnInit() {
-    this.formLogin = this.fb.group ({
-      hideRequired: false,
-      floatLabel: 'auto',
-      email: '',
-      password: ''
-      
-    }),
+    this.formLogin = this.fb.group({
+      email: ['', [Validators.required, Validators.pattern(this.emailregex)]],
+      password: ['', [Validators.required]]
 
-    this.formLogin.valueChanges.subscribe(console.log)
+    })
   }
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl ( '', [Validators.required]);
 
-  mensajeDeError() {
-    return this.email.hasError('required') ? 'Ingresa un correo para continuar' :
-        this.email.hasError('email') ? 'Ingresa un correo válido' :
-            '';
+  logIn() {
+    this.user.email = this.formLogin.value.email;
+    this.user.password = this.formLogin.value.password;
+    return this.dataApiService.post(this.user, 'user-login').then(data => {
+      console.log(data);
+      if (data.message) {
+        this.messageError = 'Usuario y/o contraseña incorrectos'
+        setTimeout(() => {
+          this.messageError = ''
+        }, 3000)
+      } else {
+        this.storageService.setValue('session', data.user);
+        this.storageService.setValue('page', 'Home');
+        this.router.navigate(['/home']);
+      }
+    }).catch(err => {
+      this.messageError = 'Usuario y/o contraseña incorrectos'
+      setTimeout(() => {
+        this.messageError = ''
+      }, 3000)
+    })
   }
 
-  mensajePassword () {
-    return this.password.hasError('required') ? 'Ingresa tu contraseña para continuar':
-            this.password.hasError('password') ? 'Ups!, contraseña errada' : '';
-  }
 
-  
 }

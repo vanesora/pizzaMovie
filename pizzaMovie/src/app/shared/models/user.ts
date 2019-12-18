@@ -8,6 +8,7 @@ export class User {
     picture: String;
     password: String;
     type: String;
+    id?: String;
     favorities?: Movies[];
     likes?: Movies[];
     reproduction?: Movies[];

@@ -38,9 +38,9 @@ function setUser(req,res){
 
 function getUser(req,res){
     var params = req.body;
-    var correo = params.correo;
+    var email = params.email;
     var password = params.password;
-    User.findOne({correo:correo.toLowerCase()},
+    User.findOne({email:email.toLowerCase()},
     (err,user)=>{
         if(err){
             res.status(500).send({

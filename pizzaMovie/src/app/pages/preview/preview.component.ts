@@ -18,7 +18,7 @@ export class PreviewComponent implements OnInit {
   }
 
   registro() {
-    this.storageService.setValue('page', 'register')
+    this.storageService.setValue('page', 'Register')
     this.router.navigate(['/register']);
   }
 }

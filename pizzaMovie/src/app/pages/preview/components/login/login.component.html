@@ -2,27 +2,28 @@
   <div class="img-title">
     <img src="../../../../../assets/titles/iniciarsesion.svg">
   </div>
-  <form [formGroup]="formLogin" (ngSubmit)="logForm()">
+  <form [formGroup]="formLogin" (ngSubmit)="logIn()" autocomplete="off">
   
-    <mat-form-field class="inputForm" [floatLabel]="formLogin.value.floatLabel">
+    <mat-form-field class="inputForm">
       <mat-label class="text-nwhite">Correo electrónico</mat-label>
-      <input matInput placeholder="E-mail" [formControl]="email" required>
+      <input matInput placeholder="E-mail" formControlName="email" required>
   
-      <mat-error *ngIf="email.invalid">
-        <p class="text-nerror">{{mensajeDeError()}}</p>
+      <mat-error *ngIf="formLogin.controls.email.errors?.required">
+        <p class="text-nerror">Ingresa un correo para continuar</p>
+      </mat-error>
+      <mat-error *ngIf="formLogin.controls.email.errors?.pattern">
+        <p class="text-nerror">Correo invalido</p>
       </mat-error>
     </mat-form-field>
   
-    <mat-form-field class="inputForm"
-    [floatLabel]="formLogin.value.floatLabel">
+    <mat-form-field class="inputForm">
       <mat-label class="text-nwhite">Contraseña</mat-label>
-      <input matInput [formControl]="email" required
-      type="password">
-      <mat-error *ngIf="email.invalid">
-        <p class="text-nerror">{{mensajePassword()}}</p>
+      <input matInput formControlName="password" type="password">
+      <mat-error *ngIf="formLogin.controls.password.errors?.required">
+        <p class="text-nerror">Ingresa una contraseña para continuar</p>
       </mat-error>
     </mat-form-field>
-  
+    <p class="text-nerror">{{messageError}}</p>
     <button mat-button type="submit" class="btn btn-primary"> Iniciar Sesión </button>
   </form>
 </div>
