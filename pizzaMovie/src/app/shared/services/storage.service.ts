@@ -16,6 +16,10 @@ export class StorageService {
     return this.getValue('session')? this.getValue('session'):''; 
   }
 
+  get pay(){
+    return this.getValue('pay')? this.getValue('pay'):''; 
+  }
+
 
   load(defaults = this._defaults) {
     try {

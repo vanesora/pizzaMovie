@@ -3,7 +3,6 @@
 </header>
 <div class="space-navbar"></div>
 <router-outlet *ngIf="storageService.page !='Home'"></router-outlet>
-
 <mat-sidenav-container *ngIf="storageService.page =='Home'">
         <mat-sidenav class="background" mode="side" [(opened)]="opened" (opened)="events.push('open!')"
                 (closed)="events.push('close!')">

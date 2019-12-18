@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialog, MatSnackBar } from '@angular/material';
-import { UserService } from 'src/app/shared/services/user.service';
+import { StorageService } from 'src/app/shared/services/storage.service';
 
 @Component({
   selector: 'app-pse',
@@ -10,15 +10,13 @@ import { UserService } from 'src/app/shared/services/user.service';
 
 export class PSEComponent{
   constructor(
-    public userSercie: UserService,
+    public storageService: StorageService,
     public snackBar: MatSnackBar,
   ){}
   processPayment() {
     this.snackBar.open('Pago exitoso', 'OK', { duration: 4000 });
     setTimeout(()=>{
-      return this.userSercie.saveUserPay().then(data=>{
-        this.snackBar.open('Usuario creado correctamente', 'OK', { duration: 4000 });
-      })
-    },3000)
+      this.storageService.setValue('pay', true)
+    },500)
   }
 }

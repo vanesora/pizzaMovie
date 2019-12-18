@@ -3,6 +3,7 @@ import { SpinnerService } from './shared/services/spinner.service';
 import { MatSidenav } from '@angular/material';
 import { StorageService } from './shared/services/storage.service';
 import { PopupPayService } from './shared/services/popup-pay.service';
+import { UserService } from './shared/services/user.service';
 
 @Component({
   selector: 'app-root',
