@@ -15,7 +15,8 @@ export class ConfigService {
     {title: 'Favoritos', class : 'fa-meteor', visible: false, auth: true, page: 'favorites'},
     {title: 'Pide tu pizza', class : 'fa-pizza-slice', visible: false, auth: true, page: 'pizza'},
     {title: 'Perfil', class : 'fa-user-astronaut', visible: false, auth: true, page: 'profile'},
-    {title: 'Agregar película o serie', class : 'fa-hand-spock', visible: false, auth: true, page: 'uploadMovie'}
+    {title: 'Agregar película o serie', class : 'fa-hand-spock', visible: false, auth: true, page: 'uploadMovie'},
+    {title: 'Editar película o serie', class : 'fa-hand-spock', visible: false, auth: true, page: 'editMovie'}
   ]
 
   constructor() { }
