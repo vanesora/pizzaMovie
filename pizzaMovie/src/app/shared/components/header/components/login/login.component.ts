@@ -5,6 +5,7 @@ import { User } from 'src/app/shared/models/user';
 import { DataApiService } from 'src/app/shared/services/data-api.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/services/user.service';
 
 const material = [
   MatDialogModule,
@@ -27,6 +28,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     public dataApiService: DataApiService,
     public storageService: StorageService,
+    public userService: UserService,
     private router: Router,
   ) {
     this.user = {
@@ -52,7 +54,7 @@ export class LoginComponent implements OnInit {
   logIn() {
     this.user.email = this.formLogin.value.email;
     this.user.password = this.formLogin.value.password;
-    return this.dataApiService.post(this.user, 'user-login').then(data => {
+    return this.userService.logIn(this.user).then(data => {
       console.log(data);
       if (data.message) {
         this.messageError = 'Usuario y/o contraseña incorrectos'
