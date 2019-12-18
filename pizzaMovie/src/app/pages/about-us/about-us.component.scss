@@ -22,6 +22,12 @@
 .tag-wrap-katherine{
     filter: drop-shadow(1px 0px 14px#c7c7c7);
 } 
+.tag-wrap-linda{
+    filter: drop-shadow(1px 0px 14px#1ba6b3);
+}
+.tag-wrap-natalia{
+    filter: drop-shadow(1px 0px 14px#dab00b);
+} 
 .name{
     text-align: center;
     font-size: 26px;
@@ -39,7 +45,11 @@ p.name{
 #Vanessa{
     flex-direction: column-reverse;
 }
-  #Katherine{
+#Katherine{
+    flex-direction: column-reverse;
+}
+#Natalia{
     flex-direction: column-reverse;
 }
 }
+
