@@ -69,6 +69,9 @@ input{
         overflow: hidden;
         margin: 10px;
         position: relative;
+        border-radius: 50%;
+        border: 1px solid #b3ff66;
+        box-shadow: 0px 0px 17px #71db07;
 
         img{
             position:absolute;
@@ -79,7 +82,10 @@ input{
             margin: auto;
             min-height: 100%;
             min-width: 100%;  
+            border: 1px solid #b3ff66;
+            box-shadow: 0px 0px 17px #71db07;
         }
+        
     }
     
 }

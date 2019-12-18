@@ -50,16 +50,16 @@
       </div>
       <div class="col-4 user-img">
         <div class="d-flex flex-column justify-content-center align-items-center">
-          <div *ngIf="(!schForm.value.gender || schForm.value.gender == 'Otro') && !filesToUpload">
+          <div *ngIf="(!schForm.value.gender || schForm.value.gender == 'Otro') && !userSercie.filesToUpload">
             <img class="img-fluid rounded-circle" id="cargarImagen" src="../../../assets/img/avatar.jfif">
           </div>
-          <div *ngIf="schForm.value.gender == 'Mujer' && !filesToUpload">
+          <div *ngIf="schForm.value.gender == 'Mujer' && !userSercie.filesToUpload">
             <img class="img-fluid rounded-circle" id="cargarImagen" src="../../../assets/img/avatar-woman.jpg">
           </div>
-          <div *ngIf="schForm.value.gender == 'Hombre' && !filesToUpload">
+          <div *ngIf="schForm.value.gender == 'Hombre' && !userSercie.filesToUpload">
             <img class="img-fluid rounded-circle" id="cargarImagen" src="../../../assets/img/avatar-man.jfif">
           </div>
-          <div class="continer-img-user" *ngIf="filesToUpload">
+          <div class="continer-img-user" *ngIf="userSercie.filesToUpload">
             <img class="img-fluid rounded-circle" [src]="source" src="">
           </div>
           <div>
@@ -67,7 +67,7 @@
             <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
               (change)="fileChangeEvent($event)">
           </div>
-          <div *ngIf="filesToUpload">
+          <div *ngIf="userSercie.filesToUpload">
             <h3>Imagen cargada</h3>
           </div>
         </div>

@@ -29,7 +29,8 @@ export class HeaderComponent implements OnInit {
 
   logOut(){
     this.storageService.cleanUser();
-    this.router.navigate(['/home']);
+    this.storageService.setValue('page', 'Preview');
+    this.router.navigate(['']);
   }
 
   closeModal(){

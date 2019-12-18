@@ -228,7 +228,7 @@ a {
 }
 
 .space-navbar{
-    height: 75px;
+    height: 70px;
 }
 
 .navbar {
@@ -299,6 +299,11 @@ a {
     margin-left: 0 !important;
 }
 
+.mat-sidenav-content{
+    height: calc(100%-70px);
+    overflow-y: hidden;
+}
+
 
 /* --- FOOTER --- */
 footer {
@@ -339,7 +344,7 @@ footer {
 
 /* --- MISC --- */
 .spacer {
-    height: 50px;
+    height: 10px;
 }
 
 /* --- PAY --- */
