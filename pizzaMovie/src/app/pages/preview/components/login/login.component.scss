@@ -1,0 +1,35 @@
+.loginForm {
+  width: 380px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+  border: 2px solid #fdf787;
+  box-shadow: 1px 1px 8px #dfd62f;
+  background-color: rgba(0, 0, 0, 0.397);
+}
+
+.h5 {
+    margin-bottom: 20px;
+}
+
+.mat-input-element {
+    caret-color:white;
+}
+
+.text-nerror {
+  color: rgba(255, 40, 2, 0.973);
+  text-shadow: 0px 0px 3px rgb(255, 94, 0);
+}
+
+.inputForm {
+  width: 250px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.img-title {
+  max-width: 200px;
+  height: auto;
+}

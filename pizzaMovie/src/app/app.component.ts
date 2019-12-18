@@ -27,8 +27,4 @@ export class AppComponent {
       this.spinnerService.close();
     },3000)
   }
-
-  openDialog(type){
-    this.payService.openAlertDialog(type)
-  }
 }
