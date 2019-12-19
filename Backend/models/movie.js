@@ -5,10 +5,14 @@ var Schema = mongoose.Schema;
 
 var movieSchema = new Schema({
     title: String,
-    type: String,
-    picture: String,
+    release_year: Number,
+    duration: Number,
+    category: Array,
+    directed_by: String,
+    casting: Array,
     description: String,
-    movie: String,
+    trailer: String,
+    picture: String,
     numberReproduction: Number,
     dateAdd: String
 })
