@@ -1,5 +1,5 @@
 <!-- Estreno destacado -->
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="configService.page=='home'">
     <div class="row">
         <div class="col feat-estreno">
             <div class="main-estreno">
@@ -25,3 +25,4 @@
 <app-pizza *ngIf="configService.page=='pizza'"></app-pizza>
 <app-profile *ngIf="configService.page=='profile'"></app-profile>
 <app-upload-movie *ngIf="configService.page=='uploadMovie'"></app-upload-movie>
+<app-edit-movie *ngIf="configService.page=='editMovie'"></app-edit-movie>

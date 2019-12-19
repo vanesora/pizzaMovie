@@ -35,6 +35,7 @@ import { GoPreviewGuard } from './guards/go-preview.guard';
 import { LastReleasesComponent } from './pages/home/components/last-releases/last-releases.component';
 import { PizzaComponent } from './pages/home/components/pizza/pizza.component';
 import { ProfileComponent } from './pages/home/components/profile/profile.component';
+import { EditMovieComponent } from './pages/home/components/edit-movie/edit-movie.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ProfileComponent } from './pages/home/components/profile/profile.compon
     LastReleasesComponent,
     PizzaComponent,
     ProfileComponent,
+    EditMovieComponent,
   ],
   entryComponents: [
     LoadingComponent,

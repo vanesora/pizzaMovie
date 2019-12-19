@@ -167,7 +167,7 @@ function uploadPictureMovie(req,res){
                     }else{
                         //devuelve usuario antes de actualizarse
                         updatedMovie.picture = file_name;
-                        res.status(200).send({usuario:updatedMovie});
+                        res.status(200).send({movie:updatedMovie});
                     }
                 }
             });

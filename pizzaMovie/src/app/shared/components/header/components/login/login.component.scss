@@ -33,3 +33,11 @@
   max-width: 200px;
   height: auto;
 }
+@media only screen and(max-width:767px){
+  .loginForm {
+    width: 100%;
+  }
+  .inputForm {
+    width:100%;
+  }
+}
