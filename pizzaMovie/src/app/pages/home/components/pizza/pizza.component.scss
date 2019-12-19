@@ -1,0 +1,49 @@
+.titulo{
+    max-width: 27%;
+}
+
+.pizzaForm{
+    height: auto;
+    float: left;
+    padding: 10px;
+    border: 1px solid blueviolet;
+    box-shadow: 1px 1px 8px #dfd62f;
+  }
+
+.tituloForm{
+    text-align: center;
+}
+form label{
+    margin-top: 4%;
+    width: 60%;
+    display: inline-block;
+}
+
+.inputForm {
+   border-radius: 5px;
+   width: 100%;
+   height: 30px;
+   background-color: black;
+   color: whitesmoke;
+}
+
+.botones {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.boton {
+    width: 43%;
+    height: 35px;
+    padding: 5px;
+    background-color:black;
+    border-radius: 5px;
+    border: 0;
+    color: whitesmoke;
+    font-size: 16px;
+    border: 1px solid #e02fcb;
+}
+
+
