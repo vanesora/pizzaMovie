@@ -79,7 +79,15 @@ a {
 }
 
 .logoini {
-    max-width: 300px;
+    max-height: 65px;
+}
+
+/* Cursiva */
+.parisienne {
+    font-family: 'Parisienne';
+    font-size: 45px;
+    margin: -210px -15px 0 0;
+    z-index: 100;
 }
 
 /* Efectos neón */
@@ -232,13 +240,13 @@ a {
 }
 
 .navbar {
-    border-bottom: 1px white solid;
+    /* border-bottom: 1px white solid; */
     margin: 0 11px;
     box-sizing: border-box;
     width: 100%;
-    padding: 15px 0 11px 21px;
+    padding: 15px 0 25px 21px;
 
-    img {
+    .profi {
         height: 35px;
         width: 35px;
         border-radius: 50%;
