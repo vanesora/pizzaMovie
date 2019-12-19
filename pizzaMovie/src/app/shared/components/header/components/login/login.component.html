@@ -3,11 +3,12 @@
     <img src="../../../../../assets/img/titles/iniciarsesion.svg">
   </div>
   <form [formGroup]="formLogin" (ngSubmit)="logIn()" autocomplete="off">
-  
+
+    <p class="hint"> Usuario de pruebas: <br> admin@pizzamovie.co : admin </p>
     <mat-form-field class="inputForm">
       <mat-label class="text-nwhite">Correo electrónico</mat-label>
       <input matInput placeholder="E-mail" formControlName="email" required>
-  
+
       <mat-error *ngIf="formLogin.controls.email.errors?.required">
         <p class="text-nerror">Ingresa un correo para continuar</p>
       </mat-error>
@@ -15,7 +16,7 @@
         <p class="text-nerror">Correo invalido</p>
       </mat-error>
     </mat-form-field>
-  
+
     <mat-form-field class="inputForm">
       <mat-label class="text-nwhite">Contraseña</mat-label>
       <input matInput formControlName="password" type="password">

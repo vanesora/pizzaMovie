@@ -11,7 +11,7 @@ import { UserService } from '../../services/user.service';
 })
 export class HeaderComponent implements OnInit {
   url = "http://localhost:3977/api/"
-  
+
   constructor(
     public storageService: StorageService,
     public dialog: MatDialog,
