@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col feat-estreno">
             <div class="main-estreno">
-                <img class="title-estreno" src="../../../assets/titles/pizzawars.svg" alt="">
+                <img class="title-estreno" src="../../../assets/img/titles/pizzawars.svg" alt="">
                 <h2 class="w-100">Black Mirror (Temporada 4) ahora en Pizza Wars</h2>
                 <p class="sinop-title">En esta nueva entrega, Brooker, dentro de un mismo universo temporal, sigue
                     explorando los límites éticos y morales de la tecnología en un mundo que se parece mucho al nuestro, pero que
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<app-upload-movie *ngIf="configService.page=='mostViewed'"></app-upload-movie>
+<app-popular *ngIf="configService.page=='mostViewed'"></app-popular>
 <app-last-releases *ngIf="configService.page=='lastReleases'"></app-last-releases>
 <app-upload-movie *ngIf="configService.page=='recommendations'"></app-upload-movie>
 <app-favorites *ngIf="configService.page=='favorites'"></app-favorites>

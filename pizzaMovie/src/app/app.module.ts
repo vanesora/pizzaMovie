@@ -36,6 +36,7 @@ import { LastReleasesComponent } from './pages/home/components/last-releases/las
 import { PizzaComponent } from './pages/home/components/pizza/pizza.component';
 import { ProfileComponent } from './pages/home/components/profile/profile.component';
 import { EditMovieComponent } from './pages/home/components/edit-movie/edit-movie.component';
+import { PopularComponent } from './pages/home/components/popular/popular.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { EditMovieComponent } from './pages/home/components/edit-movie/edit-movi
     PizzaComponent,
     ProfileComponent,
     EditMovieComponent,
-    PopUpComponent
+    PopUpComponent,
+    PopularComponent,
   ],
   entryComponents: [
     LoadingComponent,
@@ -92,7 +94,7 @@ import { EditMovieComponent } from './pages/home/components/edit-movie/edit-movi
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} },

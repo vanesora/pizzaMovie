@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import { Movies } from 'src/app/shared/models/movies';
 import { MovieService } from 'src/app/shared/services/movie.service';
+import * as moment from 'moment';
+import { DataApiService } from 'src/app/shared/services/data-api.service';
 
 @Component({
   selector: 'app-upload-movie',
@@ -35,6 +37,8 @@ export class UploadMovieComponent implements OnInit {
     public snackBar: MatSnackBar,
     private router: Router,
     public movieService: MovieService,
+    public dataApiService: DataApiService,
+    public storageService: StorageService
   ) {
   }
 
@@ -85,10 +89,15 @@ export class UploadMovieComponent implements OnInit {
     let movie = this.serealizeForm();
     this.movieService.uploadMovie(movie, this.filesToUpload, this.filesToUploadMovie).then(data => {
       this.snackBar.open('Película subida de forma correcta', 'OK', { duration: 4000 });
-      this.myForm.resetForm();
-      this.schForm.reset();
-      this.filesToUpload = '';
-      this.filesToUploadMovie = '';
+      return this.dataApiService.getAll('movies').then(data => {
+        if (data && data.movies) {
+          this.storageService.setValue('movies', data.movies)
+        }
+        this.myForm.resetForm();
+        this.schForm.reset();
+        this.filesToUpload = '';
+        this.filesToUploadMovie = '';
+      })
     }).catch(err => {
       this.snackBar.open('No se pudo subir la película', 'OK', { duration: 4000 });
     })
@@ -100,7 +109,8 @@ export class UploadMovieComponent implements OnInit {
       type: this.schForm.value.type,
       description: this.schForm.value.description,
       movie: '',
-      picture: ''
+      picture: '',
+      dateAdd: moment().format('DD-MM-YYYY HH:mm')
     };
   }
 

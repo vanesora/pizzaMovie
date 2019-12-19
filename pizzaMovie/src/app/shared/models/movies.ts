@@ -5,4 +5,5 @@ export class Movies {
     description: String;
     movie: String;
     numberReproduction?: Number;
+    dateAdd: String;
 }

@@ -541,5 +541,93 @@ footer {
         
     }
 }
+//   LISTA DE PELICULAS
+
+.list {
+    .img-title {
+        min-width: 250px;
+        min-height: 100px;
+        background-image: url('assets/img/titles/masvistos.svg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: inherit;
+        margin-bottom: 15px;
+    }
+    
+    p, h3 {
+    color: white;
+    }
+    .carousel {
+        width: 90%;
+        margin: 0 15px;
+        background: transparent;
+    }
+    
+    .carousel-inner {
+        padding: 20px 80px;
+    }
+    
+    .card-cont {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .card {
+        border-radius: 0px;
+        width: 250px;
+        height: 350px;
+        border: 1px solid #7ee9f3;
+        box-shadow: 0px 0px 7px #1ba6b3;
+        font-size: 14px;
+        background-color: transparent;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 50px;
+    }
+    
+    .movieImage {
+        height: 350px;
+        width: 100%;
+        background-image: url('assets/img/posterImg.jpg');
+        background-blend-mode: multiply;
+        background-color: white;
+        background-position: center;
+        background-size: cover;
+        transition: all .4s;
+    }
+    
+    .movieImage:hover {
+        background-color: #37374f;
+    }
+    
+    .movieImage:hover .detailsMovie {
+        opacity: 0.8;
+    }
+    
+    .bg-black-blue {
+        margin-bottom: 0 !important;
+        padding: 15px !important;
+        background-color: transparent !important;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .detail-movie {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .detailsMovie {
+        opacity: 0;
+    }
+    
+}
+
   
 
