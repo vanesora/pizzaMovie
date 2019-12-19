@@ -65,6 +65,11 @@ export class LoginComponent implements OnInit {
         this.storageService.setValue('session', data.user);
         this.storageService.setValue('page', 'Home');
         this.router.navigate(['/home']);
+        return this.dataApiService.getAll('movies').then(data=>{
+          if(data && data.movies){
+            this.storageService.setValue('movies', data.movies)
+          }
+        })
       }
     }).catch(err => {
       this.messageError = 'Usuario y/o contraseña incorrectos'
