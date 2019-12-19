@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PreviewComponent } from './pages/preview/preview.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PopularComponent } from './pages/home/components/popular/popular.component';
 import { GoHomeGuard } from './guards/go-home.guard';
 import { RegisterComponent } from './pages/register/register.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent, canActivate: [GoPreviewGuard]},
   { path: 'home', component: HomeComponent, canActivate: [GoHomeGuard]},
   { path: 'about-us', component: AboutUsComponent},
+  { path: 'popular', component: PopularComponent},
 ];
 
 @NgModule({

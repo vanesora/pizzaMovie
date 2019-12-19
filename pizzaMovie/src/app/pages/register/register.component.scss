@@ -69,6 +69,9 @@ input{
         overflow: hidden;
         margin: 10px;
         position: relative;
+        border-radius: 50%;
+        border: 1px solid #b3ff66;
+        box-shadow: 0px 0px 17px #71db07;
 
         img{
             position:absolute;
@@ -78,8 +81,11 @@ input{
             bottom: -100%;
             margin: auto;
             min-height: 100%;
-            min-width: 100%;
+            min-width: 100%;  
+            border: 1px solid #b3ff66;
+            box-shadow: 0px 0px 17px #71db07;
         }
+        
     }
 
 }
@@ -88,4 +94,9 @@ input{
 
 .premium{
     padding-top: 20px;
+}
+@media only screen and (max-width:767px){
+    .container{
+        width: 90%;
+    }
 }

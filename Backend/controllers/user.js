@@ -13,7 +13,7 @@ function setUser(req,res){
     user.name = params.name;
     user.lastName = params.lastName;
     user.gender = params.gender;
-    user.type = "USER_FREE"; 
+    user.type = params.type; 
     user.email = params.email;
     user.password = params.password;
 

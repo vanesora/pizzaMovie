@@ -13,7 +13,7 @@ function setMovie(req,res){
     movie.title = params.title;
     movie.type = params.type;
     movie.description = params.description;
-    
+    movie.dateAdd = params.dateAdd
     movie.save((err,movieCreated)=>{
         if(err){
             res.status(500).send({
@@ -56,7 +56,7 @@ function deleteMovie(req,res){
 }
 
 function getMovies(req,res){
-    Cancion.find((err,movies)=>{
+    Movie.find((err,movies)=>{
         if(err){
             res.status(500).send({
                 message:"error en el servidor"
@@ -167,7 +167,7 @@ function uploadPictureMovie(req,res){
                     }else{
                         //devuelve usuario antes de actualizarse
                         updatedMovie.picture = file_name;
-                        res.status(200).send({usuario:updatedMovie});
+                        res.status(200).send({movie:updatedMovie});
                     }
                 }
             });

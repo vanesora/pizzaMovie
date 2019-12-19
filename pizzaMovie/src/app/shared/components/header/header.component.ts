@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../../services/storage.service';
-import { LoginComponent } from '../../../pages/preview/components/login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { MatDialog } from '@angular/material';
-import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  url = "http://localhost:3977/api/"
 
   constructor(
     public storageService: StorageService,
     public dialog: MatDialog,
-    private router: Router,
+    public userService: UserService,
   ) { }
 
   ngOnInit() {
@@ -22,14 +23,39 @@ export class HeaderComponent implements OnInit {
 
   logIn(){
     this.dialog.open(LoginComponent);
-    setTimeout(() => {
-      this.dialog.closeAll()
-    }, 18000)
+    return this.onReadyDB().then()
+  }
+
+  onReadyDB(tries = 20): Promise<any> {
+    return new Promise((resolve, reject) => {
+      if (tries <= 0) {
+        reject('max tries onReadyDB');
+        console.error('max tries onReadyDB');
+      }
+      if (this.storageService.session) {
+        this.dialog.closeAll()
+        resolve(true);
+      } else {
+        setTimeout(() => {
+          this.onReadyDB(tries--).then(() => {
+            resolve(true);
+          });
+        }, 300);
+      }
+    });
   }
 
   logOut(){
-    this.storageService.cleanUser();
-    this.router.navigate(['/home']);
+    this.userService._logOut=true;
+  }
+
+  logOutFun(){
+    this.userService.logOut()
+    this.userService._logOut=false;
+  }
+
+  noLogOut(){
+    this.userService._logOut=false;
   }
 
   closeModal(){
