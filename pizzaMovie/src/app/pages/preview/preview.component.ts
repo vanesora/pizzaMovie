@@ -18,30 +18,30 @@ export class PreviewComponent implements OnInit {
   constructor(
     private router: Router,
     public dialog: MatDialog,
-    public dialogRef: MatDialogRef<null>,
+    public dialogRef: MatDialogRef<{}>,
     public storageService: StorageService,
   ) {
-    // this.llamarPopUp= interval(600000).subscribe((x =>{
-    //             this.openPopup();
-    //         }));
+    this.dialogRef = null;
+    this.llamarPopUp= interval(600000).subscribe((x =>{
+        this.openPopup();
+    }));
   }
 
   ngOnInit() {
   }
 
-  // openPopup() {
-  //   if(this.dialogRef.length === undefined){
-  //     this.dialogRef = this.dialog.open(PopUpComponent, {
-  //       // disableClose: true
-  //     });
-  //     this.dialogRef.length = 1;
-  //   } else {
-  //     console.log('Ya esta abierta la modal.');
-  //   }
-  //   this.dialogRef.afterClosed().subscribe(result => {
-  //     this.dialogRef.length = undefined;
-  //   });
-  // }
+  openPopup() {
+    if (this.dialogRef === null ){
+      this.dialogRef = this.dialog.open(PopUpComponent, {
+        width: '450px',
+        height: '380px',
+      });
+    }
+
+    this.dialogRef.afterClosed().subscribe(result => {
+      this.dialogRef = null;
+    });
+  }
 
 
   registro() {
