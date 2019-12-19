@@ -11,7 +11,7 @@ var api = app.Router();
 
 api.post('/upload-picture-user/:id',
 md_upload,userController.uploadPictureUser);
-api.get('/upload-picture-user/:imageFile',
+api.get('/get-picture-user/:imageFile',
 md_upload,userController.getPictureUser);
 
 api.post('/user-login',userController.getUser);

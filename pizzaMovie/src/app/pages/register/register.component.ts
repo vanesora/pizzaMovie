@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, Validators, NgForm, FormControl } from '@angula
 import { Observable } from 'rxjs';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { SpinnerService } from 'src/app/shared/services/spinner.service';
-import { MatSnackBar, MatDialog } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 import { User } from 'src/app/shared/models/user';
 import { UserService } from 'src/app/shared/services/user.service';
 import { MatDialog } from '@angular/material';
@@ -55,7 +55,6 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  
   initializeForm() {
     let emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     this.schForm = this.fb.group({

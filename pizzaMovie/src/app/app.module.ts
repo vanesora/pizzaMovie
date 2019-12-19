@@ -37,6 +37,7 @@ import { PizzaComponent } from './pages/home/components/pizza/pizza.component';
 import { ProfileComponent } from './pages/home/components/profile/profile.component';
 import { EditMovieComponent } from './pages/home/components/edit-movie/edit-movie.component';
 import { PopularComponent } from './pages/home/components/popular/popular.component';
+import { TermsComponent } from './pages/register/terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { PopularComponent } from './pages/home/components/popular/popular.compon
     EditMovieComponent,
     PopUpComponent,
     PopularComponent,
+    TermsComponent
   ],
   entryComponents: [
     LoadingComponent,
@@ -71,7 +73,8 @@ import { PopularComponent } from './pages/home/components/popular/popular.compon
     PayComponent,
     BuypizzaComponent,
     LoginComponent,
-    PopUpComponent
+    PopUpComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,
