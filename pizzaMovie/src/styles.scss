@@ -369,22 +369,36 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 27px;
-    color: #0e0e16;
+    a {
+        color: white;
+        text-shadow: none;
+        &:hover {
+            text-shadow: #e02fcb;
+        }
+    }
+}
+
+.sphere:hover {
+    background-color: #f982ee;
+    box-shadow: 0px 0px 5px #e02fcb;
+    transition: all .4s;
 }
 
 /* Texto en hover de Bolita Sticky */
 .pop-sphere {
-    width: 100px;
-    height: 35px;
-    color: black;
+    padding: 11px;
+    position: fixed;
+    font-size: 15px;
     opacity: 0;
-    left: -150px;
+    left: 135px;
+    background-color: #0e0e16;
+    border: 1px solid hotpink
 }
 
 .sphere:hover .pop-sphere {
-    left: 0px;
+    left: 95px;
     opacity: 1;
-    transition: .4s;
+    transition: all .3s;
 }
 
 /* --- PAY --- */
