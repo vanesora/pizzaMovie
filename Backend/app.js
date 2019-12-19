@@ -23,7 +23,7 @@ app.use((req,res,next)=>{
         //metodos mas comunes
         res.header('Allow','GET, POST, OPTIONS, PUT, DELETE');
         next();//finaliza middleware
-    })  
+    })
 app.use('/api',routesMovie);
 app.use('/api',routesUser);
 app.use('/api',routesChapter);
