@@ -20,6 +20,9 @@ export class StorageService {
     return this.getValue('pay')? this.getValue('pay'):''; 
   }
 
+  get movies(){
+    return this.getValue('movies')? this.getValue('movies'):''; 
+  }
 
   load(defaults = this._defaults) {
     try {

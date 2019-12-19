@@ -4,6 +4,7 @@ import { MatSidenav } from '@angular/material';
 import { StorageService } from './shared/services/storage.service';
 import { PopupPayService } from './shared/services/popup-pay.service';
 import { UserService } from './shared/services/user.service';
+import { DataApiService } from './shared/services/data-api.service';
 
 @Component({
   selector: 'app-root',
@@ -21,11 +22,21 @@ export class AppComponent {
     public spinnerService: SpinnerService,
     public payService: PopupPayService,
     public storageService: StorageService,
+    public dataApiService: DataApiService,
   ){
     this.storageService.load();
     this.spinnerService.openAlertDialog();
     setTimeout(()=>{
       this.spinnerService.close();
     },3000)
+    if(!this.storageService.movies){
+      this.dataApiService.getAll('movies').then(data=>{
+        if(data && data.movies){
+          this.storageService.setValue('movies', data.movies)
+        }
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
   }
 }

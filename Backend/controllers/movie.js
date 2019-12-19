@@ -57,7 +57,7 @@ function deleteMovie(req,res){
 }
 
 function getMovies(req,res){
-    Cancion.find((err,movies)=>{
+    Movie.find((err,movies)=>{
         if(err){
             res.status(500).send({
                 message:"error en el servidor"
