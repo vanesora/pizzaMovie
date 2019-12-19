@@ -13,7 +13,7 @@ function setMovie(req,res){
     movie.title = params.title;
     movie.type = params.type;
     movie.description = params.description;
-    
+
     movie.save((err,movieCreated)=>{
         if(err){
             res.status(500).send({
