@@ -48,6 +48,14 @@ export class RegisterComponent implements OnInit {
     this.initializeForm();
   }
 
+  openTerms() {
+    this.dialog.open(TermsComponent, {
+      width: '800px',
+      height: '600px',
+    });
+  }
+
+  
   initializeForm() {
     let emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     this.schForm = this.fb.group({
