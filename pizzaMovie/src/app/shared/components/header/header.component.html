@@ -8,19 +8,17 @@
                         <div class="col-md-9 d-flex justify-content-end align-items-center">
                                 <img class="profi" src="../../../../assets/img/avatar.jfif" alt="" *ngIf="!storageService.session?.picture && storageService.session?.gender =='Otro'">
                                 <img class="profi" src="../../../../assets/img/avatar-man.jfif" alt=""
-                                        *ngIf="!storageService.session?.picture && storageService.session?.gender =='Hombre'">
+                                *ngIf="!storageService.session?.picture && storageService.session?.gender =='Hombre'">
                                 <img class="profi" src="../../../../assets/img/avatar-woman.jpg" alt=""
-                                        *ngIf="!storageService.session?.picture && storageService.session?.gender =='Mujer'">
-                                        <img src="{{url+'obtener-imagen-usuario/'+session.picture}}" alt=""
-                                        *ngIf="storageService.session?.picture">
-                                <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="!storageService.session">Hola, humano
-                                        visitante</p>
-                                <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="storageService.session">Hola,
-                                        {{storageService.session.name}}</p>
+                                *ngIf="!storageService.session?.picture && storageService.session?.gender =='Mujer'">
+                                <img src="{{url+'obtener-imagen-usuario/'+session.picture}}" alt=""
+                                *ngIf="storageService.session?.picture">
+                                <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="!storageService.session">Hola, humano visitante</p>
+                                <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="storageService.session">Hola, {{storageService.session.name}}</p>
                                 <button class="btn btn-primary" *ngIf="storageService.session"
-                                        (click)="logOut()"><i class="fas fa-sign-out-alt"></i></button>
+                                (click)="logOut()"><i class="fas fa-sign-out-alt"></i></button>
                                 <button class="btn btn-primary" *ngIf="!storageService.session"
-                                        (click)="logIn()"><i class="fas fa-sign-in-alt"></i></button>
+                                (click)="logIn()"><i class="fas fa-sign-in-alt"></i></button>
                         </div>
                 </nav>
         </div>
@@ -29,7 +27,7 @@
 <div class="logOutConfirm" *ngIf="userService._logOut">
         <div class="row align-items-center justify-content-center">
                 <div class="col-12 text-center"><p>¿Seguro deseas salir?</p></div>
-                        <button class="btn btn-primary" (click)="logOutFun()">Aceptar</button>
-                        <button class="btn btn-primary" (click)="noLogOut()">Cancelar</button> 
-                </div>      
+                <button class="btn btn-primary" (click)="logOutFun()">Aceptar</button>
+                <button class="btn btn-primary" (click)="noLogOut()">Cancelar</button>
+        </div>
 </div>
