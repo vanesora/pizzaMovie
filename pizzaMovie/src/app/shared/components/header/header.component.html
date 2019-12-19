@@ -6,8 +6,7 @@
                                 <a class="navbar-brand text-ngreen" href="#"><img class="logoini" src="../../../../assets/img/logo.svg" alt=""><span class="parisienne text-nblue">Pizza</span> WARS</a>
                         </div>
                         <div class="col-md-9 d-flex justify-content-end align-items-center">
-                                <img class="profi" src="../../../../assets/img/avatar.jfif" alt=""
-                                        *ngIf="!storageService.session?.picture && storageService.session?.gender =='Otro'">
+                                <img class="profi" src="../../../../assets/img/avatar.jfif" alt="" *ngIf="!storageService.session?.picture && storageService.session?.gender =='Otro'">
                                 <img class="profi" src="../../../../assets/img/avatar-man.jfif" alt=""
                                         *ngIf="!storageService.session?.picture && storageService.session?.gender =='Hombre'">
                                 <img class="profi" src="../../../../assets/img/avatar-woman.jpg" alt=""
@@ -18,17 +17,19 @@
                                         visitante</p>
                                 <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="storageService.session">Hola,
                                         {{storageService.session.name}}</p>
-                                <button class="btn btn-primary btn-lg" *ngIf="storageService.session"
-                                        (click)="logOut()">Cerrar sesión</button>
-                                <button class="btn btn-primary btn-lg" *ngIf="!storageService.session"
-                                        (click)="logIn()">Iniciar</button>
+                                <button class="btn btn-primary" *ngIf="storageService.session"
+                                        (click)="logOut()"><i class="fas fa-sign-out-alt"></i></button>
+                                <button class="btn btn-primary" *ngIf="!storageService.session"
+                                        (click)="logIn()"><i class="fas fa-sign-in-alt"></i></button>
                         </div>
                 </nav>
         </div>
 </div>
 <div class="container-fluid spacer"></div>
 <div class="logOutConfirm" *ngIf="userService._logOut">
-        <p>¿Seguro deseas salir?</p>
-        <button class="btn btn-primary" (click)="logOutFun()">Aceptar</button>
-        <button class="btn btn-primary" (click)="noLogOut()">Cancelar</button>
+        <div class="row align-items-center justify-content-center">
+                <div class="col-12 text-center"><p>¿Seguro deseas salir?</p></div>
+                        <button class="btn btn-primary" (click)="logOutFun()">Aceptar</button>
+                        <button class="btn btn-primary" (click)="noLogOut()">Cancelar</button> 
+                </div>      
 </div>
