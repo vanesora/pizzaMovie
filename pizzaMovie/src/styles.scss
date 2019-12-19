@@ -79,7 +79,7 @@ a {
 }
 
 .logoini {
-    max-height: 65px;
+    max-width: 50%;
 }
 
 /* Cursiva */
@@ -397,7 +397,16 @@ footer {
 @media only screen and (max-width:767px){
     .navbar {
         padding: 0;
-    }    
+    }
+    .logoini {
+        max-width: 33%;
+    }
+    .parisienne{
+        font-size: 35px;
+    }
+    .navbar .navbar-brand{
+        font-size: 33px;
+    }  
 }
   
 
