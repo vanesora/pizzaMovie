@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { TermsComponent } from './pages/register/terms/terms.component';
 import { PreviewComponent } from './pages/preview/preview.component';
 import { PlayComponent } from './pages/home/components/play/play.component';
 import { FavoritesComponent } from './pages/home/components/favorites/favorites.component';
@@ -44,7 +43,6 @@ import { PopularComponent } from './pages/home/components/popular/popular.compon
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    TermsComponent,
     PreviewComponent,
     PlayComponent,
     FavoritesComponent,
@@ -71,7 +69,6 @@ import { PopularComponent } from './pages/home/components/popular/popular.compon
     LoadingComponent,
     PSEComponent,
     PayComponent,
-    TermsComponent,
     BuypizzaComponent,
     LoginComponent,
     PopUpComponent

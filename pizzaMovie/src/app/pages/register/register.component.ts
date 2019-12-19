@@ -10,10 +10,6 @@ import { MatSnackBar } from '@angular/material';
 import { User } from 'src/app/shared/models/user';
 import { UserService } from 'src/app/shared/services/user.service';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material';
-import { TermsComponent } from 'src/app/pages/register/terms/terms.component';
-
-
 
 @Component({
   selector: 'app-register',
@@ -42,19 +38,11 @@ export class RegisterComponent implements OnInit {
     public userSercie: UserService,
     public snackBar: MatSnackBar,
     private router: Router
-    public dialog: MatDialog,
   ) {
   }
 
   ngOnInit() {
     this.initializeForm();
-  }
-
-  openTerms() {
-    this.dialog.open(TermsComponent, {
-      width: '800px',
-      height: '600px',
-    });
   }
 
   initializeForm() {

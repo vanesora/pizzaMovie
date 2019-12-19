@@ -74,15 +74,14 @@
       </div>
       <!-- Name -->
       <div class="col-12 text-npink premium" [ngClass]="{'text-ngreen': !premium}">
-        <mat-checkbox name="list_name" input [(ngModel)]="premium"
+        <mat-checkbox name="list_name" input [(ngModel)]="premium" 
         [ngModelOptions]="{standalone: true}">
           Deseo ser premium
         </mat-checkbox>
       </div>
       <div class="col-12">
-        <mat-checkbox name="list_name"input [(ngModel)]="termsConditions"
-        [ngModelOptions]="{standalone: true}"></mat-checkbox>
-        Acepto los <a href="javascript:void(0);" (click)="openTerms()">terminos y condiciones</a>
+        <mat-checkbox name="list_name"input [(ngModel)]="termsConditions" 
+        [ngModelOptions]="{standalone: true}">Acepto los terminos y condiciones</mat-checkbox>
       </div>
 
       <!-- Submit -->
