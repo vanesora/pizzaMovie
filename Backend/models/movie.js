@@ -10,6 +10,7 @@ var movieSchema = new Schema({
     description: String,
     movie: String,
     numberReproduction: Number,
+    dateAdd: String
 })
 
 module.exports = mongoose.model('movie',movieSchema);

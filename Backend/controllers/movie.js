@@ -13,6 +13,7 @@ function setMovie(req,res){
     movie.title = params.title;
     movie.type = params.type;
     movie.description = params.description;
+    movie.dateAdd = params.dateAdd
     
     movie.save((err,movieCreated)=>{
         if(err){

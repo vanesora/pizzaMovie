@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import { Movies } from 'src/app/shared/models/movies';
 import { MovieService } from 'src/app/shared/services/movie.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-upload-movie',
@@ -100,7 +101,8 @@ export class UploadMovieComponent implements OnInit {
       type: this.schForm.value.type,
       description: this.schForm.value.description,
       movie: '',
-      picture: ''
+      picture: '',
+      dateAdd:moment().format('DD-MM-YYYY HH:mm')
     };
   }
 
