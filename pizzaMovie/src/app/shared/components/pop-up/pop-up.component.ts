@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MatDialogModule } from '@angular/material';
+
+const material = [
+  MatDialogModule,
+];
 
 @Component({
   selector: 'app-pop-up',
@@ -7,7 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopUpComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
   }
