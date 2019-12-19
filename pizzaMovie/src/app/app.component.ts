@@ -29,8 +29,10 @@ export class AppComponent {
     setTimeout(()=>{
       this.spinnerService.close();
     },3000)
-    if(!this.storageService.movies){
+    if(!this.storageService.movies || this.storageService.movies.length==0){
       this.dataApiService.getAll('movies').then(data=>{
+        console.log(data);
+        
         if(data && data.movies){
           this.storageService.setValue('movies', data.movies)
         }

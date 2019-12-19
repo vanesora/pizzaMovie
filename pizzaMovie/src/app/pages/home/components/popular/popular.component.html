@@ -1,4 +1,5 @@
-<div class="list">
+<!-- <div class="list">
+    <button class="btn-primary" (click)="topMovies()">Press</button>
     <div id="popularCarousel" class="carousel slide" data-ride="carousel">
         <div class="img-title"></div>
         <div class="carousel-inner">
@@ -98,4 +99,34 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-</div>
+</div> -->
+
+<ngb-carousel *ngIf="arrTopMovies">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="arrTopMovies[0].picture" alt="Random first slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="arrTopMovies[1].picture" alt="Random second slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="arrTopMovies[3].picture" alt="Random third slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>

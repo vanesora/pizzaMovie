@@ -18,7 +18,7 @@ api.post('/upload-picture-movie/:id',
     md_upload, movieController.uploadPictureMovie);
 api.get('/get-picture-movie/:imageFile',
     md_upload, movieController.getPictureMovie);
-
+api.get('/get-top/', movieController.getTopMovies);
 
 api.post('/movie', movieController.setMovie);
 api.delete('/movie/:id', movieController.deleteMovie);

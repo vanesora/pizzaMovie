@@ -142,6 +142,20 @@ function getAllMovies(req,res){
     })
 }
 
+function getTopMovies(req,res){
+
+    Movie.find().sort({numberReproduction : -1})
+    .then((movies)=>{
+        if (!movies) {
+            res.status(404).send({ message: "No hay un top disponible" });
+        } else {
+            res.status(200).send({movies: movies});
+        }11
+    }).catch(error =>{
+        res.status(500).send({ message: "Error al cargar el top de las más vistas" });
+    })
+}
+
 function uploadPictureMovie(req,res){
     var idMovie = req.params.id;
     var file_name = 'No subido...';
@@ -152,7 +166,6 @@ function uploadPictureMovie(req,res){
         var file_split = file_path.split('\\');
         //se obtiene nombre del archivo
         var file_name = file_split[2];
-
         //se obtiene extension fichero
         var exp_split = file_name.split('\.');
         var file_ext = exp_split[1];
@@ -205,5 +218,6 @@ module.exports = {
     getFileMovie,
     getAllMovies,
     uploadPictureMovie,
-    getPictureMovie
+    getPictureMovie,
+    getTopMovies
 };
