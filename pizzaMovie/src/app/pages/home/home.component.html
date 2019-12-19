@@ -1,13 +1,8 @@
-<div class="container">
-    <div class="logo">
-        <img src="../../../assets/img/logopizza-03.png" width="40%"> 
-        <img src="../../../assets/img/titles/pizzaMovie.svg" width="60%">
-      </div>
-    <div class="textoPromocional">
-        <h1 class="text-nblue">Mientras disfrutas de nuestro contenido del otro mundo,</h1> <h1 class="text-nyellow">que la pizza te acompañe.</h1>
-        <button class="btn btn-primary">Regístrate</button>
-    </div>
-    <div class="btnRegistro">
-      <button class="btn btn-primary">Regístrate</button>
-    </div>
-  </div> 
+<app-play></app-play>
+<app-upload-movie *ngIf="configService.page=='mostViewed'"></app-upload-movie>
+<app-last-releases *ngIf="configService.page=='lastReleases'"></app-last-releases>
+<app-upload-movie *ngIf="configService.page=='recommendations'"></app-upload-movie>
+<app-favorites *ngIf="configService.page=='favorites'"></app-favorites>
+<app-pizza *ngIf="configService.page=='pizza'"></app-pizza>
+<app-profile *ngIf="configService.page=='profile'"></app-profile>
+<app-upload-movie *ngIf="configService.page=='uploadMovie'"></app-upload-movie>
