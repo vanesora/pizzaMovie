@@ -9,6 +9,8 @@ import { SpinnerService } from 'src/app/shared/services/spinner.service';
 import { MatSnackBar, MatDialog } from '@angular/material';
 import { User } from 'src/app/shared/models/user';
 import { UserService } from 'src/app/shared/services/user.service';
+import { MatDialog } from '@angular/material';
+import { TermsComponent } from 'src/app/pages/register/terms/terms.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -37,6 +39,7 @@ export class RegisterComponent implements OnInit {
     public spinnerService: SpinnerService,
     public userSercie: UserService,
     public snackBar: MatSnackBar,
+    public dialog: MatDialog,
     private router: Router
   ) {
   }
