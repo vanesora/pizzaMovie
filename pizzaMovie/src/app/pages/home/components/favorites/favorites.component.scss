@@ -1,0 +1,33 @@
+.container-d {
+    margin-top: 2em;
+    display:grid;
+    grid-template-columns: 2fr 5fr;
+    grid-gap: 60px;
+}
+
+.img-title>img {
+    margin: 0 auto;
+    max-width: 400px;
+}
+ 
+.favorite>p{
+    display: inline;
+}
+.favorite-card img{
+    width: 100%;
+}
+.favorite{
+    text-align: right;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.favorite-card{
+    max-width: 570px;
+    text-align: justify;
+    display: grid;
+    grid-template-columns: 20px 4fr;
+    grid-gap: 10px;
+}
+p{
+    color: white;
+}
