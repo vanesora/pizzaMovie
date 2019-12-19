@@ -355,6 +355,38 @@ footer {
     height: 10px;
 }
 
+
+/* Bolita Sticky */
+.sphere {
+    border-radius: 50%;
+    position: fixed;
+    bottom: 85px;
+    left: 25px;
+    z-index: 25;
+    height: 55px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    color: #0e0e16;
+}
+
+/* Texto en hover de Bolita Sticky */
+.pop-sphere {
+    width: 100px;
+    height: 35px;
+    color: black;
+    opacity: 0;
+    left: -150px;
+}
+
+.sphere:hover .pop-sphere {
+    left: 0px;
+    opacity: 1;
+    transition: .4s;
+}
+
 /* --- PAY --- */
 
 /* Caja */
