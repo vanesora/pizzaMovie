@@ -355,5 +355,123 @@ footer {
     background-blend-mode: multiply;
   }
 
+
+/* --- FORMS MOVIES -- */
+
+.form-movie{
+    h1{
+        font-size: 50px;
+    }
+    .title-center{
+        text-align: center;
+    }
+
+    mat-label{
+        color: white;
+    }
+
+    input{
+        color: white;
+    }
+    
+    .container{
+        width: 50%;
+    }
+    
+    .mat-form-field{
+        padding-left: 0px;
+    }
+        
+    .mat-form-field-infix{
+        color: white;
+    }
+    
+    .btn-center{
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    #avatarMovie {
+        display: none;
+    }
+
+    .movieImg {
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        color: #f982ee;
+        text-shadow: 0px 0px 7px #e02fcb;
+        padding: 0 10px;
+        transition: all .5s;
+    }
+    #avatarMovie:hover,
+    .movieImg:hover {
+    cursor: pointer;
+        font-size: 25px;
+        border-bottom: 1px solid #f982ee;
+    }
+
+    .movie-img{
+        align-items: center;
+        padding-top: 0;
+        width: 150px;
+        height: 190px;
+    
+        #avatar {
+            display: none;
+        }
+
+               
+        .profileImg {
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            color: #f982ee;
+            text-shadow: 0px 0px 7px #e02fcb;
+            padding: 0 10px;
+            transition: all .5s;
+        }
+        #avatar:hover,
+        .profileImg:hover {
+        cursor: pointer;
+            font-size: 17px;
+            border-bottom: 1px solid #f982ee;
+        }
+        
+        img {
+            padding: 2px;
+            margin: 2px;
+            object-fit: cover;
+            margin-bottom: 11px;
+            border: 1px solid #b3ff66;
+            box-shadow: 0px 0px 17px #71db07;
+        }
+    
+        .continer-img-movie{
+            width: 150px;
+            height: 190px;
+            overflow: hidden;
+            margin: 10px;
+            position: relative;
+            border: 1px solid #b3ff66;
+            box-shadow: 0px 0px 17px #71db07;
+    
+            img{
+                position:absolute;
+                left: -100%;
+                right: -100%;
+                top: -100%;
+                bottom: -100%;
+                margin: auto;
+                min-height: 100%;
+                min-width: 100%;  
+                border: 1px solid #b3ff66;
+                box-shadow: 0px 0px 17px #71db07;
+            }
+            
+        }
+        
+    }
+}
   
 

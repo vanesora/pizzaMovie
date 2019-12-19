@@ -1,1 +1,76 @@
-<p>upload-movie works!</p>
+<div class="container mt-5 form-movie row">
+    <div class="col-8 offset-2">
+        <div class="title-center">
+            <h1>Agregar película</h1>
+        </div>
+        <form #myForm="ngForm" id="ngForm" [formGroup]="schForm" (ngSubmit)="submitForm()" novalidate
+            autocomplete="off">
+            <div class="row">
+                <div class="col-8">
+                    <div class="row">
+                        <mat-label class="col-4">Título (*)</mat-label>
+                        <mat-form-field class="col-8">
+                            <input matInput formControlName="title" type="text">
+                            <mat-error *ngIf="schForm.controls.title.errors?.required">Campo requerido</mat-error>
+                        </mat-form-field>
+
+                        <mat-label class="col-4">Descripción (*)</mat-label>
+                        <mat-form-field class="col-8">
+                            <textarea matInput formControlName="description" type="text"></textarea>
+                            <mat-error *ngIf="schForm.controls.description.errors?.required">Campo requerido</mat-error>
+                            <mat-error *ngIf="schForm.controls.description.errors?.maxlength">Máximo 400 carácteres</mat-error>
+                        </mat-form-field>
+
+                        <!-- Type -->
+                        <mat-label class="col-4">Tipo (*)</mat-label>
+                        <mat-form-field class="col-8">
+                            <mat-select formControlName="type">
+                                <mat-option [value]="type" *ngFor="let type of type">{{type}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="schForm.controls.type.errors?.required">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Select Movie -->
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="avatarMovie" class="movieImg">Cargar Película <i class="fas fa-video"></i></label>
+                            <input type="file" id="avatarMovie" name="avatarMovie" accept="video/*"
+                                (change)="fileChangeEventMovie($event)">
+                        </div>
+                        <div *ngIf="filesToUploadMovie" class="col-6">
+                            <h3>Vídeo cargado</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 movie-img">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        
+                        <div *ngIf="!filesToUpload">
+                            <img class="img-fluid" id="cargarImagen"
+                                src="../../../../../assets/img/movie.jpg">
+                        </div>
+                        <div class="continer-img-movie" *ngIf="filesToUpload">
+                            <img class="img-fluid" [src]="source" src="">
+                        </div>
+                        <div>
+                            <label for="avatar" class="profileImg">Cargar imagen <i class="fas fa-camera"></i></label>
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
+                                (change)="fileChangeEvent($event)">
+                        </div>
+                        <div *ngIf="filesToUpload">
+                            <h3>Imagen cargada</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="col-4 offset-4">
+                    <button class="btn btn-primary btn-center">Cargar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

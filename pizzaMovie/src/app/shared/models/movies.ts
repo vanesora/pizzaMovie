@@ -4,5 +4,5 @@ export class Movies {
     picture: String;
     description: String;
     movie: String;
-    numberRepreduction: Number;
+    numberReproduction?: Number;
 }

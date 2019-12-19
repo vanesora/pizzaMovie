@@ -122,6 +122,7 @@ export class RegisterComponent implements OnInit {
       this.schForm.reset();
       this.premium = false;
       this.termsConditions = false;
+      this.userSercie.filesToUpload=null;
     }).catch(err => {
       this.snackBar.open('Error al crear el usuario / ' + err.message, 'OK', { duration: 4000 });
     })
