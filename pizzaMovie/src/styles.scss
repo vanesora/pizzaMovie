@@ -79,7 +79,15 @@ a {
 }
 
 .logoini {
-    max-width: 300px;
+    max-width: 50%;
+}
+
+/* Cursiva */
+.parisienne {
+    font-family: 'Parisienne';
+    font-size: 45px;
+    margin: -210px -15px 0 0;
+    z-index: 100;
 }
 
 /* Efectos neón */
@@ -232,13 +240,13 @@ a {
 }
 
 .navbar {
-    border-bottom: 1px white solid;
+    /* border-bottom: 1px white solid; */
     margin: 0 11px;
     box-sizing: border-box;
     width: 100%;
-    padding: 15px 0 11px 21px;
+    padding: 15px 0 25px 21px;
 
-    img {
+    .profi {
         height: 35px;
         width: 35px;
         border-radius: 50%;
@@ -347,6 +355,52 @@ footer {
     height: 10px;
 }
 
+
+/* Bolita Sticky */
+.sphere {
+    border-radius: 50%;
+    position: fixed;
+    bottom: 85px;
+    left: 25px;
+    z-index: 25;
+    height: 55px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    a {
+        color: white;
+        text-shadow: none;
+        &:hover {
+            text-shadow: #e02fcb;
+        }
+    }
+}
+
+.sphere:hover {
+    background-color: #f982ee;
+    box-shadow: 0px 0px 5px #e02fcb;
+    transition: all .4s;
+}
+
+/* Texto en hover de Bolita Sticky */
+.pop-sphere {
+    padding: 11px;
+    position: fixed;
+    font-size: 15px;
+    opacity: 0;
+    left: 135px;
+    background-color: #0e0e16;
+    border: 1px solid hotpink
+}
+
+.sphere:hover .pop-sphere {
+    left: 95px;
+    opacity: 1;
+    transition: all .3s;
+}
+
 /* --- PAY --- */
 
 /* Caja */
@@ -354,6 +408,20 @@ footer {
     background-color: #0e0e16e1;
     background-blend-mode: multiply;
   }
+@media only screen and (max-width:767px){
+    .navbar {
+        padding: 0;
+    }
+    .logoini {
+        max-width: 33%;
+    }
+    .parisienne{
+        font-size: 35px;
+    }
+    .navbar .navbar-brand{
+        font-size: 33px;
+    }  
+}
 
 
 /* --- FORMS MOVIES -- */

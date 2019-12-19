@@ -1,0 +1,35 @@
+.feat-estreno {
+    width: 100vw;
+    height: 85vh;
+    background-image: url(../../../assets/black-mirror-temporada-4.jpg);
+    background-blend-mode: multiply;
+    background-color: #37374f;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    align-content: center;
+}
+
+.main-estreno {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.title-estreno {
+    max-width: 400px;
+}
+
+.sinop-title {
+    max-width: 65%;
+}
+
+.btn-title {
+    max-width: 20%;
+}
