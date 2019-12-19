@@ -4,25 +4,25 @@
   </div>
   <form #myForm="ngForm" id="ngForm" [formGroup]="schForm" (ngSubmit)="submitForm()" novalidate autocomplete="off">
     <div class="row">
-      <div class="col-8">
+      <div class="col-12 col-md-8">
         <div class="row">
-          <mat-label class="col-4">Nombres (*)</mat-label>
-          <mat-form-field class="col-8">
+          <mat-label class="col-12 col-md-4">Nombres (*)</mat-label>
+          <mat-form-field class="col-12 col-md-8">
             <input matInput formControlName="name" type="text">
             <mat-error *ngIf="schForm.controls.name.errors?.required">Campo requerido</mat-error>
             <mat-error *ngIf="schForm.controls.name.errors?.pattern">Debe ser alfabético</mat-error>
           </mat-form-field>
 
-          <mat-label class="col-4">Apellidos (*)</mat-label>
-          <mat-form-field class="col-8">
+          <mat-label class="col-12 col-md-4">Apellidos (*)</mat-label>
+          <mat-form-field class="col-12 col-md-8">
             <input matInput formControlName="lastName" type="text">
             <mat-error *ngIf="schForm.controls.lastName.errors?.required">Campo requerido</mat-error>
             <mat-error *ngIf="schForm.controls.lastName.errors?.pattern">Debe ser alfabético</mat-error>
           </mat-form-field>
 
           <!-- Gender -->
-          <mat-label class="col-4">Género (*)</mat-label>
-          <mat-form-field class="col-8">
+          <mat-label class="col-12 col-md-4">Género (*)</mat-label>
+          <mat-form-field class="col-12 col-md-8">
             <mat-select formControlName="gender">
               <mat-option [value]="jobTypes" *ngFor="let jobTypes of jobTypes">{{jobTypes}}
               </mat-option>
@@ -31,15 +31,15 @@
           </mat-form-field>
 
           <!-- email   -->
-          <mat-label class="col-4">Email(*)</mat-label>
-          <mat-form-field class="col-8">
+          <mat-label class="col-12 col-md-4">Email(*)</mat-label>
+          <mat-form-field class="col-12 col-md-8">
             <input matInput formControlName="email" type="text">
             <mat-error *ngIf="schForm.controls.email.errors?.required">Campo requerido</mat-error>
             <mat-error *ngIf="schForm.controls.email.errors?.pattern">Correo invalido</mat-error>
           </mat-form-field>
 
-          <mat-label class="col-4">Contraseña(*)</mat-label>
-          <mat-form-field class="col-8">
+          <mat-label class="col-12 col-md-4">Contraseña(*)</mat-label>
+          <mat-form-field class="col-12 col-md-8">
             <input matInput formControlName="password" type="password">
             <mat-error *ngIf="schForm.controls.password.errors?.required">Campo requerido</mat-error>
             <mat-error *ngIf="schForm.controls.password.errors?.requirements">
@@ -48,18 +48,18 @@
           </mat-form-field>
         </div>
       </div>
-      <div class="col-4 user-img">
+      <div class="col-12 col-md-4 user-img">
         <div class="d-flex flex-column justify-content-center align-items-center">
-          <div *ngIf="(!schForm.value.gender || schForm.value.gender == 'Otro') && !filesToUpload">
+          <div *ngIf="(!schForm.value.gender || schForm.value.gender == 'Otro') && !userSercie.filesToUpload">
             <img class="img-fluid rounded-circle" id="cargarImagen" src="../../../assets/img/avatar.jfif">
           </div>
-          <div *ngIf="schForm.value.gender == 'Mujer' && !filesToUpload">
+          <div *ngIf="schForm.value.gender == 'Mujer' && !userSercie.filesToUpload">
             <img class="img-fluid rounded-circle" id="cargarImagen" src="../../../assets/img/avatar-woman.jpg">
           </div>
-          <div *ngIf="schForm.value.gender == 'Hombre' && !filesToUpload">
+          <div *ngIf="schForm.value.gender == 'Hombre' && !userSercie.filesToUpload">
             <img class="img-fluid rounded-circle" id="cargarImagen" src="../../../assets/img/avatar-man.jfif">
           </div>
-          <div class="continer-img-user" *ngIf="filesToUpload">
+          <div class="continer-img-user" *ngIf="userSercie.filesToUpload">
             <img class="img-fluid rounded-circle" [src]="source" src="">
           </div>
           <div>
@@ -67,22 +67,21 @@
             <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
               (change)="fileChangeEvent($event)">
           </div>
-          <div *ngIf="filesToUpload">
+          <div *ngIf="userSercie.filesToUpload">
             <h3>Imagen cargada</h3>
           </div>
         </div>
       </div>
       <!-- Name -->
       <div class="col-12 text-npink premium" [ngClass]="{'text-ngreen': !premium}">
-        <mat-checkbox name="list_name" input [(ngModel)]="premium"
+        <mat-checkbox name="list_name" input [(ngModel)]="premium" 
         [ngModelOptions]="{standalone: true}">
           Deseo ser premium
         </mat-checkbox>
       </div>
       <div class="col-12">
-        <mat-checkbox name="list_name"input [(ngModel)]="termsConditions"
-        [ngModelOptions]="{standalone: true}"></mat-checkbox>
-        Acepto los <a href="javascript:void(0);" (click)="openTerms()">terminos y condiciones</a>
+        <mat-checkbox name="list_name"input [(ngModel)]="termsConditions" 
+        [ngModelOptions]="{standalone: true}">Acepto los terminos y condiciones</mat-checkbox>
       </div>
 
       <!-- Submit -->

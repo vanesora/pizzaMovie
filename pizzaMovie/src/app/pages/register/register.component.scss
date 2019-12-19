@@ -1,6 +1,6 @@
 .img-title{
     text-align: center;
-}
+}   
 
 input{
     color: white;
@@ -36,7 +36,7 @@ input{
     #avatar {
         display: none;
     }
-
+    
     .profileImg {
         background-color: transparent;
         border: none;
@@ -52,7 +52,7 @@ input{
         font-size: 17px;
         border-bottom: 1px solid #f982ee;
     }
-
+    
     img {
         border-radius: 50%;
         padding: 2px;
@@ -69,6 +69,9 @@ input{
         overflow: hidden;
         margin: 10px;
         position: relative;
+        border-radius: 50%;
+        border: 1px solid #b3ff66;
+        box-shadow: 0px 0px 17px #71db07;
 
         img{
             position:absolute;
@@ -78,14 +81,22 @@ input{
             bottom: -100%;
             margin: auto;
             min-height: 100%;
-            min-width: 100%;
+            min-width: 100%;  
+            border: 1px solid #b3ff66;
+            box-shadow: 0px 0px 17px #71db07;
         }
+        
     }
-
+    
 }
 
 // premium
 
 .premium{
     padding-top: 20px;
+}
+@media only screen and (max-width:767px){
+    .container{
+        width: 90%;
+    }
 }

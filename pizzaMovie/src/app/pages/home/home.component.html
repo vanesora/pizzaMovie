@@ -1,0 +1,28 @@
+<!-- Estreno destacado -->
+<div class="container-fluid" *ngIf="configService.page=='home'">
+    <div class="row">
+        <div class="col feat-estreno">
+            <div class="main-estreno">
+                <img class="title-estreno" src="../../../assets/img/titles/pizzawars.svg" alt="">
+                <h2 class="w-100">Black Mirror (Temporada 4) ahora en Pizza Wars</h2>
+                <p class="sinop-title">En esta nueva entrega, Brooker, dentro de un mismo universo temporal, sigue
+                    explorando los límites éticos y morales de la tecnología en un mundo que se parece mucho al nuestro, pero que
+                    todavía está por llegar. Acaso la interpretación moral sea bastante más clara en esta temporada que
+                    en las anteriores, pero con menos frescura narrativa y capacidad para sorprendernos,
+                    fundamentalmente porque se están realizando más episodios en menos tiempo.</p>
+                <div class="w-100"></div>
+                <button class="btn btn-primary btn-lg btn-title">Ver</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-popular *ngIf="configService.page=='mostViewed'"></app-popular>
+<app-last-releases *ngIf="configService.page=='lastReleases'"></app-last-releases>
+<app-upload-movie *ngIf="configService.page=='recommendations'"></app-upload-movie>
+<app-favorites *ngIf="configService.page=='favorites'"></app-favorites>
+<app-pizza *ngIf="configService.page=='pizza'"></app-pizza>
+<app-profile *ngIf="configService.page=='profile'"></app-profile>
+<app-upload-movie *ngIf="configService.page=='uploadMovie'"></app-upload-movie>
+<app-edit-movie *ngIf="configService.page=='editMovie'"></app-edit-movie>

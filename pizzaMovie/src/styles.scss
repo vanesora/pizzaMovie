@@ -79,7 +79,15 @@ a {
 }
 
 .logoini {
-    max-width: 300px;
+    max-width: 40%;
+}
+
+/* Cursiva */
+.parisienne {
+    font-family: 'Parisienne';
+    font-size: 45px;
+    margin: -210px -15px 0 0;
+    z-index: 100;
 }
 
 /* Efectos neón */
@@ -228,17 +236,17 @@ a {
 }
 
 .space-navbar{
-    height: 75px;
+    height: 70px;
 }
 
 .navbar {
-    border-bottom: 1px white solid;
+    /* border-bottom: 1px white solid; */
     margin: 0 11px;
     box-sizing: border-box;
     width: 100%;
-    padding: 15px 0 11px 21px;
+    padding: 0;
 
-    img {
+    .profi {
         height: 35px;
         width: 35px;
         border-radius: 50%;
@@ -299,6 +307,11 @@ a {
     margin-left: 0 !important;
 }
 
+.mat-sidenav-content{
+    height: calc(100%-70px);
+    overflow-y: hidden;
+}
+
 
 /* --- FOOTER --- */
 footer {
@@ -339,7 +352,53 @@ footer {
 
 /* --- MISC --- */
 .spacer {
-    height: 50px;
+    height: 10px;
+}
+
+
+/* Bolita Sticky */
+.sphere {
+    border-radius: 50%;
+    position: fixed;
+    bottom: 85px;
+    left: 25px;
+    z-index: 25;
+    height: 55px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    a {
+        color: white;
+        text-shadow: none;
+        &:hover {
+            text-shadow: #e02fcb;
+        }
+    }
+}
+
+.sphere:hover {
+    background-color: #f982ee;
+    box-shadow: 0px 0px 5px #e02fcb;
+    transition: all .4s;
+}
+
+/* Texto en hover de Bolita Sticky */
+.pop-sphere {
+    padding: 11px;
+    position: fixed;
+    font-size: 15px;
+    opacity: 0;
+    left: 135px;
+    background-color: #0e0e16;
+    border: 1px solid hotpink
+}
+
+.sphere:hover .pop-sphere {
+    left: 95px;
+    opacity: 1;
+    transition: all .3s;
 }
 
 /* --- PAY --- */
@@ -349,6 +408,226 @@ footer {
     background-color: #0e0e16e1;
     background-blend-mode: multiply;
   }
+@media only screen and (max-width:767px){
+    .navbar {
+        padding: 0;
+    }
+    .logoini {
+        max-width: 33%;
+    }
+    .parisienne{
+        font-size: 35px;
+    }
+    .navbar .navbar-brand{
+        font-size: 33px;
+    }  
+}
+
+
+/* --- FORMS MOVIES -- */
+
+.form-movie{
+    h1{
+        font-size: 50px;
+    }
+    .title-center{
+        text-align: center;
+    }
+
+    mat-label{
+        color: white;
+    }
+
+    input{
+        color: white;
+    }
+    
+    .container{
+        width: 50%;
+    }
+    
+    .mat-form-field{
+        padding-left: 0px;
+    }
+        
+    .mat-form-field-infix{
+        color: white;
+    }
+    
+    .btn-center{
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    #avatarMovie {
+        display: none;
+    }
+
+    .movieImg {
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        color: #f982ee;
+        text-shadow: 0px 0px 7px #e02fcb;
+        padding: 0 10px;
+        transition: all .5s;
+    }
+    #avatarMovie:hover,
+    .movieImg:hover {
+    cursor: pointer;
+        font-size: 25px;
+        border-bottom: 1px solid #f982ee;
+    }
+
+    .movie-img{
+        align-items: center;
+        padding-top: 0;
+        width: 150px;
+        height: 190px;
+    
+        #avatar {
+            display: none;
+        }
+
+               
+        .profileImg {
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            color: #f982ee;
+            text-shadow: 0px 0px 7px #e02fcb;
+            padding: 0 10px;
+            transition: all .5s;
+        }
+        #avatar:hover,
+        .profileImg:hover {
+        cursor: pointer;
+            font-size: 17px;
+            border-bottom: 1px solid #f982ee;
+        }
+        
+        img {
+            padding: 2px;
+            margin: 2px;
+            object-fit: cover;
+            margin-bottom: 11px;
+            border: 1px solid #b3ff66;
+            box-shadow: 0px 0px 17px #71db07;
+        }
+    
+        .continer-img-movie{
+            width: 150px;
+            height: 190px;
+            overflow: hidden;
+            margin: 10px;
+            position: relative;
+            border: 1px solid #b3ff66;
+            box-shadow: 0px 0px 17px #71db07;
+    
+            img{
+                position:absolute;
+                left: -100%;
+                right: -100%;
+                top: -100%;
+                bottom: -100%;
+                margin: auto;
+                min-height: 100%;
+                min-width: 100%;  
+                border: 1px solid #b3ff66;
+                box-shadow: 0px 0px 17px #71db07;
+            }
+            
+        }
+        
+    }
+}
+//   LISTA DE PELICULAS
+
+.list {
+    .img-title {
+        min-width: 250px;
+        min-height: 100px;
+        background-image: url('assets/img/titles/masvistos.svg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: inherit;
+        margin-bottom: 15px;
+    }
+    
+    p, h3 {
+    color: white;
+    }
+    .carousel {
+        width: 90%;
+        margin: 0 15px;
+        background: transparent;
+    }
+    
+    .carousel-inner {
+        padding: 20px 80px;
+    }
+    
+    .card-cont {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .card {
+        border-radius: 0px;
+        width: 250px;
+        height: 350px;
+        border: 1px solid #7ee9f3;
+        box-shadow: 0px 0px 7px #1ba6b3;
+        font-size: 14px;
+        background-color: transparent;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 50px;
+    }
+    
+    .movieImage {
+        height: 350px;
+        width: 100%;
+        background-image: url('assets/img/posterImg.jpg');
+        background-blend-mode: multiply;
+        background-color: white;
+        background-position: center;
+        background-size: cover;
+        transition: all .4s;
+    }
+    
+    .movieImage:hover {
+        background-color: #37374f;
+    }
+    
+    .movieImage:hover .detailsMovie {
+        opacity: 0.8;
+    }
+    
+    .bg-black-blue {
+        margin-bottom: 0 !important;
+        padding: 15px !important;
+        background-color: transparent !important;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .detail-movie {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .detailsMovie {
+        opacity: 0;
+    }
+    
+}
 
   
 

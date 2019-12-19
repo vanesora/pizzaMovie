@@ -1,84 +1,18 @@
 <div id="sidebar-wrapper">
-    <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action text-nwhite">
-                    <div class="row">
-                            <div class="col-12">
-                                    <i class="fas fa-jedi"></i>
-                            </div>
-                            <div class="col-12">
-                                    Los más vistos
-                            </div>
-                    </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action text-nwhite">
-                    <div class="row">
-                            <div class="col-12">
-                                    <i class="fas fa-rocket"></i>
-                            </div>
-                            <div class="col-12">
-                                    Últimos estrenos
-                            </div>
-                    </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action text-nwhite">
-                    <div class="row">
-                            <div class="col-12">
-                                    <i class="fab fa-galactic-senate"></i>
-                            </div>
-                            <div class="col-12">
-                                    Agregados recientemente
-                            </div>
-                    </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action text-nwhite">
-                    <div class="row">
-                            <div class="col-12">
-                                    <i class="fas fa-robot"></i>
-                            </div>
-                            <div class="col-12">
-                                    Recomendaciones
-                            </div>
-                    </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action text-nwhite">
-                    <div class="row">
-                            <div class="col-12">
-                                    <i class="fas fa-meteor"></i>
-                            </div>
-                            <div class="col-12">
-                                    Favoritos
-                            </div>
-                    </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action text-nwhite">
-                    <div class="row">
-                            <div class="col-12">
-                                    <i class="fas fa-pizza-slice"></i>
-                            </div>
-                            <div class="col-12">
-                                    Pide tu pizza
-                            </div>
-                    </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action text-nwhite">
-                    <div class="row">
-                            <div class="col-12">
-                                    <i class="fas fa-user-astronaut"></i>
-                            </div>
-                            <div class="col-12">
-                                    Iniciar sesión
-                            </div>
-                    </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action text-nwhite">
-                    <div class="row">
-                            <div class="col-12">
-                                    <i class="fas fa-hand-spock"></i>
-                            </div>
-                            <div class="col-12">
-                                    Registrate
-                            </div>
-                    </div>
-            </a>
-    </div>
+        <div class="list-group list-group-flush">
+                <div *ngFor="let button of configService.menu">
+                        <button class="list-group-item list-group-item-action "
+                                *ngIf="button.auth" [ngClass]="{'text-npink': button.visible, 'text-nwhite': !button.visible}"
+                                (click)="viewComponent(button)">
+                                <div class="row">
+                                        <div class="col-12">
+                                                <i [ngClass]="['fas', button.class]"></i>
+                                        </div>
+                                        <div class="col-12">
+                                                {{button.title}}
+                                        </div>
+                                </div>
+                        </button>
+                </div>
+        </div>
 </div>

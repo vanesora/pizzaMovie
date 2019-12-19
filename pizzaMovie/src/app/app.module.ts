@@ -10,13 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { TermsComponent } from './pages/register/terms/terms.component';
 import { PreviewComponent } from './pages/preview/preview.component';
 import { PlayComponent } from './pages/home/components/play/play.component';
 import { FavoritesComponent } from './pages/home/components/favorites/favorites.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { UploadMovieComponent } from './pages/home/components/upload-movie/upload-movie.component';
-import { LoginComponent } from './pages/preview/components/login/login.component';
+import { LoginComponent } from './shared/components/header/components/login/login.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { LoadingComponent } from './shared/components/loading/loading.component';
 import { PopUpComponent } from './shared/components/pop-up/pop-up.component';
@@ -33,13 +32,17 @@ import { DataApiService } from './shared/services/data-api.service';
 import { StorageService } from './shared/services/storage.service';
 import { GoHomeGuard } from './guards/go-home.guard';
 import { GoPreviewGuard } from './guards/go-preview.guard';
+import { LastReleasesComponent } from './pages/home/components/last-releases/last-releases.component';
+import { PizzaComponent } from './pages/home/components/pizza/pizza.component';
+import { ProfileComponent } from './pages/home/components/profile/profile.component';
+import { EditMovieComponent } from './pages/home/components/edit-movie/edit-movie.component';
+import { PopularComponent } from './pages/home/components/popular/popular.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    TermsComponent,
     PreviewComponent,
     PlayComponent,
     FavoritesComponent,
@@ -55,13 +58,17 @@ import { GoPreviewGuard } from './guards/go-preview.guard';
     PSEComponent,
     MenuComponent,
     HeaderComponent,
-    PopUpComponent
+    LastReleasesComponent,
+    PizzaComponent,
+    ProfileComponent,
+    EditMovieComponent,
+    PopUpComponent,
+    PopularComponent,
   ],
   entryComponents: [
     LoadingComponent,
     PSEComponent,
     PayComponent,
-    TermsComponent,
     BuypizzaComponent,
     LoginComponent,
     PopUpComponent
@@ -87,7 +94,7 @@ import { GoPreviewGuard } from './guards/go-preview.guard';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} },
