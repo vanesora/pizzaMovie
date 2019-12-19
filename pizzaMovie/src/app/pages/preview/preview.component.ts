@@ -21,27 +21,27 @@ export class PreviewComponent implements OnInit {
     public dialogRef: MatDialogRef<null>,
     public storageService: StorageService,
   ) {
-    this.llamarPopUp= interval(600000).subscribe((x =>{
-                this.openPopup();
-            }));
+    // this.llamarPopUp= interval(600000).subscribe((x =>{
+    //             this.openPopup();
+    //         }));
   }
 
   ngOnInit() {
   }
 
-  openPopup() {
-    if(this.dialogRef.length === undefined){
-      this.dialogRef = this.dialog.open(PopUpComponent, {
-        // disableClose: true
-      });
-      this.dialogRef.length = 1;
-    } else {
-      console.log('Ya esta abierta la modal.');
-    }
-    this.dialogRef.afterClosed().subscribe(result => {
-      this.dialogRef.length = undefined;
-    });
-  }
+  // openPopup() {
+  //   if(this.dialogRef.length === undefined){
+  //     this.dialogRef = this.dialog.open(PopUpComponent, {
+  //       // disableClose: true
+  //     });
+  //     this.dialogRef.length = 1;
+  //   } else {
+  //     console.log('Ya esta abierta la modal.');
+  //   }
+  //   this.dialogRef.afterClosed().subscribe(result => {
+  //     this.dialogRef.length = undefined;
+  //   });
+  // }
 
 
   registro() {
