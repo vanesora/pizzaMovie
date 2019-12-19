@@ -2,11 +2,11 @@
 <div class="container-fluid mat-toolbar">
         <div class="row">
                 <nav class="navbar">
-                        <div class="col-md-3 d-flex justify-content-start">
+                        <div class="col-3 col-md-3 d-flex justify-content-start">
                                 <a class="navbar-brand" href="#"><img src="../../../../assets/img/logo.svg"
                                                 alt="PizzaMovie"></a>
                         </div>
-                        <div class="col-md-9 d-flex justify-content-end align-items-center">
+                        <div class="col-9 col-md-9 d-flex justify-content-end align-items-center">
                                 <img src="../../../../assets/img/avatar.jfif" alt=""
                                         *ngIf="!storageService.session?.picture && storageService.session?.gender =='Otro'">
                                 <img src="../../../../assets/img/avatar-man.jfif" alt=""
@@ -19,10 +19,10 @@
                                         visitante</p>
                                 <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="storageService.session">Hola,
                                         {{storageService.session.name}}</p>
-                                <button class="btn btn-primary btn-lg" *ngIf="storageService.session"
-                                        (click)="logOut()">Cerrar sesión</button>
-                                <button class="btn btn-primary btn-lg" *ngIf="!storageService.session"
-                                        (click)="logIn()">Iniciar</button>
+                                <button class="btn btn-primary" *ngIf="storageService.session"
+                                        (click)="logOut()"><i class="fas fa-sign-out-alt"></i></button>
+                                <button class="btn btn-primary" *ngIf="!storageService.session"
+                                        (click)="logIn()"><i class="fas fa-sign-in-alt"></i></button>
                         </div>
                 </nav>
         </div>
