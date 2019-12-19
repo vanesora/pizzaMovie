@@ -46,4 +46,12 @@ export class DataApiService {
       .post(this.url_api + extension, formData)
       .toPromise();
   }
+
+  postFile(file: File, extension: string): Promise<any> {
+    var formData = new FormData();
+    formData.append('file', file);
+    return this.http
+      .post(this.url_api + extension, formData)
+      .toPromise();
+  }
 }

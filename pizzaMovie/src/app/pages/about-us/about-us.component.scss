@@ -39,6 +39,9 @@ p.name{
     text-align: center;
 }
 @media only screen and (max-width:767px){
+  .titulo{
+        max-width: 90%;
+    }
 #Camila{
     flex-direction: column-reverse;
 }

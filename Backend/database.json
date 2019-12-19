@@ -1,0 +1,14 @@
+{
+  "dev": {
+    "driver": "mysql",
+    "user": "root",
+    "password": "root"
+  },
+
+  "mongo": {
+    "driver": "mongodb",
+    "database": "pizzaMovie",
+    "host": "localhost"
+  }
+
+}

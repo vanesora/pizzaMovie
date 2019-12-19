@@ -3,16 +3,14 @@
 </header>
 <div class="space-navbar"></div>
 <router-outlet *ngIf="storageService.page !='Home'"></router-outlet>
-
 <mat-sidenav-container *ngIf="storageService.page =='Home'">
         <mat-sidenav class="background" mode="side" [(opened)]="opened" (opened)="events.push('open!')"
                 (closed)="events.push('close!')">
                 <app-menu></app-menu>
         </mat-sidenav>
         <mat-sidenav-content>
-                <div style="height: 88vh;">
-                        <router-outlet></router-outlet>
-                </div>
+                <router-outlet></router-outlet>
         </mat-sidenav-content>
 </mat-sidenav-container>
+<app-stiky></app-stiky>
 <app-footer></app-footer>

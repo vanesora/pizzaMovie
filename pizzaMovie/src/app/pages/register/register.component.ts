@@ -11,8 +11,7 @@ import { User } from 'src/app/shared/models/user';
 import { UserService } from 'src/app/shared/services/user.service';
 import { MatDialog } from '@angular/material';
 import { TermsComponent } from 'src/app/pages/register/terms/terms.component';
-
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -41,6 +40,7 @@ export class RegisterComponent implements OnInit {
     public userSercie: UserService,
     public snackBar: MatSnackBar,
     public dialog: MatDialog,
+    private router: Router
   ) {
   }
 
@@ -113,11 +113,26 @@ export class RegisterComponent implements OnInit {
     let user: User
     user = this.serealizeForm();
     return this.userSercie.saveUser(user).then(data => {
-      if (data != 'in pay') {
+      if (data.user) {
         this.snackBar.open('Usuario creado correctamente', 'OK', { duration: 4000 });
+        this.spinnerService.openAlertDialog();
+        setTimeout(() => {
+          console.log(data.user);
+          return this.userSercie.logIn(data.user).then(userLog => {
+            console.log(userLog);
+            this.storageService.setValue('session', userLog.user);
+            this.storageService.setValue('page', 'Home');
+            this.router.navigate(['/home']);
+            this.spinnerService.close();
+          })
+        }, 3000)
+        
       }
       this.myForm.resetForm();
       this.schForm.reset();
+      this.premium = false;
+      this.termsConditions = false;
+      this.userSercie.filesToUpload=null;
     }).catch(err => {
       this.snackBar.open('Error al crear el usuario / ' + err.message, 'OK', { duration: 4000 });
     })
