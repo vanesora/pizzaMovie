@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopularComponent implements OnInit {
 
+  public details = document.getElementById('details')
+
   constructor() { }
 
   ngOnInit() {
   }
 
+
 }
+
