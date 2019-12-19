@@ -3,6 +3,7 @@ import { DataApiService } from './data-api.service';
 import { PopupPayService } from './popup-pay.service';
 import { StorageService } from './storage.service';
 import { Router } from '@angular/router';
+import { SpinnerService } from './spinner.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,8 @@ export class UserService {
     public dataApiService: DataApiService,
     public payService: PopupPayService,
     public storageService: StorageService,
-    private router: Router
+    private router: Router,
+    public spinnerService: SpinnerService,
   ) { }
 
   saveUser(user): Promise<any> {
@@ -82,6 +84,10 @@ export class UserService {
     this.storageService.cleanUser();
     this.storageService.setValue('page', 'Preview');
     this.router.navigate(['']);
+    this.spinnerService.openAlertDialog();
+    setTimeout(()=>{
+      this.spinnerService.close();
+    },3000)
   }
 
 
