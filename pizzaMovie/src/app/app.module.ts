@@ -61,13 +61,15 @@ import { EditMovieComponent } from './pages/home/components/edit-movie/edit-movi
     PizzaComponent,
     ProfileComponent,
     EditMovieComponent,
+    PopUpComponent
   ],
   entryComponents: [
     LoadingComponent,
     PSEComponent,
     PayComponent,
     BuypizzaComponent,
-    LoginComponent
+    LoginComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,
