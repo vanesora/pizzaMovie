@@ -227,6 +227,7 @@ export class UploadMovieComponent implements OnInit {
       picture: '',
       dateAdd: moment().format('DD-MM-YYYY HH:mm')
     };
+    
   }
 
   changeSelect(data) {

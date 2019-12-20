@@ -39,7 +39,6 @@ export class MovieService {
     return this.dataApiService.getAll('/get-top/');
   }
 
-<<<<<<< HEAD
   getMovies() {
     return this.dataApiService.getAll('/movies');
   }
@@ -48,8 +47,6 @@ export class MovieService {
 
   }
 
-=======
->>>>>>> 0226a6de6767a195eaf6ea23cf18e53bbf8a77ec
   updateMovie(movie): Promise<any> {
     // movie.numberReproduction=7;
     return this.dataApiService.update(movie, 'movie/' + movie._id).then(data => {

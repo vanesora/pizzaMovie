@@ -30,7 +30,6 @@ export class PopularComponent implements OnInit {
   }
 
   topMovies() {
-<<<<<<< HEAD
     debugger;
     var movies = this.storageService.movies;
     this.movieService.getTopMovies().then(datos => {
@@ -40,12 +39,6 @@ export class PopularComponent implements OnInit {
         return movie;
       });
       
-=======
-    this.movieService.getTopMovies().then(datos => {
-      console.log(datos);
-      
-      this.arrTopMovies = datos.movies;
->>>>>>> 0226a6de6767a195eaf6ea23cf18e53bbf8a77ec
       this.peliculasUno = this.arrTopMovies.slice(0, 3),
       this.peliculasDos = this.arrTopMovies.slice(3, 6),
       this.peliculasTres = this.arrTopMovies.slice(6, 9)
