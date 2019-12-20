@@ -57,7 +57,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Share Tech';
+    font-family: 'Share Tech' !important;
     color: #f982ee;
     text-shadow: 0px 0px 7px #e02fcb;
 }
@@ -88,6 +88,11 @@ a {
     font-size: 45px;
     margin: -210px -15px 0 0;
     z-index: 100;
+}
+
+/* Share Tech */
+.share-tech {
+    font-family: 'Share Tech' !important;
 }
 
 /* Efectos neón */
@@ -369,9 +374,12 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 27px;
-    a {
+    a, button {
         color: white;
         text-shadow: none;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
         &:hover {
             text-shadow: #e02fcb;
         }
@@ -650,5 +658,24 @@ footer {
     
 }
 
+/* Pop-up */
+
+.popup {
+    padding: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+
+    .darthmini {
+        width: 20%;
+    }
+  
+    h3 {
+      font-family: 'Share Tech' !important;
+    }
+  }
+  
   
 
