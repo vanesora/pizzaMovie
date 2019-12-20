@@ -3,53 +3,46 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <ngb-carousel *ngIf="arrTopMovies">
-                <ng-template ngbSlide>
-                    
+                <ng-template ngbSlide *ngIf="peliculasUno">
                     <div class="card-cont">
+                        
                         <div *ngFor="let slideUno of peliculasUno" class="card">
-                            <div class="movieImage"
-                                style="background-image: url('https://wipy.tv/wp-content/uploads/2019/10/xmen-en-el-mcu.jpg');">
+                            <!-- <img class="profi" src="{{rutaImagen}}" alt=""> -->
+                            <div class="movieImage" [style.background-image]="slideUno.background">
                                 <div class="bg-black-blue detailsMovie">
-
                                     <h5 class="card-title">{{slideUno.title}}</h5>
                                     <p class="card-text">{{slideUno.description}}</p>
-                                <a href="#" class="btn btn-primary mb-1">Reproducir</a>
-                                <button class="btn btn-primary">Añadir a favoritos <i
-                                        class="fas fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                </ng-template>
-                <ng-template ngbSlide>
-                    
-                    <div class="card-cont">
-                        <div *ngFor="let slideDos of peliculasDos" class="card">
-                            <div class="movieImage"
-                            style="background-image: url('https://img-cdn.hipertextual.com/files/2019/10/hipertextual-star-wars-ascenso-skywalker-rompe-record-avengers-endgame-2019003508.png?strip=all&lossy=1&quality=57&resize=740%2C490&ssl=1');">
-                                <div class="bg-black-blue detailsMovie">
-                                    <h5 class="card-title">{{slideDos.title}}</h5>
-                                    <p class="card-text">{{slideDos.description}}</p>
                                     <a href="#" class="btn btn-primary mb-1">Reproducir</a>
-                                <button class="btn btn-primary">Añadir a favoritos <i
-                                        class="fas fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </ng-template>
-                <ng-template ngbSlide>
+
                     
+                <ng-template ngbSlide *ngIf="peliculasDos">
+
+                    <div class="card-cont">
+                        <div *ngFor="let slideDos of peliculasDos" class="card">
+                            <div class="movieImage" [style.background-image]="slideDos.background">
+                                <div class="bg-black-blue detailsMovie">
+                                    <h5 class="card-title">{{slideDos.title}}</h5>
+                                    <p class="card-text">{{slideDos.description}}</p>
+                                    <a href="#" class="btn btn-primary mb-1">Reproducir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide *ngIf="peliculasTres">
+
                     <div class="card-cont">
                         <div *ngFor="let slideTres of peliculasTres" class="card">
-                            <div class="movieImage"
-                            style="background-image: url('https://cineverso.acidspainnetwork.tv/wp-content/uploads/2019/02/alita-battle-angel-1549369862.jpg')">
+                            <div class="movieImage" [style.background-image]="slideTres.background">
                                 <div class="bg-black-blue detailsMovie">
                                     <h5 class="card-title">{{slideTres.title}}</h5>
                                     <p class="card-text">{{slideTres.description}}</p>
                                     <a href="#" class="btn btn-primary mb-1">Reproducir</a>
-                                <button class="btn btn-primary">Añadir a favoritos <i
-                                        class="fas fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>

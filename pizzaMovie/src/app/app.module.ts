@@ -100,7 +100,7 @@ import { TermsComponent } from './pages/register/terms/terms.component';
     MatSnackBarModule,
     HttpClientModule,
     NgbModule,
-    MatCardModule
+    MatCardModule, 
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} },
