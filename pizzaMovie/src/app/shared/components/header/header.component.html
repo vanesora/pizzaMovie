@@ -11,7 +11,7 @@
                                 *ngIf="!storageService.session?.picture && storageService.session?.gender =='Hombre'">
                                 <img class="profi" src="../../../../assets/img/avatar-woman.jpg" alt=""
                                 *ngIf="!storageService.session?.picture && storageService.session?.gender =='Mujer'">
-                                <img src="{{url+'obtener-imagen-usuario/'+session.picture}}" alt=""
+                                <img class="profi" src="{{url+'get-picture-user/'+storageService.session.picture}}" alt=""
                                 *ngIf="storageService.session?.picture">
                                 <p id="humano" class="text-ngreen mb-0 mr-4 tech-text" *ngIf="!storageService.session">Hola, humano visitante</p>
                                 <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="storageService.session">Hola, {{storageService.session.name}}</p>
