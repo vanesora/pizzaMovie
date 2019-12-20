@@ -1,7 +1,8 @@
 <div class="card-favorites">
     <div class="img-title-favs"></div>
     <div class="row">
-        <mat-card class="col-5 offset-1">
+        <mat-card class="col-10 offset-md-1">
+            <h2 class="h3 mr-2 card-fav-title">Selecciona un título para ver más información</h2>
             <div *ngFor="let movie of favorites">
                 <div class="item" (click)="select(movie)" [ngClass]="{'item-select': movie == movieSelect}">
                     Título: {{movie.title}} - Género: {{movie.type}}
@@ -9,29 +10,32 @@
 
             </div>
         </mat-card>
-
-        <div class="col-3" *ngIf="movieSelect">
-            <div class="title text-npink">{{movieSelect.title}}</div>
-            <div class="type text-nblue">{{movieSelect.type}}</div>
-            <div class="description">{{movieSelect.description}}</div>
-            <button (click)="play()">ver</button>
-        </div>
-        <div class="col-2" *ngIf="movieSelect">
+        <div class="w-100 spacer"></div>
+        <div class="col-md-4  offset-md-1" *ngIf="movieSelect">
             <div *ngIf="!movieSelect.picture && movieSelect.type=='Comedia'">
-                <img src="../../../../../assets/img/comedia.png" alt="">
+                <img class="poster-pic" src="../../../../../assets/img/comedia.png" alt="">
             </div>
             <div *ngIf="!movieSelect.picture && movieSelect.type=='Drama'">
-                <img src="../../../../../assets/img/drama.png" alt="">
+                <img class="poster-pic" src="../../../../../assets/img/drama.png" alt="">
             </div>
             <div *ngIf="!movieSelect.picture && movieSelect.type=='Anime'">
-                <img src="../../../../../assets/img/anime.png" alt="">
+                <img class="poster-pic" src="../../../../../assets/img/anime.png" alt="">
             </div>
             <div *ngIf="!movieSelect.picture && movieSelect.type=='Romance'">
-                <img src="../../../../../assets/img/romance.png" alt="">
+                <img class="poster-pic" src="../../../../../assets/img/romance.png" alt="">
             </div>
             <div *ngIf="movieSelect.picture">
-                <img src="{{url+'get-picture-movie/'+movieSelect.picture}}" alt="">
+                <img class="poster-pic" src="{{url+'get-picture-movie/'+movieSelect.picture}}" alt="">
             </div>
         </div>
+
+        <div class="col-md-6 p-3" *ngIf="movieSelect">
+            <h2 class="h2 text-npink">{{movieSelect.title}}</h2>
+            <p class="type text-nblue">Categoría: {{movieSelect.type}}</p>
+            <h3 class="h3">Sinopsis</h3>
+            <p class="description text-white">{{movieSelect.description}}</p>
+            <button class="btn btn-primary btn-lg" (click)="play()">ver</button>
+        </div>
+
     </div>
 </div>
