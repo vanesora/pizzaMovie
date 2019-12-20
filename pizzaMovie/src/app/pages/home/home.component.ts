@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     public dialogRef: MatDialogRef<{}>,
   ) {
     this.dialogRef = null;
-    this.llamarPopUp = interval(600000).subscribe((x => {
+    this.llamarPopUp = interval(6000000).subscribe((x => {
       this.openPopup();
     }));
   }
