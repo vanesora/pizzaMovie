@@ -29,11 +29,13 @@ export class MovieService {
     })
   }
 
-  deleteMovie() {
-
+  getTopMovies() {
+    console.log(this.dataApiService.getAll('/get-top/'))
+    return this.dataApiService.getAll('/get-top/');
   }
 
   updateMovie(movie): Promise<any> {
+    // movie.numberReproduction=7;
     return this.dataApiService.update(movie, 'movie/' + movie._id).then(data => {
       return this.dataApiService.getAll('movies').then(data => {
         if (data && data.movies) {
