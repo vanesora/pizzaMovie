@@ -102,7 +102,7 @@ import { RecomendationsComponent } from './pages/home/components/recomendations/
     MatSnackBarModule,
     HttpClientModule,
     NgbModule,
-    MatCardModule
+    MatCardModule, 
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} },

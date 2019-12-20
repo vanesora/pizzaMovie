@@ -36,8 +36,15 @@ export class MovieService {
   }
 
   getTopMovies() {
-    console.log(this.dataApiService.getAll('/get-top/'))
     return this.dataApiService.getAll('/get-top/');
+  }
+
+  getMovies() {
+    return this.dataApiService.getAll('/movies');
+  }
+
+  deleteMovie() {
+
   }
 
   updateMovie(movie): Promise<any> {
