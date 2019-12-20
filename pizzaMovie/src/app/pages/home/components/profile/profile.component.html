@@ -1,1 +1,87 @@
-<p>profile works!</p>
+<div class="container mt-5">
+        <h1>PERFIL</h1>
+    <form #myForm="ngForm" id="ngForm" [formGroup]="schForm" (ngSubmit)="submitForm()" novalidate autocomplete="off">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="row">
+                    <mat-label class="col-12 col-md-4">Nombres (*)</mat-label>
+                    <mat-form-field class="col-12 col-md-8">
+                        <input matInput formControlName="name" type="text">
+                        <mat-error *ngIf="schForm.controls.name.errors?.required">Campo requerido</mat-error>
+                        <mat-error *ngIf="schForm.controls.name.errors?.pattern">Debe ser alfabético</mat-error>
+                    </mat-form-field>
+
+                    <mat-label class="col-12 col-md-4">Apellidos (*)</mat-label>
+                    <mat-form-field class="col-12 col-md-8">
+                        <input matInput formControlName="lastName" type="text">
+                        <mat-error *ngIf="schForm.controls.lastName.errors?.required">Campo requerido</mat-error>
+                        <mat-error *ngIf="schForm.controls.lastName.errors?.pattern">Debe ser alfabético</mat-error>
+                    </mat-form-field>
+
+                    <!-- Gender -->
+                    <mat-label class="col-12 col-md-4">Género (*)</mat-label>
+                    <mat-form-field class="col-12 col-md-8">
+                        <mat-select formControlName="gender">
+                            <mat-option [value]="jobTypes" *ngFor="let jobTypes of jobTypes">{{jobTypes}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="schForm.controls.gender.errors?.required">Campo requerido</mat-error>
+                    </mat-form-field>
+
+                    <!-- email   -->
+                    <mat-label class="col-12 col-md-4">Email(*)</mat-label>
+                    <mat-form-field class="col-12 col-md-8">
+                        <input matInput formControlName="email" type="text">
+                        <mat-error *ngIf="schForm.controls.email.errors?.required">Campo requerido</mat-error>
+                        <mat-error *ngIf="schForm.controls.email.errors?.pattern">Correo invalido</mat-error>
+                    </mat-form-field>
+
+                    <mat-label class="col-12 col-md-4">Contraseña(*)</mat-label>
+                    <mat-form-field class="col-12 col-md-8">
+                        <input matInput formControlName="password" type="password">
+                        <mat-error *ngIf="schForm.controls.password.errors?.required">Campo requerido</mat-error>
+                        <mat-error *ngIf="schForm.controls.password.errors?.requirements">
+                            La contraseña debe tener al menos ocho caracteres, una letra mayúscula y un número
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 user-img">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div *ngIf="!storageService.session?.picture">
+                        <div *ngIf="schForm.value.gender == 'Otro' && !filesToUpload">
+                            <img class="img-fluid rounded-circle" id="cargarImagen"
+                                src="../../../assets/img/avatar.jfif">
+                        </div>
+                        <div *ngIf="schForm.value.gender == 'Mujer' && !filesToUpload">
+                            <img class="img-fluid rounded-circle" id="cargarImagen"
+                                src="../../../assets/img/avatar-woman.jpg">
+                        </div>
+                        <div *ngIf="schForm.value.gender == 'Hombre' && !filesToUpload">
+                            <img class="img-fluid rounded-circle" id="cargarImagen"
+                                src="../../../assets/img/avatar-man.jfif">
+                        </div>
+                    </div>
+                    <div class="continer-img-user" *ngIf="filesToUpload">
+                        <img class="img-fluid rounded-circle" [src]="source" src="">
+                    </div>
+                    <div class="continer-img-user" *ngIf="!filesToUpload && storageService.session?.picture">
+                        <img class="img-fluid rounded-circle" src="{{url+'get-picture-user/'+storageService.session.picture}}">
+                    </div>
+                    <div>
+                        <label for="avatar" class="profileImg">Cargar imagen <i class="fas fa-camera"></i></label>
+                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
+                            (change)="fileChangeEvent($event)">
+                    </div>
+                    <div *ngIf="filesToUpload">
+                        <h3>Imagen cargada</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="col-4 offset-4">
+                <button class="btn btn-primary btn-center">Actualizar</button>
+            </div>
+        </div>
+    </form>

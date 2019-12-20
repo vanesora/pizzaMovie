@@ -39,6 +39,14 @@ export class DataApiService {
       .toPromise();
   }
 
+  update(element, extension: string): Promise<any> {
+    let elementString
+    elementString= JSON.stringify(element)
+    return this.http
+      .put(this.url_api + extension, elementString, { headers: this.headers })
+      .toPromise();
+  }
+
   postImg(file: File, extension: string): Promise<any> {
     var formData = new FormData();
     formData.append('image', file);

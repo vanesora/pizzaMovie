@@ -25,10 +25,10 @@ export class AppComponent {
     public dataApiService: DataApiService,
   ){
     this.storageService.load();
-    this.spinnerService.openAlertDialog();
-    setTimeout(()=>{
-      this.spinnerService.close();
-    },3000)
+    // this.spinnerService.openAlertDialog();
+    // setTimeout(()=>{
+    //   this.spinnerService.close();
+    // },3000)
     if(!this.storageService.movies){
       this.dataApiService.getAll('movies').then(data=>{
         if(data && data.movies){
