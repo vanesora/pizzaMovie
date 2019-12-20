@@ -4,7 +4,6 @@
         <div class="carousel-item active">
             <ngb-carousel *ngIf="arrTopMovies">
                 <ng-template ngbSlide>
-                    
                     <div class="card-cont">
                         <div *ngFor="let slideUno of peliculasUno" class="card">
                             <div class="movieImage"
@@ -13,13 +12,13 @@
 
                                     <h5 class="card-title">{{slideUno.title}}</h5>
                                     <p class="card-text">{{slideUno.description}}</p>
-                                <a href="#" class="btn btn-primary mb-1">Reproducir</a>
-                                <button class="btn btn-primary">Añadir a favoritos <i
-                                        class="fas fa-heart"></i></button>
+                                    <a href="#" class="btn btn-primary mb-1">Reproducir</a>
+                                    <button class="btn btn-primary">Añadir a favoritos <i
+                                            class="fas fa-heart"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </ng-template>
                 <ng-template ngbSlide>
                     

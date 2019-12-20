@@ -34,11 +34,8 @@ export class MovieService {
     return this.dataApiService.getAll('/get-top/');
   }
 
-  deleteMovie() {
-
-  }
-
   updateMovie(movie): Promise<any> {
+    movie.numberReproduction=3;
     return this.dataApiService.update(movie, 'movie/' + movie._id).then(data => {
       return this.dataApiService.getAll('movies').then(data => {
         if (data && data.movies) {
