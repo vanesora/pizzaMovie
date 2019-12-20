@@ -18,8 +18,7 @@ export class PreviewComponent implements OnInit {
   constructor(
     private router: Router,
     public storageService: StorageService,
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
   }
