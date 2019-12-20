@@ -39,6 +39,7 @@ import { ProfileComponent } from './pages/home/components/profile/profile.compon
 import { EditMovieComponent } from './pages/home/components/edit-movie/edit-movie.component';
 import { PopularComponent } from './pages/home/components/popular/popular.component';
 import { TermsComponent } from './pages/register/terms/terms.component';
+import { RecomendationsComponent } from './pages/home/components/recomendations/recomendations.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { TermsComponent } from './pages/register/terms/terms.component';
     EditMovieComponent,
     PopUpComponent,
     PopularComponent,
-    TermsComponent
+    TermsComponent,
+    RecomendationsComponent
   ],
   entryComponents: [
     LoadingComponent,
