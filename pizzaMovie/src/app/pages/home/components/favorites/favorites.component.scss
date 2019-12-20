@@ -1,5 +1,5 @@
 .card-favorites{
- width: 90%;
+ width: 95%;
  height: 100%;
 }
 
@@ -14,22 +14,39 @@
 }
 
 mat-card{
-    background-color: rgba(0, 0, 0, 0.472);
+    background-color: #202031;
+    box-shadow: 0px 0px 11px black;
+    padding: 17px;
     color: wheat;
-    border: 1px solid #b3ff66;
     align-items: center;
-    max-height: 250px;
     overflow-y:auto;    
 }
 
 .item{
-    border: 1px solid #b3ff66;
-    width: 100%;
+    background-color: #0e0e16;
     margin: 10px;
     font-size: 20px;
     cursor: default;
+    padding: 11px;
+    margin: 20px;
+    overflow: visible;
+
+    &:hover {
+        background-color: #2d2d3f;
+        box-shadow: 0px 0px 5px #1ba6b3;
+        transition: all .4s;
+    }
 }
 
 .item-select{
     box-shadow: 0px 0px 17px #71db07;
+}
+
+.poster-pic { 
+    max-width: 100%;
+    padding: 21px;
+}
+
+.card-fav-title {
+    margin-left: 21px;
 }
