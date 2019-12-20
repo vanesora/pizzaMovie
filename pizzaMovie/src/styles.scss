@@ -316,7 +316,9 @@ a {
     height: calc(100%-70px);
     overflow-y: hidden;
 }
-
+.boton{
+    display: none;
+  }
 
 /* --- FOOTER --- */
 footer {
@@ -417,6 +419,20 @@ footer {
     background-blend-mode: multiply;
   }
 @media only screen and (max-width:767px){
+  /* .boton{
+    display: block !important;
+    position: fixed;
+    top: 12%;
+    left: 65%;
+    z-index: 10000;
+    } */
+    .boton{
+    display: block !important;
+    position: fixed;
+    top: 12%;
+    left: 91%;
+    z-index: 10000;
+    }
     .navbar {
         padding: 0;
     }
