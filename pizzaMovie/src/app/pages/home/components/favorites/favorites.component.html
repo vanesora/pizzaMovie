@@ -1,101 +1,37 @@
-<div class="list">
-    <div id="popularCarousel" class="carousel slide" data-ride="carousel">
-        <div class="img-title-favs"></div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="card-cont">
-                    <div class="card">
-                        <div class="movieImage">
-                            <div class="bg-black-blue detailsMovie">
-                                <h5 class="card-title">Título</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the
-                                    card's content.</p>
-                                <a href="#" class="btn btn-primary">Reproducir</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="movieImage">
-                            <div class="bg-black-blue detailsMovie">
-                                <h5 class="card-title">Título</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the
-                                    card's content.</p>
-                                <a href="#" class="btn btn-primary">Reproducir</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="movieImage">
-                            <div class="bg-black-blue detailsMovie">
-                                <h5 class="card-title">Título</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the
-                                    card's content.</p>
-                                <a href="#" class="btn btn-primary">Reproducir</a>
-                            </div>
-                        </div>
-                    </div>
+<div class="card-favorites">
+    <div class="img-title-favs"></div>
+    <div class="row">
+        <mat-card class="col-5 offset-1">
+            <div *ngFor="let movie of favorites">
+                <div class="item" (click)="select(movie)" [ngClass]="{'item-select': movie == movieSelect}">
+                    Título: {{movie.title}} - Género: {{movie.type}}
                 </div>
+
             </div>
-            <div class="carousel-item">
-                <div class="card-cont">
-                    <div class="card">
-                        <div class="movieImage">
-                            <div class="bg-black-blue detailsMovie">
-                                <h5 class="card-title">Título</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the
-                                    card's content.</p>
-                                <a href="#" class="btn btn-primary">Reproducir</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="movieImage">
-                            <div class="bg-black-blue detailsMovie">
-                                <h5 class="card-title">Título</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the
-                                    card's content.</p>
-                                <a href="#" class="btn btn-primary">Reproducir</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="movieImage">
-                            <div class="bg-black-blue detailsMovie">
-                                <h5 class="card-title">Título</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the
-                                    card's content.</p>
-                                <a href="#" class="btn btn-primary">Reproducir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </mat-card>
+
+        <div class="col-3" *ngIf="movieSelect">
+            <div class="title text-npink">{{movieSelect.title}}</div>
+            <div class="type text-nblue">{{movieSelect.type}}</div>
+            <div class="description">{{movieSelect.description}}</div>
+            <button>ver</button>
+        </div>
+        <div class="col-2" *ngIf="movieSelect">
+            <div *ngIf="!movieSelect.picture && movieSelect.type=='Comedia'">
+                <img src="../../../../../assets/img/comedia.png" alt="">
+            </div>
+            <div *ngIf="!movieSelect.picture && movieSelect.type=='Drama'">
+                <img src="../../../../../assets/img/drama.png" alt="">
+            </div>
+            <div *ngIf="!movieSelect.picture && movieSelect.type=='Anime'">
+                <img src="../../../../../assets/img/anime.png" alt="">
+            </div>
+            <div *ngIf="!movieSelect.picture && movieSelect.type=='Romance'">
+                <img src="../../../../../assets/img/romance.png" alt="">
+            </div>
+            <div *ngIf="movieSelect.picture">
+                <img src="{{url+'get-picture-movie/'+movieSelect.picture}}" alt="">
             </div>
         </div>
-        <a class="carousel-control-prev text-nwhite" href="#popularCarousel" role="button" data-slide="prev">
-            <span aria-hidden="true"><i class="fab fa-galactic-senate fa-rotate-270 fa-2x"></i></span>
-            <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next text-nwhite" href="#popularCarousel" role="button" data-slide="next">
-            <span aria-hidden="true"><i class="fab fa-galactic-senate fa-rotate-90 fa-2x"></i></span>
-            <span class="sr-only">Siguiente</span>
-        </a>
     </div>
 </div>
