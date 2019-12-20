@@ -69,4 +69,10 @@ export class MovieService {
     this.moviePlay = movie;
     this.configService.page='play';
   }
+
+  updateReproduction(movie): Promise<any>{
+    return this.dataApiService.update(movie, 'movie/' + movie._id).then(data => {
+      
+    })
+  }
 }

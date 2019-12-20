@@ -27,14 +27,14 @@ export class UserService {
     if (user.type == 'USER_PREMIUM') {
       this.payService.openAlertDialog('pay');
       this.storageService.setValue('pay', false)
-        return this.onReadyDB(20,user).then(data =>{
-          return this.newUser
-        })
+      return this.onReadyDB(20, user).then(data => {
+        return this.newUser
+      })
     } else {
       return this.dataApiService.post(user, 'user').then(data => {
         if (this.filesToUpload) {
           return this.dataApiService.postImg(this.filesToUpload, 'upload-picture-user/' + data.user._id).then()
-        }else{
+        } else {
 
           return data;
         }
@@ -45,24 +45,35 @@ export class UserService {
   saveUserPay(user): Promise<any> {
     return this.dataApiService.post(user, 'user').then(data => {
       if (this.filesToUpload) {
-        return this.dataApiService.postImg(this.filesToUpload, 'upload-picture-user/' + data.user._id).then(_user=>{
+        return this.dataApiService.postImg(this.filesToUpload, 'upload-picture-user/' + data.user._id).then(_user => {
           return _user;
         })
-      }else{
+      } else {
         return data;
       }
     })
   }
 
-  updateUser(user,file): Promise<any> {
-    return this.dataApiService.update(user,'user/' + user._id).then(userRes=>{
+  updateUser(user, file): Promise<any> {
+    return this.dataApiService.update(user, 'user/' + user._id).then(userRes => {
       console.log(userRes)
-      if(file){
-        return this.dataApiService.postImg(file, 'upload-picture-user/' + userRes.user._id).then(_user=>{
-          console.log(_user);          
+      if (file) {
+        return this.dataApiService.postImg(file, 'upload-picture-user/' + userRes.user._id).then(_user => {
+          console.log(_user);
           return _user;
         })
       }
+      return userRes;
+    })
+  }
+
+  updateFavorites(user, movie) {
+    if (!user.favorites) {
+      user.favorites=[];
+    }
+    user.favorites.push(movie);
+    return this.dataApiService.update(user, 'user/' + user._id).then(userRes => {
+      this.storageService.setValue('session', user)
       return userRes;
     })
   }
@@ -74,10 +85,10 @@ export class UserService {
         console.error('max tries onReadyDB');
 
       }
-      if (this.storageService.pay==true) {
-        return this.saveUserPay(user).then(data=>{
-          this.newUser=data
-          resolve (data)
+      if (this.storageService.pay == true) {
+        return this.saveUserPay(user).then(data => {
+          this.newUser = data
+          resolve(data)
         })
       } else {
         setTimeout(() => {
@@ -89,18 +100,18 @@ export class UserService {
     });
   }
 
-  logIn(user): Promise<any>{
+  logIn(user): Promise<any> {
     return this.dataApiService.post(user, 'user-login').then()
   }
 
-  logOut(){
+  logOut() {
     this.storageService.cleanUser();
     this.storageService.setValue('page', 'Preview');
     this.router.navigate(['']);
     this.spinnerService.openAlertDialog();
-    setTimeout(()=>{
+    setTimeout(() => {
       this.spinnerService.close();
-    },3000)
+    }, 3000)
   }
 
 
