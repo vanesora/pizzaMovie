@@ -19,10 +19,21 @@
     </div>
 </div>
 
+
+
+<!-- Categorías individuales -->
+<app-popular></app-popular>
 <app-popular *ngIf="configService.page=='mostViewed'"></app-popular>
+
+<app-last-releases></app-last-releases>
 <app-last-releases *ngIf="configService.page=='lastReleases'"></app-last-releases>
-<app-upload-movie *ngIf="configService.page=='recommendations'"></app-upload-movie>
+
+<app-favorites></app-favorites>
 <app-favorites *ngIf="configService.page=='favorites'"></app-favorites>
+
+
+<!-- Funcionalidades -->
+<app-upload-movie *ngIf="configService.page=='recommendations'"></app-upload-movie>
 <app-pizza *ngIf="configService.page=='pizza'"></app-pizza>
 <app-profile *ngIf="configService.page=='profile'"></app-profile>
 <app-upload-movie *ngIf="configService.page=='uploadMovie'"></app-upload-movie>

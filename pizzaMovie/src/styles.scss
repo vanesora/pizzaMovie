@@ -544,14 +544,35 @@ footer {
 //   LISTA DE PELICULAS
 
 .list {
-    .img-title {
-        min-width: 250px;
-        min-height: 100px;
-        background-image: url('assets/img/titles/masvistos.svg');
+    padding: 75px 0;
+    .img-title-popular {
+        width: 100%;
+        background-image: url(assets/img/titles/masvistos.svg);
+        min-height: 200px;
         background-repeat: no-repeat;
-        background-position: top;
+        background-position: top center;
         background-size: inherit;
-        margin-bottom: 15px;
+        margin: 17px 0;
+    }
+
+    .img-title-recientes {
+        width: 100%;
+        background-image: url(./assets/img/titles/agregadas.svg);
+        min-height: 200px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: inherit;
+        margin: 17px 0;
+    }
+
+    .img-title-favs {
+        width: 100%;
+        background-image: url(./assets/img/titles/favoritas.svg);
+        min-height: 200px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: inherit;
+        margin: 17px 0;
     }
     
     p, h3 {
