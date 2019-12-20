@@ -7,46 +7,10 @@
   </div>
   <div class="container-d ">
     <div>
-      <ul _ngcontent-iyi-c12="" class="">
+      <ul _ngcontent-iyi-c12="" class="" *ngFor="let movie of favorities">
         <li _ngcontent-iyi-c12="" class="d-flex">
           <div _ngcontent-iyi-c12="" class="favorite">
-            <p>Hola. soy tu favorito 1</p>
-            <a
-              _ngcontent-iyi-c12=""
-              class="iconoMovie ml-2"
-              data-toggle="modal"
-              href=""
-              ><i _ngcontent-iyi-c12="" class="fas fa-trash-alt"></i
-            ></a>
-          </div>
-        </li>
-        <li _ngcontent-iyi-c12="" class="d-flex">
-          <div _ngcontent-iyi-c12="" class="favorite">
-            <p>Hola. soy tu favorito 2</p>
-            <a
-              _ngcontent-iyi-c12=""
-              class="iconoMovie ml-2"
-              data-toggle="modal"
-              href=""
-              ><i _ngcontent-iyi-c12="" class="fas fa-trash-alt"></i
-            ></a>
-          </div>
-        </li>
-        <li _ngcontent-iyi-c12="" class="d-flex">
-          <div _ngcontent-iyi-c12="" class="favorite">
-            <p>Hola. soy tu favorito 3</p>
-            <a
-              _ngcontent-iyi-c12=""
-              class="iconoMovie ml-2"
-              data-toggle="modal"
-              href=""
-              ><i _ngcontent-iyi-c12="" class="fas fa-trash-alt"></i
-            ></a>
-          </div>
-        </li>
-        <li _ngcontent-iyi-c12="" class="d-flex">
-          <div _ngcontent-iyi-c12="" class="favorite">
-            <p>Hola. soy tu favorito 4</p>
+            <p>´{{movie.title}}</p>
             <a
               _ngcontent-iyi-c12=""
               class="iconoMovie ml-2"
@@ -57,21 +21,21 @@
           </div>
         </li>
       </ul>
-    </div>
-    <div class="favorite-card">
-      <img src="../../../../../assets/img/social/beating.gif" />
-      <div>
-        <h2>Hola. soy tu favorito 4</h2>
-        <p>
-          soy ladescripcion de tu pelicula favrita 4, Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Qui expedita doloremque veniam delectus
-          ratione est recusandae pariatur iste numquam, ullam rem aspernatur
-          velit sunt. Libero quam eligendi enim! Ratione, recusandae!
-        </p>
-        <button _ngcontent-lph-c9="" class="btn btn-primary btn-lg btn-title">
-          Ver pelicula
-        </button>
-      </div>
-    </div>
+</div>
+<div class="favorite-card">
+  <img src="../../../../../assets/img/social/beating.gif" />
+  <div>
+    <h2>Hola. soy tu favorito 4</h2>
+    <p>
+      soy ladescripcion de tu pelicula favrita 4, Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Qui expedita doloremque veniam delectus
+      ratione est recusandae pariatur iste numquam, ullam rem aspernatur
+      velit sunt. Libero quam eligendi enim! Ratione, recusandae!
+    </p>
+    <button _ngcontent-lph-c9="" class="btn btn-primary btn-lg btn-title">
+      Ver pelicula
+    </button>
   </div>
+</div>
+</div>
 </div>
