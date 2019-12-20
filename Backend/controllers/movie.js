@@ -166,7 +166,6 @@ function getAllMovies(req,res){
 }
 
 function getTopMovies(req,res){
-
     Movie.find().sort({numberReproduction : -1})
     .then((movies)=>{
         if (!movies) {

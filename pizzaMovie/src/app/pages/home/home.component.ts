@@ -30,29 +30,31 @@ export class HomeComponent implements OnInit {
   }
 
   openPopup() {
-    if (this.dialogRef === null ){
-      if(this.storageService.session.type == 'USER_FREE'){
+    if (this.storageService.session.type == 'USER_FREE') {
+      if (this.dialogRef === null) {
         this.dialogRef = this.dialog.open(PopUpComponent, {
           width: '450px',
           height: '380px',
         });
+        return this.onReadyDB().then();
       }
-      return this.onReadyDB().then();
+      if (this.dialogRef != null) {
+        this.dialogRef.afterClosed().subscribe(result => {
+          this.dialogRef = null;
+        });
+      }
+    }else{
+      this.llamarPopUp.unsubscribe()
     }
-    if (this.dialogRef != null){
-      this.dialogRef.afterClosed().subscribe(result => {
-        this.dialogRef = null;
-      });
-    }
-    
+
   }
 
-  onReadyDB(tries = 20): Promise < any > {
+  onReadyDB(tries = 20): Promise<any> {
     return new Promise((resolve, reject) => {
       if (tries <= 0) {
         reject('max tries onReadyDB');
         console.error('max tries onReadyDB');
-      }    
+      }
       if (this.storageService.pay == true) {
         this.dialog.closeAll()
         resolve(true);

@@ -35,7 +35,7 @@ export class MovieService {
   }
 
   updateMovie(movie): Promise<any> {
-    movie.numberReproduction=3;
+    // movie.numberReproduction=7;
     return this.dataApiService.update(movie, 'movie/' + movie._id).then(data => {
       return this.dataApiService.getAll('movies').then(data => {
         if (data && data.movies) {

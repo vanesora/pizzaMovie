@@ -27,12 +27,14 @@ export class PopularComponent implements OnInit {
   }
 
   topMovies() {
-    var movies = this.storageService.movies;
-    this.arrTopMovies = movies;
-    this.peliculasUno = this.arrTopMovies.slice(0, 3);
-    this.peliculasDos = this.arrTopMovies.slice(3, 6);
-    this.peliculasTres = this.arrTopMovies.slice(6, 9);
+    this.movieService.getTopMovies().then(datos => {
+      console.log(datos);
+      
+      this.arrTopMovies = datos.movies;
+      this.peliculasUno = this.arrTopMovies.slice(0, 3),
+      this.peliculasDos = this.arrTopMovies.slice(3, 6),
+      this.peliculasTres = this.arrTopMovies.slice(6, 9)
+    });
   }
-
 }
 
