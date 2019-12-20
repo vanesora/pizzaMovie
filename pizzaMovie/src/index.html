@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>PizzaMovie</title>
+  <title>PizzaWars</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -37,7 +37,28 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script src="https://vjs.zencdn.net/5.11/video.min.js"></script>
-
+<script>
+  $(document).ready(function() {
+          $("body").on("click","#menu-celular-display",function() {
+          if($("#div-menu-celular-display").hasClass("menu-oculto")) {
+                  $("#sidebar-wrapper").css("margin-left","0");
+                  $("#div-menu-celular-display").removeClass("menu-oculto");
+                  $("#div-menu-celular-display").addClass("menu-abierto");
+                  $("#div-menu-celular-display").css("left","65%");
+                  $("#div-menu-celular-display").removeClass("menu-oculto");
+                  $("#div-menu-celular-display").addClass("menu-abierto");
+          } else if ($("#div-menu-celular-display").hasClass("menu-abierto")) {
+                  $("#sidebar-wrapper").css("margin-left","-7rem");
+                  $("#div-menu-celular-display").removeClass("menu-abierto");
+                  $("#div-menu-celular-display").addClass("menu-oculto");
+                  $("#div-menu-celular-display").css("left","91%");
+                  $("#div-menu-celular-display").removeClass("menu-abierto");
+                  $("#div-menu-celular-display").addClass("menu-oculto");
+          }
+          });
+  });      
+</script>
+  
 </body>
 
 </html>
