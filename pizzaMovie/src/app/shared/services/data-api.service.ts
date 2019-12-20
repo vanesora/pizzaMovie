@@ -62,4 +62,10 @@ export class DataApiService {
       .post(this.url_api + extension, formData)
       .toPromise();
   }
+
+  delete(extension: string): Promise<any> {
+    return this.http
+      .delete(this.url_api + extension, { headers: this.headers })
+      .toPromise();
+  }
 }

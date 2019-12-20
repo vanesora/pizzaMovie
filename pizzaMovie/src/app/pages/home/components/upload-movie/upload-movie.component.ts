@@ -87,7 +87,7 @@ export class UploadMovieComponent implements OnInit {
       return;
     }
     let movie = this.serealizeForm();
-    this.movieService.uploadMovie(movie, this.filesToUpload, this.filesToUploadMovie).then(data => {
+    this.movieService.setMovie(movie, this.filesToUpload, this.filesToUploadMovie).then(data => {
       this.snackBar.open('Película subida de forma correcta', 'OK', { duration: 4000 });
       return this.dataApiService.getAll('movies').then(data => {
         if (data && data.movies) {

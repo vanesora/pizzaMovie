@@ -12,5 +12,5 @@
                 <router-outlet></router-outlet>
         </mat-sidenav-content>
 </mat-sidenav-container>
-<app-stiky></app-stiky>
+<app-stiky *ngIf="storageService.session?.type=='USER_FREE'"></app-stiky>
 <app-footer></app-footer>
