@@ -1,7 +1,14 @@
-import { Chapters } from './chapters';
-
 export class Series {
-    season: Number;
-    numberRepreduction: Number;
-    chapters: Chapters[];
+    title: String;
+    type: String;
+    picture: String;
+    description: String;
+    seasonNumber: Number;
+    dateAdd: String
+    seasons?: [{
+        chaptersNumber: Number;
+        chapters?:[{
+            chapters:String[];
+        }]
+    }]
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import { MovieService } from 'src/app/shared/services/movie.service';
 
 @Component({
   selector: 'app-favorites',
@@ -13,6 +14,7 @@ export class FavoritesComponent implements OnInit {
 
   constructor(
     public storageService: StorageService,
+    public movieService: MovieService,
   ) { 
     
   }
@@ -26,5 +28,8 @@ export class FavoritesComponent implements OnInit {
     this.movieSelect=movie
   }
   
+  play(){
+    this.movieService.play(this.movieSelect)
+  }
 
 }

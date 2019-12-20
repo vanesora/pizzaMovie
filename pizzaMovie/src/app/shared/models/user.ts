@@ -1,4 +1,5 @@
 import { Movies } from './movies';
+import { Series } from './series';
 
 export class User {
     name: String;
@@ -9,7 +10,6 @@ export class User {
     password: String;
     type: String;
     _id?: String;
-    favorities?: Movies[];
-    likes?: Movies[];
-    reproduction?: Movies[];
+    favoritiesMovies?: Movies[];
+    favoritiesSeries?: Series[];
 }
