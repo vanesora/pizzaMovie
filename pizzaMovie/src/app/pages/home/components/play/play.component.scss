@@ -1,37 +1,24 @@
-.videogular-container {
-	width: 80%;
-	height: 320px;
-	margin: auto;
-	overflow: hidden;
-}
-
 .tituloPeli {
-	margin-right: 15px;
-	padding-right: 15px;
+	margin-top: 30px;
 }
 .video{
 	width: 80%;
 }
-/* @media (min-width: 1200px) {
-	.videogular-container {
-		width: 1170px;
-		height: 658.125px;
-	}
-}
- 
-@media (min-width: 992px) and (max-width: 1199px) {
-	.videogular-container {
-		width: 940px;
-		height: 528.75px;
-	}
-}
- 
+
 @media (min-width: 768px) and (max-width: 991px) {
 	.videogular-container {
 		width: 728px;
 		height: 409.5px;
 	}
-} */
+} 
+.peli {
+  width:90%;
+  padding-top: 20px;
+  padding-left: 10%;
+}
+.video-js .vjs-big-play-button{
+  border-color: blue($color: #000000)!important;
+}
 /*
   Player Skin Designer for Video.js
   http://videojs.com
@@ -48,10 +35,9 @@
 
 // The following are SCSS variables to automate some of the values.
 // But don't feel limited by them. Change/replace whatever you want.
-
 // The color of icons, text, and the big play button border.
 // Try changing to #0f0
-$primary-foreground-color: #fff; // #fff default
+$primary-foreground-color: #ffe16b; // #fff default
 
 // The default color of control backgrounds is mostly black but with a little
 // bit of blue so it can still be seen on all-black video frames, which are common.
@@ -61,7 +47,9 @@ $primary-background-color: #2b333f; // #2B333F default
 // Try changing to true
 $center-big-play-button: true; // true default
 
+
 .video-js {
+
   /* The base font size controls the size of everything, not just text.
      All dimensions use em-based sizes so that the scale along with the font size.
      Try increasing it to 15px and see what happens. */
