@@ -585,12 +585,30 @@ footer {
     }
     .carousel {
         width: 90%;
+        height: 500px;
         margin: 0 15px;
         background: transparent;
     }
+
+    .carousel-item {
+        width: 85% !important;
+        margin: auto !important;
+        height: 80vh;
+        flex-direction: row;
+        &:focus {
+            outline: transparent !important;
+        }
+    }
+
+    .active:focus {outline: transparent !important;}
     
     .carousel-inner {
         padding: 20px 80px;
+        display: flex;
+        justify-content: space-between;
+        &:focus {
+            outline: transparent !important;
+        }
     }
     
     .card-cont {
@@ -611,6 +629,7 @@ footer {
     .carousel-control-prev,
     .carousel-control-next {
         width: 50px;
+        height: 500px; 
     }
     
     .movieImage {
@@ -629,7 +648,7 @@ footer {
     }
     
     .movieImage:hover .detailsMovie {
-        opacity: 0.8;
+        opacity: 0.9;
     }
     
     .bg-black-blue {

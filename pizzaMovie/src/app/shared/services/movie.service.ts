@@ -29,6 +29,11 @@ export class MovieService {
     })
   }
 
+  getTopMovies() {
+    console.log(this.dataApiService.getAll('/get-top/'))
+    return this.dataApiService.getAll('/get-top/');
+  }
+
   deleteMovie() {
 
   }
