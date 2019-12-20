@@ -1,8 +1,12 @@
 
-<div class="peli" >
+<div *ngIf="!movieService.moviePlay">
+    <p>DEBES SELECCIONAR UNA PELÍCULA PARA VER</p>
+    <button class="btn btn-primary" (click)="back()">Regresar</button>
+</div>
+<div class="peli" *ngIf="movieService.moviePlay">
     <div class="tituloPeli">
-        <h1 class="text-nblue">BA. I. Inteligencia Artificial</h1>
-        <h3 class="text-npink">Año: 2001 | EEUU | Ciencia Ficción
+        <h1 class="text-nblue">{{movieService.moviePlay.title}}</h1>
+        <h3 class="text-npink">{{movieService.moviePlay.type}} | Ciencia Ficción
        <button class="btn btn-primary"style="border: none;"><i class="fas fa-heart-broken"></i></button>
             <button class="btn btn-primary"style="border: none;"><i class="fas fa-heart"></i></button>
             <button class="btn btn-primary"style="border: none;"><i class="fas fa-plus"></i></button>
@@ -10,6 +14,7 @@
     </div>
         <video class="video" id="my_video_1" class="video-js vjs-default-skin" width="80%" height=auto
         controls preload="none" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
-        <source src="../../../../../assets/JULIAN SMITH - Techno Jeep.mp4" type='video/mp4' />
+        <source src="{{url+'get-file-movie/'+movieService.moviePlay.movie}}" type='video/mp4' />
+        
     </video>
 </div>
