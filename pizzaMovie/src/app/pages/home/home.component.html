@@ -22,13 +22,10 @@
 
 
 <!-- Categorías individuales -->
-<app-popular></app-popular>
 <app-popular *ngIf="configService.page=='mostViewed'"></app-popular>
 
-<app-last-releases></app-last-releases>
 <app-last-releases *ngIf="configService.page=='lastReleases'"></app-last-releases>
 
-<app-favorites></app-favorites>
 <app-favorites *ngIf="configService.page=='favorites'"></app-favorites>
 
 
