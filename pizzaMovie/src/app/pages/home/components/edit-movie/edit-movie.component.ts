@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import { MovieService } from 'src/app/shared/services/movie.service';
 
 @Component({
   selector: 'app-edit-movie',
@@ -9,10 +10,11 @@ import { StorageService } from 'src/app/shared/services/storage.service';
 export class EditMovieComponent implements OnInit {
 
   content;
-  edit='';
+  edit;
   
   constructor(
-    public storageService: StorageService,    
+    public storageService: StorageService, 
+    public movieService: MovieService   
   ) { }
 
   ngOnInit() {
@@ -23,15 +25,22 @@ export class EditMovieComponent implements OnInit {
   }
 
   cancel(){
-    this.edit=''
+    this.edit=null;
     this.content=''
   }
 
   acept(){  
-    this.content=document.getElementById("text-a")
-    console.log(this.content);
-    
-    this.edit=''  
+    this.content=(<HTMLInputElement>document.getElementById("text-a")).value;
+    this.edit.description=this.content  
+    return this.movieService.updateMovie(this.edit).then(data=>{
+      this.edit=null;
+    }).catch(err=>{
+      this.edit=null;
+    })
+  }
+
+  delete(movie){
+    return this.movieService.delete(movie).then()
   }
 
 }
