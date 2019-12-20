@@ -4,102 +4,80 @@
 var fs = require('fs');
 var path = require('path');
 
-var Movie = require('../models/movie')
+var Serie = require('../models/serie')
 
-function setMovie(req,res){
-    var movie = new Movie();
+function setSerie(req,res){
+    var serie = new Serie();
     var params = req.body;
 
-    movie.title = params.title;
-    movie.type = params.type;
-    movie.description = params.description;
-    movie.dateAdd = params.dateAdd
-    movie.save((err,movieCreated)=>{
+    serie.title = params.title;
+    serie.type = params.type;
+    serie.description = params.description;
+    serie.dateAdd = params.dateAdd
+    serie.seasonNumber = params.seasonNumber
+    serie.save((err,serieCreated)=>{
         if(err){
             res.status(500).send({
                 message:"error en el servidor"
             })
         }else{
-            if(!movieCreated){
+            if(!serieCreated){
                 res.status(200).send({
-                    message:"no se pudo crear la película"
+                    message:"no se pudo crear la cancion"
                 })
             }else{
                 res.status(200).send({
-                    movie:movieCreated
+                    serie:serieCreated
                 })
             }
         }
     })
 }
 
-function updateMovie(req,res){
-    var idMovie = req.params.id;
-    var updateMovie = req.body;
-    Movie.findByIdAndUpdate(idMovie,updateMovie,(err,_updateMovie)=>{
+function deleteSerie(req,res){
+    var idSerie = req.params.id;
+
+    Serie.findByIdAndRemove(idSerie,(err,serieRemoved)=>{
         if(err){
             res.status(500).send({
                 message:"error en el servidor"
             })
         }else{
-            if(!_updateMovie){
-                res.status(200).send({
-                    message:"no se pudo actualizar la película"
-                })
-            }else{
-                res.status(200).send({
-                    movie:updateMovie
-                })
-            }
-        }
-    })
-
-}
-
-function deleteMovie(req,res){
-    var idMovie = req.params.id;
-
-    Movie.findByIdAndRemove(idMovie,(err,movieRemoved)=>{
-        if(err){
-            res.status(500).send({
-                message:"error en el servidor"
-            })
-        }else{
-            if(!movieRemoved){
+            if(!serieRemoved){
                 res.status(200).send({
                     message:"no se pudo eliminar la cancion"
                 })
             }else{
                 res.status(200).send({
-                    movie:movieRemoved
+                    serie:serieRemoved
                 })
             }
         }
     })
 }
 
-function getMovies(req,res){
-    Movie.find((err,movies)=>{
+function getSeries(req,res){
+    Serie.find((err,series)=>{
         if(err){
             res.status(500).send({
                 message:"error en el servidor"
             })
         }else{
-            if(!movies){
+            if(!series){
                 res.status(200).send({
-                    message:"no se pudo obtener las películas"
+                    message:"no se pudo obtener las series"
                 })
             }else{
                 res.status(200).send({
-                    movies:movies
+                    series:series
                 })
             }
         }
     })
 }
 
-function uploadFileMovie(req,res){
-    var idMovie = req.params.id;
+function UploadFileSerie(req,res){
+    var idSerie = req.params.id;
     var file_name = 'No subido...';
 
     //se valida si viene el archivo con la variable superglobal files
@@ -114,15 +92,15 @@ function uploadFileMovie(req,res){
         var file_ext = exp_split[1];
 
         if(file_ext == 'mp4'){
-            Movie.findByIdAndUpdate(idMovie,{movie:file_name},(err,updatedMovie)=>{
+            Serie.findByIdAndUpdate(idSerie,{archivo:file_name},(err,updatedSerie)=>{
                 if(err){
                     res.status(500).send({message:'Error en el servidor'});
                 }else{
-                    if(!updatedMovie){
+                    if(!updatedSerie){
                         res.status(404).send({message:'No se ha podido actualizar la película'});
                     }else{
                         //devuelve usuario antes de actualizarse
-                        res.status(200).send({movie:updatedMovie});
+                        res.status(200).send({serie:updatedSerie});
                     }
                 }
             });
@@ -134,11 +112,11 @@ function uploadFileMovie(req,res){
     }
 }
 
-function getFileMovie(req,res){
+function getFileSerie(req,res){
     //nombre fichero
-    var movieFile = req.params.movieFile;
+    var serieFile = req.params.serieFile;
     //ruta archivo 
-    var path_file = './uploads/movies/'+movieFile;
+    var path_file = './uploads/series/'+serieFile;
     
     //se comprueba si existe
     fs.exists(path_file,function(exists){
@@ -151,35 +129,45 @@ function getFileMovie(req,res){
     });
 }
 
-function getAllMovies(req,res){
+function getAllSeries(req,res){
 
-    Movie.find().exec()
-    .then((movies)=>{
-        if (!movies) {
-            res.status(404).send({ message: "Las películas no se ha cargado" });
+    Serie.find().exec()
+    .then((series)=>{
+        if (!series) {
+            res.status(404).send({ message: "Las películas no se han cargado" });
         } else {
-            res.status(200).send({movies: movies});
+            res.status(200).send({canciones: series});
         }11
     }).catch(error =>{
-        res.status(500).send({ message: "Error al cargar las películas" });
+        res.status(500).send({ message: "Error al cargar las seríes" });
     })
 }
 
-function getTopMovies(req,res){
-    Movie.find().sort({numberReproduction : -1})
-    .then((movies)=>{
-        if (!movies) {
-            res.status(404).send({ message: "No hay un top disponible" });
-        } else {
-            res.status(200).send({movies: movies});
-        }11
-    }).catch(error =>{
-        res.status(500).send({ message: "Error al cargar el top de las más vistas" });
+function updateSerie(req,res){
+    var idSerie = req.params.id;
+    var updateMSerie = req.body;
+    Serie.findByIdAndUpdate(idSerie,updateSerie,(err,_updateSerie)=>{
+        if(err){
+            res.status(500).send({
+                message:"error en el servidor"
+            })
+        }else{
+            if(!_updateSerie){
+                res.status(200).send({
+                    message:"no se pudo actualizar la serie"
+                })
+            }else{
+                res.status(200).send({
+                    serie:updateSerie
+                })
+            }
+        }
     })
+
 }
 
-function uploadPictureMovie(req,res){
-    var idMovie = req.params.id;
+function uploadPictureSerie(req,res){
+    var idSerie = req.params.id;
     var file_name = 'No subido...';
 
     //se valida si viene el archivo con la variable superglobal files
@@ -188,21 +176,22 @@ function uploadPictureMovie(req,res){
         var file_split = file_path.split('\\');
         //se obtiene nombre del archivo
         var file_name = file_split[2];
+
         //se obtiene extension fichero
         var exp_split = file_name.split('\.');
         var file_ext = exp_split[1];
 
         if(file_ext == 'png' || file_ext == 'jpg' || file_ext == 'gif'){
-            Movie.findByIdAndUpdate(idMovie,{picture:file_name},(err,updatedMovie)=>{
+            Serie.findByIdAndUpdate(idSerie,{picture:file_name},(err,updatedSerie)=>{
                 if(err){
                     res.status(500).send({message:'Error en el servidor'});
                 }else{
-                    if(!updatedMovie){
+                    if(!updatedSerie){
                         res.status(404).send({message:'No se ha podido actualizar el usuario'});
                     }else{
                         //devuelve usuario antes de actualizarse
-                        updatedMovie.picture = file_name;
-                        res.status(200).send({movie:updatedMovie});
+                        updatedSerie.picture = file_name;
+                        res.status(200).send({usuario:updatedSerie});
                     }
                 }
             });
@@ -214,11 +203,11 @@ function uploadPictureMovie(req,res){
     }
 }
 
-function getPictureMovie(req,res){
+function getPictureSerie(req,res){
         //nombre fichero
         var imageFile = req.params.imageFile;
         //ruta archivo 
-        var path_file = './uploads/movies/'+imageFile;
+        var path_file = './uploads/series/pictures/'+imageFile;
         //se comprueba si existe
         fs.exists(path_file,function(exists){
             if(exists){
@@ -233,14 +222,13 @@ function getPictureMovie(req,res){
 
 
 module.exports = {
-    setMovie,
-    deleteMovie,
-    getMovies,
-    updateMovie,
-    uploadFileMovie,
-    getFileMovie,
-    getAllMovies,
-    uploadPictureMovie,
-    getPictureMovie,
-    getTopMovies
+    setSerie,
+    deleteSerie,
+    getSeries,
+    UploadFileSerie,
+    getFileSerie,
+    getAllSeries,
+    uploadPictureSerie,
+    getPictureSerie,
+    updateSerie
 };

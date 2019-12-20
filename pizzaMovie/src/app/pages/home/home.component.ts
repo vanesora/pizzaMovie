@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { PopUpComponent } from 'src/app/shared/components/pop-up/pop-up.component';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import { MovieService } from 'src/app/shared/services/movie.service';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public configService: ConfigService,
+    public movieService: MovieService,
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<{}>,
     public storageService: StorageService,
@@ -30,31 +32,33 @@ export class HomeComponent implements OnInit {
   }
 
   openPopup() {
-    if (this.dialogRef === null ){
-      if(this.storageService.session.type == 'USER_FREE'){
+    if (this.storageService.session.type == 'USER_FREE') {
+      if (this.dialogRef === null) {
         this.dialogRef = this.dialog.open(PopUpComponent, {
           width: '450px',
           height: '380px',
         });
+        return this.onReadyDB().then();
       }
-      return this.onReadyDB().then();
+      if (this.dialogRef != null) {
+        this.dialogRef.afterClosed().subscribe(result => {
+          this.dialogRef = null;
+        });
+      }
+    }else{
+      this.llamarPopUp.unsubscribe()
     }
-    if (this.dialogRef != null){
-      this.dialogRef.afterClosed().subscribe(result => {
-        this.dialogRef = null;
-      });
-    }
-    
+
   }
 
-  onReadyDB(tries = 20): Promise < any > {
+  onReadyDB(tries = 20): Promise<any> {
     return new Promise((resolve, reject) => {
       if (tries <= 0) {
         reject('max tries onReadyDB');
         console.error('max tries onReadyDB');
-      }    
+      }
       if (this.storageService.pay == true) {
-        this.dialogRef.close()
+        this.dialog.closeAll()
         resolve(true);
       } else {
         setTimeout(() => {

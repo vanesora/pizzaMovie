@@ -1,4 +1,17 @@
 <div class="block" *ngIf="edit">
+    <div class="edit">
+        <div class="card-edit">
+            <textarea id="text-a"></textarea>
+            <div class="row">
+                <div class="col-6">
+                    <button class="btn btn-primary" (click)="acept()">Aceptar</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary" (click)="cancel()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="row list-edit">
     <div class="col-11">
@@ -31,19 +44,6 @@
                         </button>
                     </mat-card-actions>
                 </mat-card>
-                <div class="edit" *ngIf="edit?._id==movie._id">
-                    <div class="card-edit">
-                        <textarea id="text-a"></textarea>
-                        <div class="row">
-                            <div class="col-6">
-                                <button class="btn btn-primary" (click)="acept()">Aceptar</button>
-                            </div>
-                            <div class="col-6">
-                                <button class="btn btn-primary" (click)="cancel()">Cancelar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

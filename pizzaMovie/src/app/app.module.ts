@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { PreviewComponent } from './pages/preview/preview.component';
-import { PlayComponent } from './pages/home/components/play/play.component';
+import { PlayComponent } from './shared/components/play/play.component';
 import { FavoritesComponent } from './pages/home/components/favorites/favorites.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { UploadMovieComponent } from './pages/home/components/upload-movie/upload-movie.component';
@@ -39,6 +39,7 @@ import { ProfileComponent } from './pages/home/components/profile/profile.compon
 import { EditMovieComponent } from './pages/home/components/edit-movie/edit-movie.component';
 import { PopularComponent } from './pages/home/components/popular/popular.component';
 import { TermsComponent } from './pages/register/terms/terms.component';
+import { RecomendationsComponent } from './pages/home/components/recomendations/recomendations.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { TermsComponent } from './pages/register/terms/terms.component';
     EditMovieComponent,
     PopUpComponent,
     PopularComponent,
-    TermsComponent
+    TermsComponent,
+    RecomendationsComponent
   ],
   entryComponents: [
     LoadingComponent,
