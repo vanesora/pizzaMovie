@@ -6,19 +6,17 @@
     overflow-x: hidden;
 }
 
-.container{
-    height: calc(100% - 165px);
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12,1fr);
-}
 .logo{
-    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     grid-column: 5/9;
     grid-row: 2/7;
+    overflow: hidden;
 }
-
+.padding{
+    padding: 3.8rem 0;
+}
 .textoPromocional{
     text-align: center;
     grid-column: 4/10;
