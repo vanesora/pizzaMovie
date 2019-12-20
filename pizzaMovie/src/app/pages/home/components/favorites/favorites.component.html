@@ -14,7 +14,7 @@
             <div class="title text-npink">{{movieSelect.title}}</div>
             <div class="type text-nblue">{{movieSelect.type}}</div>
             <div class="description">{{movieSelect.description}}</div>
-            <button>ver</button>
+            <button (click)="play()">ver</button>
         </div>
         <div class="col-2" *ngIf="movieSelect">
             <div *ngIf="!movieSelect.picture && movieSelect.type=='Comedia'">

@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { PopUpComponent } from 'src/app/shared/components/pop-up/pop-up.component';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import { MovieService } from 'src/app/shared/services/movie.service';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public configService: ConfigService,
+    public movieService: MovieService,
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<{}>,
     public storageService: StorageService,

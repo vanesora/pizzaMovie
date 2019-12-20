@@ -1,4 +1,8 @@
-<div class="container mt-5 form-movie row">
+<button class="btn btn-primary" (click)="changeSelect('movie')"> Película </button>
+<button class="btn btn-primary" (click)="changeSelect('serie')"> Serie </button>
+
+
+<div class="container mt-5 form-movie row" *ngIf="select=='movie'">
     <div class="col-md-10 offset-md-3 mt-5">
         <div class="title-center">
             <h1>Agregar película</h1>
@@ -74,3 +78,105 @@
         </form>
     </div>
 </div>
+
+
+
+<!-- series -->
+<div class="container mt-5 form-movie row" *ngIf="select=='serie'">
+    <div class="col-md-10 offset-md-2">
+        <div class="title-center">
+            <h1>Agregar Serie</h1>
+        </div>
+        <form id="ngForm" [formGroup]="schFormSerie" novalidate
+            autocomplete="off">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="row">
+                        <mat-label class="col-12 col-md-4">Título (*)</mat-label>
+                        <mat-form-field class="col-12 col-md-8">
+                            <input matInput formControlName="title" type="text">
+                            <mat-error *ngIf="schForm.controls.title.errors?.required">Campo requerido</mat-error>
+                        </mat-form-field>
+
+                        <mat-label class="col-12 col-md-4">Descripción (*)</mat-label>
+                        <mat-form-field class="col-12 col-md-8">
+                            <textarea matInput formControlName="description" type="text"></textarea>
+                            <mat-error *ngIf="schForm.controls.description.errors?.required">Campo requerido</mat-error>
+                            <mat-error *ngIf="schForm.controls.description.errors?.maxlength">Máximo 400 carácteres</mat-error>
+                        </mat-form-field>
+
+                        <!-- Type -->
+                        <mat-label class="col-12 col-md-4">Tipo (*)</mat-label>
+                        <mat-form-field class="col-12 col-md-8">
+                            <mat-select formControlName="type">
+                                <mat-option [value]="type" *ngFor="let type of type">{{type}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="schForm.controls.type.errors?.required">Campo requerido</mat-error>
+                        </mat-form-field>
+
+                        <mat-label class="col-8 col-md-3">Temporadas(*)</mat-label>
+                        <mat-form-field class="col-6 col-md-3">
+                            <mat-select formControlName="seasons">
+                                <mat-option [value]="number" *ngFor="let number of number">{{number}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="schFormSerie.controls.seasons.errors?.required">Campo requerido</mat-error>
+                        </mat-form-field>
+
+                        <mat-label class="col-8 col-md-3">Capítulos (*)</mat-label>
+                        <mat-form-field class="col-6 col-md-3">
+                            <mat-select formControlName="chapters">
+                                <mat-option [value]="number" *ngFor="let number of number">{{number}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="schFormSerie.controls.chapters.errors?.required">Campo requerido</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Select Movie -->
+
+                    <div class="row" *ngIf="updateVideo">
+                        <div class="col-6">
+                            <label for="avatarMovie" class="movieImg">Cargar capitulo {{actualChapter}} de la temporada {{actualSeason}} <i class="fas fa-video"></i></label>
+                            <input type="file" id="avatarMovie" name="avatarMovie" accept="video/*"
+                                (change)="fileChangeEventSerie($event)">
+                        </div>
+                        <div *ngIf="filesToUploadSerie" class="col-5">
+                            <h3>Vídeo cargado</h3>
+                        </div>
+                        <div *ngIf="filesToUploadSerie" class="col-1">
+                            <button (click)="uploadVideo()"><i class="fas fa-share-square"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 movie-img">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        
+                        <div *ngIf="!filesToUploadPictureSerie">
+                            <img class="img-fluid" id="cargarImagen"
+                                src="../../../../../assets/img/movie.jpg">
+                        </div>
+                        <div class="continer-img-movie" *ngIf="filesToUploadPictureSerie">
+                            <img class="img-fluid" [src]="source" src="">
+                        </div>
+                        <div>
+                            <label for="avatar" class="profileImg">Cargar imagen <i class="fas fa-camera"></i></label>
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
+                                (change)="fileChangeEventSeriePicture($event)">
+                        </div>
+                        <div *ngIf="filesToUploadPictureSerie">
+                            <h3>Imagen cargada</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="col-4 offset-4" *ngIf="!updateVideo" (click)="submitFormSerie()">
+                    <button class="btn btn-primary btn-center">Cargar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
