@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
         console.error('max tries onReadyDB');
       }    
       if (this.storageService.pay == true) {
-        this.dialogRef.close()
+        this.dialog.closeAll()
         resolve(true);
       } else {
         setTimeout(() => {
