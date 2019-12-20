@@ -7,14 +7,13 @@ import { GoHomeGuard } from './guards/go-home.guard';
 import { RegisterComponent } from './pages/register/register.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { GoPreviewGuard } from './guards/go-preview.guard';
-import { PlayComponent } from './pages/play/play.component';
+import { PlayComponent } from './shared/components/play/play.component';
 
 
 const routes: Routes = [
   { path: '', component: PreviewComponent, canActivate: [GoPreviewGuard]},
   { path: 'register', component: RegisterComponent, canActivate: [GoPreviewGuard]},
   { path: 'home', component: HomeComponent, canActivate: [GoHomeGuard]},
-  { path: 'play', component: PlayComponent, canActivate: [GoHomeGuard]},
   { path: 'about-us', component: AboutUsComponent},
 ];
 

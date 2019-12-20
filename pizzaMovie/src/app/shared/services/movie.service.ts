@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { DataApiService } from './data-api.service';
 import { StorageService } from './storage.service';
 import { Router } from '@angular/router';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class MovieService {
   constructor(
     public dataApiService: DataApiService,
     public storageService: StorageService,
+    public configService: ConfigService,
     private router: Router,
   ) { }
 
@@ -65,6 +67,6 @@ export class MovieService {
 
   play(movie) {
     this.moviePlay = movie;
-    this.router.navigate(['/play'])
+    this.configService.page='play';
   }
 }
