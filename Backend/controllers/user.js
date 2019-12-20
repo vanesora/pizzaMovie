@@ -68,8 +68,7 @@ function getUser(req,res){
 
 function updateUser(req,res){
     var idUser = req.params.id;
-    var updateUser = req.body;
-
+    var updateUser = req.body;   
     User.findByIdAndUpdate(idUser,updateUser,(err,updatedUser)=>{
         if(err){
             res.status(500).send({
@@ -93,7 +92,7 @@ function updateUser(req,res){
 function deleteUser(req,res){
     var idUser = req.params.id;
     
-    Usuario.findByIdAndRemove(idUser,(err,userDeleted)=>{
+    User.findByIdAndRemove(idUser,(err,userDeleted)=>{
         if(err){
             res.status(500).send({
                 message:"error en el servidor"
@@ -138,7 +137,7 @@ function uploadPictureUser(req,res){
                     }else{
                         //devuelve usuario antes de actualizarse
                         updatedUser.picture = file_name;
-                        res.status(200).send({usuario:updatedUser});
+                        res.status(200).send({user:updatedUser});
                     }
                 }
             });

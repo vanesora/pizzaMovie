@@ -3,6 +3,7 @@ import { MatDialogRef, MatDialog, MatDialogConfig } from '@angular/material';
 import { PayComponent } from '../components/pay/pay.component';
 import { BuypizzaComponent } from '../components/pay/buypizza.component';
 import { StorageService } from './storage.service';
+import { DataApiService } from './data-api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class PopupPayService {
 
   constructor(
     public storageService: StorageService,
+    public dataApiService: DataApiService,
     private dialog: MatDialog,
     private dialogBuyPizza: MatDialog,
     private dialogRef: MatDialogRef<PayComponent>,
@@ -23,10 +25,11 @@ export class PopupPayService {
   openAlertDialog(type) {
     if (type == 'Pizza') {
       this.dialogRefBuypizza = this.dialogBuyPizza.open(BuypizzaComponent);
-      return this.onReadyDB(20,type).then()
+      return this.onReadyDB(20, type).then()
     } else {
       this.dialogRef = this.dialog.open(PayComponent);
-      return this.onReadyDB(20,type).then()
+      return this.onReadyDB(20, type).then(data => {
+      })
     }
   }
 
@@ -41,10 +44,17 @@ export class PopupPayService {
         console.error('max tries onReadyDB');
       }
       if (this.storageService.pay == true) {
-        if (type == 'Pizza'){
+        if (type == 'Pizza') {
           this.dialogRefBuypizza.close()
-        }else{
+        } else {
           this.dialogRef.close()
+          if(type == 'payInto'){
+            let user = this.storageService.session;
+            user.type = 'USER_PREMIUM';
+            return this.dataApiService.update(user,'user/' + user._id).then(userRes=>{
+              this.storageService.setValue('session',user)
+            })
+          }
         }
         resolve(true);
       } else {

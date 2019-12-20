@@ -54,6 +54,19 @@ export class UserService {
     })
   }
 
+  updateUser(user,file): Promise<any> {
+    return this.dataApiService.update(user,'user/' + user._id).then(userRes=>{
+      console.log(userRes)
+      if(file){
+        return this.dataApiService.postImg(file, 'upload-picture-user/' + userRes.user._id).then(_user=>{
+          console.log(_user);          
+          return _user;
+        })
+      }
+      return userRes;
+    })
+  }
+
   onReadyDB(tries = 20, user): Promise<any> {
     return new Promise((resolve, reject) => {
       if (tries <= 0) {

@@ -33,6 +33,29 @@ function setMovie(req,res){
     })
 }
 
+function updateMovie(req,res){
+    var idMovie = req.params.id;
+    var updateMovie = req.body;
+    Movie.findByIdAndUpdate(idMovie,updateMovie,(err,_updateMovie)=>{
+        if(err){
+            res.status(500).send({
+                message:"error en el servidor"
+            })
+        }else{
+            if(!_updateMovie){
+                res.status(200).send({
+                    message:"no se pudo actualizar la película"
+                })
+            }else{
+                res.status(200).send({
+                    movie:updateMovie
+                })
+            }
+        }
+    })
+
+}
+
 function deleteMovie(req,res){
     var idMovie = req.params.id;
 
@@ -201,6 +224,7 @@ module.exports = {
     setMovie,
     deleteMovie,
     getMovies,
+    updateMovie,
     uploadFileMovie,
     getFileMovie,
     getAllMovies,

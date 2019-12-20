@@ -31,5 +31,26 @@
 }
 
 .btn-title {
-    max-width: 20%;
+    width: 20%;
+}
+@media only screen and (max-width:767px){
+    .title-estreno {
+        max-width: 50%;
+    }
+    .main-estreno {
+        width: 90%;
+    }
+    .h2, h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .feat-estreno {
+        padding: 3em 0 0;
+    }
+    .sinop-title {
+        max-width: 90%;
+    }
+    .btn-title {
+        width: 90%;
+    }
 }

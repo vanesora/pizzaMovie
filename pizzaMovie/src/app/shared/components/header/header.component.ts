@@ -3,6 +3,7 @@ import { StorageService } from '../../services/storage.service';
 import { LoginComponent } from './components/login/login.component';
 import { MatDialog } from '@angular/material';
 import { UserService } from '../../services/user.service';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit {
     public storageService: StorageService,
     public dialog: MatDialog,
     public userService: UserService,
+    public configService: ConfigService,
   ) { }
 
   ngOnInit() {
@@ -52,13 +54,13 @@ export class HeaderComponent implements OnInit {
   logOutFun(){
     this.userService.logOut()
     this.userService._logOut=false;
+    this.configService.menu.map(data=>{
+      data.auth=false;
+    })
   }
 
   noLogOut(){
     this.userService._logOut=false;
-  }
-
-  closeModal(){
   }
 
 }
