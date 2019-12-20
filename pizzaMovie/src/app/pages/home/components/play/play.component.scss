@@ -17,10 +17,10 @@
   Player Skin Designer for Video.js
   http://videojs.com
 
-  To customize the player skin edit 
-  the CSS below. Click "details" 
+  To customize the player skin edit
+  the CSS below. Click "details"
   below to add comments or questions.
-  This file uses some SCSS. Learn more  
+  This file uses some SCSS. Learn more
   at http://sass-lang.com/guide)
 
   This designer can be linked to at:
@@ -61,7 +61,7 @@ $center-big-play-button: true; // true default
    of the button is the center, but there is trend towards moving it to a corner
    where it gets out of the way of valuable content in the poster image.*/
 .vjs-default-skin .vjs-big-play-button {
-  /* The font size is what makes the big play button...big. 
+  /* The font size is what makes the big play button...big.
      All width/height values use ems, which are a multiple of the font size.
      If the .video-js font-size is 10px, then 3em equals 30px.*/
   font-size: 3em;
@@ -141,4 +141,32 @@ $slider-bg-color: lighten($primary-background-color, 33%);
   background: lighten(#1ba6b3, 50%);
   /* Otherwise we'll rely on stacked opacities */
   background: rgba(#1ba6b3, 0.75);
+}
+
+#v_area{
+	width: 640px;
+	height: 267px;
+  float:left;
+  z-index: 99;
+}
+
+#my_ad {
+	position:absolute;
+	width:640px;
+	height:267px;
+	font-family: Arial;
+	font-size: 120%;
+	background-color:rgba(255,0,0,0.8);
+	z-index:100;
+	color: #fff;
+}
+
+#close a {
+	position:absolute;
+	top: 5;
+	left: 520;
+	z-index:100;
+	font-family: Arial;
+	font-size: 40%;
+	text-decoration: none;
 }

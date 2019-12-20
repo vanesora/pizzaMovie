@@ -1,15 +1,25 @@
 
 <div class="peli" >
     <div class="tituloPeli">
-        <h1 class="text-nblue">BA. I. Inteligencia Artificial</h1>
-        <h3 class="text-npink">Año: 2001 | EEUU | Ciencia Ficción
-       <button class="btn btn-primary"style="border: none;"><i class="fas fa-heart-broken"></i></button>
-            <button class="btn btn-primary"style="border: none;"><i class="fas fa-heart"></i></button>
-            <button class="btn btn-primary"style="border: none;"><i class="fas fa-plus"></i></button>
-   </h3>
+      <h1 class="text-nblue">BA. I. Inteligencia Artificial</h1>
+      <h3 class="text-npink">
+        Año: 2001 | EEUU | Ciencia Ficción
+        <button class="btn btn-primary"style="border: none;"><i class="fas fa-heart-broken"></i></button>
+        <button class="btn btn-primary"style="border: none;"><i class="fas fa-heart"></i></button>
+        <button class="btn btn-primary"style="border: none;"><i class="fas fa-plus"></i></button>
+      </h3>
     </div>
-        <video class="video" id="my_video_1" class="video-js vjs-default-skin" width="80%" height=auto
-        controls preload="none" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
-        <source src="../../../../../assets/JULIAN SMITH - Techno Jeep.mp4" type='video/mp4' />
-    </video>
+    <div id="v_area">
+      <div id="my_ad" *ngIf="show">
+        Que tal? y si te registras?
+        <p>Registrate!</p>
+        <!--div id='close' (click)="showAdVideo()">
+          <a href="javascript:void(0);">[x]</a>
+        </div-->
+      </div>
+      <video  class="video" #myVideo (timeupdate)="setCurrentTime($event)" class="video-js vjs-default-skin" width="80%" height="100%"
+              controls preload="none" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+              <source src="../../../../../assets/JULIAN SMITH - Techno Jeep.mp4" type='video/mp4' />
+      </video>
+    </div>
 </div>
