@@ -21,7 +21,7 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
 import { PopUpComponent } from './shared/components/pop-up/pop-up.component';
 import { StikyComponent } from './shared/components/stiky/stiky.component';
 
-import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatSelectModule, MatRadioModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule } from '@angular/material';
+import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatSelectModule, MatRadioModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule, MatCardModule } from '@angular/material';
 
 import { BuypizzaComponent } from './shared/components/pay/buypizza.component';
 import { PayComponent } from './shared/components/pay/pay.component';
@@ -98,6 +98,7 @@ import { TermsComponent } from './pages/register/terms/terms.component';
     MatNativeDateModule,
     MatSnackBarModule,
     HttpClientModule,
+    MatCardModule
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} },
