@@ -21,6 +21,7 @@ api.get('/get-picture-movie/:imageFile',
 api.get('/get-top/', movieController.getTopMovies);
 
 api.post('/movie', movieController.setMovie);
+api.put('/movie/:id',movieController.updateMovie);
 api.delete('/movie/:id', movieController.deleteMovie);
 
 module.exports = api;

@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogModule } from '@angular/material';
+import { PopupPayService } from '../../services/popup-pay.service';
 
 const material = [
   MatDialogModule,
@@ -13,9 +14,14 @@ const material = [
 export class PopUpComponent implements OnInit {
 
   constructor(
+    public payService: PopupPayService
   ) { }
 
   ngOnInit() {
+  }
+
+  goPremium(){
+    this.payService.openAlertDialog('payInto');
   }
 
 }

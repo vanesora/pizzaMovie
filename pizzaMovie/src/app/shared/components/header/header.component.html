@@ -2,18 +2,18 @@
 <div class="container-fluid mat-toolbar">
         <div class="row">
                 <nav class="navbar">
-                        <div class="col-md-3 d-flex justify-content-start">
+                        <div class="col-6 col-md-3 d-flex justify-content-start">
                                 <a class="navbar-brand text-ngreen" href="#"><img class="logoini" src="../../../../assets/img/logo.svg" alt=""><span class="parisienne text-nblue">Pizza</span> WARS</a>
                         </div>
-                        <div class="col-md-9 d-flex justify-content-end align-items-center">
+                        <div class="col-6 col-md-9 d-flex justify-content-end align-items-center">
                                 <img class="profi" src="../../../../assets/img/avatar.jfif" alt="" *ngIf="!storageService.session?.picture && storageService.session?.gender =='Otro'">
                                 <img class="profi" src="../../../../assets/img/avatar-man.jfif" alt=""
                                 *ngIf="!storageService.session?.picture && storageService.session?.gender =='Hombre'">
                                 <img class="profi" src="../../../../assets/img/avatar-woman.jpg" alt=""
                                 *ngIf="!storageService.session?.picture && storageService.session?.gender =='Mujer'">
-                                <img src="{{url+'obtener-imagen-usuario/'+session.picture}}" alt=""
+                                <img class="profi" src="{{url+'get-picture-user/'+storageService.session.picture}}" alt=""
                                 *ngIf="storageService.session?.picture">
-                                <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="!storageService.session">Hola, humano visitante</p>
+                                <p id="humano" class="text-ngreen mb-0 mr-4 tech-text" *ngIf="!storageService.session">Hola, humano visitante</p>
                                 <p class="text-ngreen mb-0 mr-4 tech-text" *ngIf="storageService.session">Hola, {{storageService.session.name}}</p>
                                 <button class="btn btn-primary" *ngIf="storageService.session"
                                 (click)="logOut()"><i class="fas fa-sign-out-alt"></i></button>
@@ -23,7 +23,6 @@
                 </nav>
         </div>
 </div>
-<div class="container-fluid spacer"></div>
 <div class="logOutConfirm" *ngIf="userService._logOut">
         <div class="row align-items-center justify-content-center">
                 <div class="col-12 text-center"><p>¿Seguro deseas salir?</p></div>

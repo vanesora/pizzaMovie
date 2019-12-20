@@ -1,29 +1,29 @@
 <div class="container mt-5 form-movie row">
-    <div class="col-8 offset-2">
+    <div class="col-md-10 offset-md-2">
         <div class="title-center">
             <h1>Agregar película</h1>
         </div>
         <form #myForm="ngForm" id="ngForm" [formGroup]="schForm" (ngSubmit)="submitForm()" novalidate
             autocomplete="off">
             <div class="row">
-                <div class="col-8">
+                <div class="col-12 col-md-8">
                     <div class="row">
-                        <mat-label class="col-4">Título (*)</mat-label>
-                        <mat-form-field class="col-8">
+                        <mat-label class="col-12 col-md-4">Título (*)</mat-label>
+                        <mat-form-field class="col-12 col-md-8">
                             <input matInput formControlName="title" type="text">
                             <mat-error *ngIf="schForm.controls.title.errors?.required">Campo requerido</mat-error>
                         </mat-form-field>
 
-                        <mat-label class="col-4">Descripción (*)</mat-label>
-                        <mat-form-field class="col-8">
+                        <mat-label class="col-12 col-md-4">Descripción (*)</mat-label>
+                        <mat-form-field class="col-12 col-md-8">
                             <textarea matInput formControlName="description" type="text"></textarea>
                             <mat-error *ngIf="schForm.controls.description.errors?.required">Campo requerido</mat-error>
                             <mat-error *ngIf="schForm.controls.description.errors?.maxlength">Máximo 400 carácteres</mat-error>
                         </mat-form-field>
 
                         <!-- Type -->
-                        <mat-label class="col-4">Tipo (*)</mat-label>
-                        <mat-form-field class="col-8">
+                        <mat-label class="col-12 col-md-4">Tipo (*)</mat-label>
+                        <mat-form-field class="col-12 col-md-8">
                             <mat-select formControlName="type">
                                 <mat-option [value]="type" *ngFor="let type of type">{{type}}
                                 </mat-option>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 movie-img">
+                <div class="col-12 col-md-4 movie-img">
                     <div class="d-flex flex-column justify-content-center align-items-center">
                         
                         <div *ngIf="!filesToUpload">

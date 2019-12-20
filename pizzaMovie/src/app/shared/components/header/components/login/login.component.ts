@@ -6,6 +6,7 @@ import { DataApiService } from 'src/app/shared/services/data-api.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/services/user.service';
+import { ConfigService } from 'src/app/shared/services/config.service';
 
 const material = [
   MatDialogModule,
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
     public storageService: StorageService,
     public userService: UserService,
     private router: Router,
+    public configService: ConfigService,
   ) {
     this.user = {
       email: '',
@@ -55,7 +57,6 @@ export class LoginComponent implements OnInit {
     this.user.email = this.formLogin.value.email;
     this.user.password = this.formLogin.value.password;
     return this.userService.logIn(this.user).then(data => {
-      console.log(data);
       if (data.message) {
         this.messageError = 'Usuario y/o contraseña incorrectos'
         setTimeout(() => {
@@ -69,6 +70,7 @@ export class LoginComponent implements OnInit {
           if(data && data.movies){
             this.storageService.setValue('movies', data.movies)
           }
+          this.configService.authComp();
         })
       }
     }).catch(err => {
@@ -78,6 +80,8 @@ export class LoginComponent implements OnInit {
       }, 3000)
     })
   }
+
+  
 
 
 }

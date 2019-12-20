@@ -22,7 +22,7 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
 import { PopUpComponent } from './shared/components/pop-up/pop-up.component';
 import { StikyComponent } from './shared/components/stiky/stiky.component';
 
-import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatSelectModule, MatRadioModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule } from '@angular/material';
+import { MatDialogModule, MatDialogRef, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatSelectModule, MatRadioModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule, MatCardModule } from '@angular/material';
 
 import { BuypizzaComponent } from './shared/components/pay/buypizza.component';
 import { PayComponent } from './shared/components/pay/pay.component';
@@ -38,6 +38,7 @@ import { PizzaComponent } from './pages/home/components/pizza/pizza.component';
 import { ProfileComponent } from './pages/home/components/profile/profile.component';
 import { EditMovieComponent } from './pages/home/components/edit-movie/edit-movie.component';
 import { PopularComponent } from './pages/home/components/popular/popular.component';
+import { TermsComponent } from './pages/register/terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { PopularComponent } from './pages/home/components/popular/popular.compon
     EditMovieComponent,
     PopUpComponent,
     PopularComponent,
+    TermsComponent
   ],
   entryComponents: [
     LoadingComponent,
@@ -72,7 +74,8 @@ import { PopularComponent } from './pages/home/components/popular/popular.compon
     PayComponent,
     BuypizzaComponent,
     LoginComponent,
-    PopUpComponent
+    PopUpComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,
@@ -97,6 +100,7 @@ import { PopularComponent } from './pages/home/components/popular/popular.compon
     MatSnackBarModule,
     HttpClientModule,
     NgbModule,
+    MatCardModule
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} },

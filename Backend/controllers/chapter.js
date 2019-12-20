@@ -133,7 +133,7 @@ function getAllChapters(req,res){
     Chapter.find().exec()
     .then((chapters)=>{
         if (!chapters) {
-            res.status(404).send({ message: "Las películas no se ha cargado" });
+            res.status(404).send({ message: "Las películas no se han cargado" });
         } else {
             res.status(200).send({canciones: chapters});
         }11
