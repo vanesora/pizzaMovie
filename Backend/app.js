@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 
 var routesMovie = require('./routes/movie');
 var routesUser = require('./routes/user');
-var routesChapter = require('./routes/chapter');
+var routesSeries = require('./routes/serie');
 
 
 var app = express();
@@ -26,7 +26,7 @@ app.use((req,res,next)=>{
     })
 app.use('/api',routesMovie);
 app.use('/api',routesUser);
-app.use('/api',routesChapter);
+app.use('/api',routesSeries);
 module.exports = app;
 
 
