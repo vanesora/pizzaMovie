@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PopupPayService } from '../../services/popup-pay.service';
 
 @Component({
   selector: 'app-stiky',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StikyComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public payService: PopupPayService
+  ) { }
 
   ngOnInit() {
+  }
+
+  goPremium(){
+    this.payService.openAlertDialog('payInto');
   }
 
 }

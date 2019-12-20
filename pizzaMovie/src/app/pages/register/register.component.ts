@@ -12,6 +12,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 import { MatDialog } from '@angular/material';
 import { TermsComponent } from 'src/app/pages/register/terms/terms.component';
 import { Router } from '@angular/router';
+import { ConfigService } from 'src/app/shared/services/config.service';
 
 @Component({
   selector: 'app-register',
@@ -40,7 +41,8 @@ export class RegisterComponent implements OnInit {
     public userSercie: UserService,
     public snackBar: MatSnackBar,
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    public configService: ConfigService,
   ) {
   }
 
@@ -123,6 +125,7 @@ export class RegisterComponent implements OnInit {
             this.storageService.setValue('session', userLog.user);
             this.storageService.setValue('page', 'Home');
             this.router.navigate(['/home']);
+            this.configService.authComp();
             this.spinnerService.close();
           })
         }, 3000)

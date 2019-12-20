@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,30 @@ export class ConfigService {
     admin:['home',  'profile', 'uploadMovie', 'editMovie'],
   }
 
-  constructor() { }
+  constructor(
+    public storageService: StorageService
+  ) { }
+
+  authComp(){
+    this.menu.map(data=>{
+      data.auth=false;
+    })
+    this.menu.map(data => {
+      if (this.storageService.session.type == 'USER_PREMIUM') {
+        let valid = this.auth.premium.find(auth => auth == data.page)
+        if (valid) { data.auth = true }
+      }
+      if (this.storageService.session.type == 'USER_FREE') {
+
+        let valid = this.auth.free.find(auth => auth == data.page)
+        if (valid) { data.auth = true }
+      }
+      if (this.storageService.session.type == 'USER_ADMIN') {
+        let valid = this.auth.admin.find(auth => auth == data.page)
+        if (valid) { data.auth = true }
+      }
+    })
+  }
 
   
 }

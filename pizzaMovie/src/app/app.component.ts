@@ -41,22 +41,7 @@ export class AppComponent {
       })
     }
     if (this.storageService.session) {
-
-      this.configService.menu.map(data => {
-        if (this.storageService.session.type == 'USER_PREMIUM') {
-          let valid = this.configService.auth.premium.find(auth => auth == data.page)
-          if (valid) { data.auth = true }
-        }
-        if (this.storageService.session.type == 'USER_FREE') {
-
-          let valid = this.configService.auth.free.find(auth => auth == data.page)
-          if (valid) { data.auth = true }
-        }
-        if (this.storageService.session.type == 'USER_ADMIN') {
-          let valid = this.configService.auth.admin.find(auth => auth == data.page)
-          if (valid) { data.auth = true }
-        }
-      })
+      this.configService.authComp();
     }
   }
 }
