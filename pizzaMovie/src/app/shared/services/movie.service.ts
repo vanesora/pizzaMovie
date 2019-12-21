@@ -75,6 +75,7 @@ export class MovieService {
   play(movie) {
     this.moviePlay = movie;
     this.configService.page='play';
+    this.updateReproduction(movie);
   }
 
   updateReproduction(movie): Promise<any>{

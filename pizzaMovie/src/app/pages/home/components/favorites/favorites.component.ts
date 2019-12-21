@@ -20,8 +20,7 @@ export class FavoritesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.favorites=this.storageService.movies
-    this.movieSelect=this.storageService.movies[0]? this.storageService.movies[0] : ''
+    this.movieSelect=this.storageService.session.favoritiesMovies[0]? this.storageService.movies[0] : ''
   }
 
   select(movie){

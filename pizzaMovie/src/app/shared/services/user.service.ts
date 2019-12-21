@@ -68,10 +68,10 @@ export class UserService {
   }
 
   updateFavorites(user, movie) {
-    if (!user.favorites) {
-      user.favorites=[];
+    if (!user.favoritiesMovies) {
+      user.favoritiesMovies=[];
     }
-    user.favorites.push(movie);
+    user.favoritiesMovies.push(movie);
     return this.dataApiService.update(user, 'user/' + user._id).then(userRes => {
       this.storageService.setValue('session', user)
       return userRes;

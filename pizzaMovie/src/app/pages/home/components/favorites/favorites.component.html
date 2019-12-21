@@ -3,11 +3,10 @@
     <div class="row">
         <mat-card class="col-10 offset-md-1">
             <h2 class="h3 mr-2 card-fav-title">Selecciona un título para ver más información</h2>
-            <div *ngFor="let movie of favorites">
+            <div *ngFor="let movie of this.storageService.session?.favoritiesMovies">
                 <div class="item" (click)="select(movie)" [ngClass]="{'item-select': movie == movieSelect}">
                     Título: {{movie.title}} - Género: {{movie.type}}
                 </div>
-
             </div>
         </mat-card>
         <div class="w-100 spacer"></div>

@@ -1,1 +1,59 @@
-<p>recomendations works!</p>
+<div class="list">
+    <div id="popularCarousel" class="carousel slide" data-ride="carousel">
+        <div class="img-title-recientes"></div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <ngb-carousel *ngIf="arrTopMovies">
+                    <ng-template ngbSlide *ngIf="peliculasUno">
+                        <div class="card-cont">
+                            
+                            <div *ngFor="let slideUno of peliculasUno" class="card">
+                                <!-- <img class="profi" src="{{rutaImagen}}" alt=""> -->
+                                <div class="movieImage" [style.background-image]="slideUno.background">
+                                    <div class="bg-black-blue detailsMovie">
+                                        <h5 class="card-title">{{slideUno.title}}</h5>
+                                        <p class="card-text">{{slideUno.description}}</p>
+                                        <button class="btn btn-primary mb-1" (click)="play(slideUno)">Reproducir</button>
+                                        <button class="btn btn-primary mb-1" (click)="favorites(slideUno)">Favoritos</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+    
+                        
+                    <ng-template ngbSlide *ngIf="peliculasDos">
+    
+                        <div class="card-cont">
+                            <div *ngFor="let slideDos of peliculasDos" class="card">
+                                <div class="movieImage" [style.background-image]="slideDos.background">
+                                    <div class="bg-black-blue detailsMovie">
+                                        <h5 class="card-title">{{slideDos.title}}</h5>
+                                        <p class="card-text">{{slideDos.description}}</p>
+                                        <button class="btn btn-primary mb-1" (click)="play(slideDos)">Reproducir</button>
+                                        <button class="btn btn-primary mb-1" (click)="favorites(slideDos)">Favoritos</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template ngbSlide *ngIf="peliculasTres">
+    
+                        <div class="card-cont">
+                            <div *ngFor="let slideTres of peliculasTres" class="card">
+                                <div class="movieImage" [style.background-image]="slideTres.background">
+                                    <div class="bg-black-blue detailsMovie">
+                                        <h5 class="card-title">{{slideTres.title}}</h5>
+                                        <p class="card-text">{{slideTres.description}}</p>
+                                        <button class="btn btn-primary mb-1" (click)="play(slideTres)">Reproducir</button>
+                                        <button class="btn btn-primary mb-1" (click)="favorites(slideTres)">Favoritos</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+            </div>
+        </div>
+    </div>
+</div>
