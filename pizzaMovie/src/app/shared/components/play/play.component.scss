@@ -2,11 +2,16 @@
 	margin-top: 30px;
 }
 .video{
-	width: 80%;
+	width: 100%;
+}
+
+#my_video_1 {
+  width: 80vw;
+  height: 70vh;
 }
 
 .peli {
-  width:90%;
+  width:90vw !important;
   padding-top: 20px;
   padding-left: 10%;
 }
