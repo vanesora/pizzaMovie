@@ -1,0 +1,11 @@
+.movieImg {
+    background-color: #0e0e16;
+    padding: 11px;
+    border: 1px solid #f982ee;
+    box-shadow: 0px 0px 5px #e02fcb;
+    font-size: 13px;
+
+    &:hover {
+        transform: scale(1);
+    }
+}
