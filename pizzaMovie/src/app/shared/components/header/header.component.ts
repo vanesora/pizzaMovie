@@ -54,6 +54,7 @@ export class HeaderComponent implements OnInit {
   logOutFun(){
     this.userService.logOut()
     this.userService._logOut=false;
+    this.configService.page='home';
     this.configService.menu.map(data=>{
       data.auth=false;
     })
